@@ -25,8 +25,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-YX-vaQ">
                                 <rect key="frame" x="16" y="97" width="343" height="220"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search query here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nER-6S-4o9">
-                                        <rect key="frame" x="83.5" y="121" width="176" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search query here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nER-6S-4o9">
+                                        <rect key="frame" x="16" y="121" width="319" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -43,8 +43,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozW-Qq-uEv">
-                                        <rect key="frame" x="147.5" y="170" width="48" height="30"/>
+                                    <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozW-Qq-uEv">
+                                        <rect key="frame" x="117" y="170" width="111" height="30"/>
                                         <color key="backgroundColor" red="0.43529411764705883" green="0.56470588235294117" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Search"/>
@@ -55,11 +55,13 @@
                                     <constraint firstAttribute="bottom" secondItem="ozW-Qq-uEv" secondAttribute="bottom" constant="20" id="1tD-t4-X6c"/>
                                     <constraint firstItem="nER-6S-4o9" firstAttribute="top" secondItem="0Hv-nd-OxE" secondAttribute="bottom" constant="41" id="BpT-he-hhA"/>
                                     <constraint firstItem="ozW-Qq-uEv" firstAttribute="centerX" secondItem="nER-6S-4o9" secondAttribute="centerX" id="EfT-Lz-MPf"/>
+                                    <constraint firstItem="ozW-Qq-uEv" firstAttribute="leading" secondItem="ljc-YX-vaQ" secondAttribute="leading" constant="117" id="ZAc-DZ-brr"/>
                                     <constraint firstItem="nER-6S-4o9" firstAttribute="centerX" secondItem="0Hv-nd-OxE" secondAttribute="centerX" id="eMZ-a7-Xwd"/>
                                     <constraint firstItem="XIF-1M-htV" firstAttribute="centerX" secondItem="ljc-YX-vaQ" secondAttribute="centerX" id="ej1-y8-p5R"/>
                                     <constraint firstItem="XIF-1M-htV" firstAttribute="top" secondItem="ljc-YX-vaQ" secondAttribute="top" constant="28" id="hrs-uS-Tg1"/>
                                     <constraint firstItem="0Hv-nd-OxE" firstAttribute="centerX" secondItem="XIF-1M-htV" secondAttribute="centerX" id="n3u-Sx-gNH"/>
                                     <constraint firstItem="0Hv-nd-OxE" firstAttribute="top" secondItem="XIF-1M-htV" secondAttribute="bottom" constant="10" id="tnO-vl-lHJ"/>
+                                    <constraint firstItem="nER-6S-4o9" firstAttribute="leading" secondItem="ljc-YX-vaQ" secondAttribute="leading" constant="16" id="yAZ-4L-gFJ"/>
                                     <constraint firstItem="ozW-Qq-uEv" firstAttribute="top" secondItem="nER-6S-4o9" secondAttribute="bottom" constant="19" id="yHD-Pz-Zap"/>
                                 </constraints>
                             </view>
@@ -90,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="42"/>
+            <point key="canvasLocation" x="221.59999999999999" y="41.829085457271368"/>
         </scene>
     </scenes>
 </document>
