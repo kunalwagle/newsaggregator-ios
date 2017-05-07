@@ -75,6 +75,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Qz-qL-OXZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.066666666666666666" green="0.23137254901960785" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
@@ -161,6 +164,10 @@
                                                 </view>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="DNJ-Nv-8VY" id="3n8-Rp-K7d"/>
+                                            <outlet property="delegate" destination="DNJ-Nv-8VY" id="ejm-6l-0OD"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                             </stackView>
