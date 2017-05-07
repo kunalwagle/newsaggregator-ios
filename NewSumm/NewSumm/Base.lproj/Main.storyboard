@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bcA-L1-O5Y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="ymw-0A-cXj">
+            <objects>
+                <navigationController id="bcA-L1-O5Y" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="pfz-Nq-xph">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="npw-Y3-7mn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9RX-7W-8g3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-502" y="49"/>
+        </scene>
+        <!--NewSumm-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
@@ -19,11 +42,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-YX-vaQ">
-                                <rect key="frame" x="16" y="97" width="343" height="220"/>
+                                <rect key="frame" x="16" y="50" width="343" height="220"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search query here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nER-6S-4o9">
                                         <rect key="frame" x="16" y="121" width="319" height="30"/>
@@ -68,27 +91,15 @@
                                     <constraint firstItem="ozW-Qq-uEv" firstAttribute="top" secondItem="nER-6S-4o9" secondAttribute="bottom" constant="19" id="yHD-Pz-Zap"/>
                                 </constraints>
                             </view>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byB-XP-9GP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="barTintColor" red="0.01176470588" green="0.14117647059999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="NewSumm" id="lq2-EU-EtH"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274509803921" green="0.32941176470588235" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ljc-YX-vaQ" firstAttribute="top" secondItem="byB-XP-9GP" secondAttribute="bottom" constant="53" id="aH8-IP-xjB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ljc-YX-vaQ" secondAttribute="trailing" id="fWq-hZ-Fav"/>
-                            <constraint firstItem="byB-XP-9GP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="hPv-JX-oDX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="byB-XP-9GP" secondAttribute="trailing" constant="-16" id="lZ2-uV-SBs"/>
+                            <constraint firstItem="ljc-YX-vaQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="kaB-lF-wdf"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ljc-YX-vaQ" secondAttribute="leading" id="o2h-gI-gUY"/>
-                            <constraint firstItem="ljc-YX-vaQ" firstAttribute="centerX" secondItem="byB-XP-9GP" secondAttribute="centerX" id="z8k-tR-kSu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="NewSumm" id="Lbf-Ma-KJJ"/>
                     <connections>
                         <outlet property="searchButton" destination="ozW-Qq-uEv" id="MCP-Vn-RrJ"/>
                         <outlet property="searchField" destination="nER-6S-4o9" id="knR-Uf-uaf"/>
