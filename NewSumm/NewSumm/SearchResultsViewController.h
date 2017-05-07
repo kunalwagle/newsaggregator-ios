@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchResultsViewController : UIViewController
+@interface SearchResultsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property NSString *searchTerm;
 @property (weak, nonatomic) IBOutlet UITextField *searchField;

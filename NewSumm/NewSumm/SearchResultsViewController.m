@@ -46,6 +46,18 @@
 */
 
 - (IBAction)search:(id)sender {
+    searchTerm = searchField.text;
+    if (searchTerm.length > 0) {
+        [self doSearch];
+    }
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return NULL;
 }
 
 @end

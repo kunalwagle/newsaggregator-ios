@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "SearchResultsViewController.h"
 
 @interface HomeViewController ()
 
@@ -38,7 +39,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showSearchResults"]) {
-        
+        SearchResultsViewController *vc = (SearchResultsViewController *) [segue destinationViewController];
+        vc.searchTerm = searchField.text;
     }
 }
 
