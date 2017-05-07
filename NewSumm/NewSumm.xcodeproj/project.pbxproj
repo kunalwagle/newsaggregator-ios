@@ -16,6 +16,8 @@
 		9B6B4A3D1EBBA5B5009C8B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6B4A3B1EBBA5B5009C8B33 /* LaunchScreen.storyboard */; };
 		9B6B4A481EBBA5B5009C8B33 /* NewSummTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A471EBBA5B5009C8B33 /* NewSummTests.m */; };
 		9B6B4A531EBBA5B5009C8B33 /* NewSummUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A521EBBA5B5009C8B33 /* NewSummUITests.m */; };
+		9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6B4A631EBF3D33009C8B33 /* LargePanel.xib */; };
+		9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A661EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		9B6B4A4E1EBBA5B5009C8B33 /* NewSummUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewSummUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A521EBBA5B5009C8B33 /* NewSummUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewSummUITests.m; sourceTree = "<group>"; };
 		9B6B4A541EBBA5B5009C8B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B6B4A631EBF3D33009C8B33 /* LargePanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargePanel.xib; sourceTree = "<group>"; };
+		9B6B4A651EBF3FAF009C8B33 /* LargePanelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargePanelCollectionViewCell.h; sourceTree = "<group>"; };
+		9B6B4A661EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargePanelCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,9 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B6B4A631EBF3D33009C8B33 /* LargePanel.xib */,
+				9B6B4A651EBF3FAF009C8B33 /* LargePanelCollectionViewCell.h */,
+				9B6B4A661EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m */,
 				9B6B4A391EBBA5B5009C8B33 /* Assets.xcassets */,
 				9B6B4A3B1EBBA5B5009C8B33 /* LaunchScreen.storyboard */,
 				9B6B4A3E1EBBA5B5009C8B33 /* Info.plist */,
@@ -254,6 +262,7 @@
 			files = (
 				9B6B4A3D1EBBA5B5009C8B33 /* LaunchScreen.storyboard in Resources */,
 				9B6B4A3A1EBBA5B5009C8B33 /* Assets.xcassets in Resources */,
+				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
 				9B6B4A351EBBA5B5009C8B33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +291,7 @@
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
 				9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */,
+				9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

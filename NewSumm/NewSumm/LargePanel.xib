@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="largePanel" id="WQi-Jn-bNp" customClass="LargePanelCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="315" height="250"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hgw-y1-YIL">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="250"/>
+                    </imageView>
+                    <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9Y-FS-jNh">
+                        <rect key="frame" x="0.0" y="142" width="315" height="108"/>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myZ-RS-REr">
+                        <rect key="frame" x="8" y="148" width="299" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dva-FH-GDF">
+                        <rect key="frame" x="0.0" y="175" width="315" height="75"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.01176470588" green="0.14117647059999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Hgw-y1-YIL" firstAttribute="centerY" secondItem="WQi-Jn-bNp" secondAttribute="centerY" id="5h2-ju-RU0"/>
+                <constraint firstItem="Dva-FH-GDF" firstAttribute="width" secondItem="Y9Y-FS-jNh" secondAttribute="width" id="92h-xA-j65"/>
+                <constraint firstItem="Dva-FH-GDF" firstAttribute="centerX" secondItem="Y9Y-FS-jNh" secondAttribute="centerX" id="Dec-he-LwI"/>
+                <constraint firstItem="Hgw-y1-YIL" firstAttribute="width" secondItem="WQi-Jn-bNp" secondAttribute="width" id="J3O-Pc-XQ6"/>
+                <constraint firstItem="myZ-RS-REr" firstAttribute="leading" secondItem="Y9Y-FS-jNh" secondAttribute="trailing" constant="-307" id="Sg9-8P-LTx"/>
+                <constraint firstItem="Y9Y-FS-jNh" firstAttribute="top" secondItem="myZ-RS-REr" secondAttribute="bottom" constant="-27" id="VHK-Q9-nez"/>
+                <constraint firstItem="Hgw-y1-YIL" firstAttribute="centerX" secondItem="WQi-Jn-bNp" secondAttribute="centerX" id="lVg-4M-u19"/>
+                <constraint firstItem="Hgw-y1-YIL" firstAttribute="height" secondItem="WQi-Jn-bNp" secondAttribute="height" id="oVE-3G-anf"/>
+                <constraint firstItem="Dva-FH-GDF" firstAttribute="top" secondItem="myZ-RS-REr" secondAttribute="bottom" constant="6" id="pB0-oM-Qbi"/>
+            </constraints>
+            <size key="customSize" width="315" height="250"/>
+            <connections>
+                <outlet property="image" destination="Hgw-y1-YIL" id="rQu-6C-WGg"/>
+                <outlet property="text" destination="Dva-FH-GDF" id="lvk-x0-siK"/>
+                <outlet property="title" destination="myZ-RS-REr" id="NNw-i1-NwS"/>
+            </connections>
+            <point key="canvasLocation" x="-56.5" y="-273"/>
+        </collectionViewCell>
+    </objects>
+</document>
