@@ -10,6 +10,13 @@
 
 @implementation WikipediaArticle
 
-
+-(WikipediaArticle*)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    self.title = dictionary[@"title"];
+    self.extract = dictionary[@"extract"];
+    self.imageUrl = dictionary[@"imageUrl"];
+    self._id = dictionary[@"_id"];
+    return self;
+}
 
 @end

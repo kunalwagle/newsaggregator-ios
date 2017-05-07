@@ -15,6 +15,8 @@
 @property NSString *imageUrl;
 @property NSString *_id;
 
+-(WikipediaArticle*)initWithDictionary:(NSDictionary *)dictionary;
+
 
 
 @end
