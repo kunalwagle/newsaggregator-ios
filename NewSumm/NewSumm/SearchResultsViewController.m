@@ -7,6 +7,7 @@
 //
 
 #import "SearchResultsViewController.h"
+#import "WikipediaSearch.h"
 
 @interface SearchResultsViewController ()
 
@@ -19,9 +20,11 @@
 @synthesize searchButton;
 @synthesize searchResultGrid;
 @synthesize searchResultCount;
+@synthesize searchResults;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [searchResultGrid registerNib:[UINib nibWithNibName:@"LargePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     [self doSearch];
     // Do any additional setup after loading the view.
 }
@@ -32,7 +35,11 @@
 }
 
 - (void)doSearch {
-    
+    [WikipediaSearch performSearch:searchTerm withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSError *jsonError;
+        NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
+        
+    }];
 }
 
 /*

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UILabel *searchResultCount;
 @property (weak, nonatomic) IBOutlet UICollectionView *searchResultGrid;
+@property NSArray *searchResults;
 - (IBAction)search:(id)sender;
 
 @end

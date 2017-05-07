@@ -19,6 +19,9 @@
 		9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6B4A631EBF3D33009C8B33 /* LargePanel.xib */; };
 		9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A661EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m */; };
 		9B6B4A6A1EBF533E009C8B33 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A691EBF533E009C8B33 /* SearchResultsViewController.m */; };
+		9B6B4A6D1EBF5AF0009C8B33 /* WikipediaSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A6C1EBF5AF0009C8B33 /* WikipediaSearch.m */; };
+		9B6B4A701EBF5B74009C8B33 /* UtilityMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */; };
+		9B6B4A731EBF66DC009C8B33 /* WikipediaArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A721EBF66DC009C8B33 /* WikipediaArticle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,12 @@
 		9B6B4A661EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargePanelCollectionViewCell.m; sourceTree = "<group>"; };
 		9B6B4A681EBF533E009C8B33 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		9B6B4A691EBF533E009C8B33 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		9B6B4A6B1EBF5AF0009C8B33 /* WikipediaSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaSearch.h; sourceTree = "<group>"; };
+		9B6B4A6C1EBF5AF0009C8B33 /* WikipediaSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaSearch.m; sourceTree = "<group>"; };
+		9B6B4A6E1EBF5B74009C8B33 /* UtilityMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityMethods.h; sourceTree = "<group>"; };
+		9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityMethods.m; sourceTree = "<group>"; };
+		9B6B4A711EBF66DC009C8B33 /* WikipediaArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaArticle.h; sourceTree = "<group>"; };
+		9B6B4A721EBF66DC009C8B33 /* WikipediaArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaArticle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +131,16 @@
 				9B6B4A391EBBA5B5009C8B33 /* Assets.xcassets */,
 				9B6B4A3B1EBBA5B5009C8B33 /* LaunchScreen.storyboard */,
 				9B6B4A3E1EBBA5B5009C8B33 /* Info.plist */,
+				9B6B4A711EBF66DC009C8B33 /* WikipediaArticle.h */,
+				9B6B4A721EBF66DC009C8B33 /* WikipediaArticle.m */,
 				9B6B4A361EBBA5B5009C8B33 /* NewSumm.xcdatamodeld */,
 				9B6B4A2A1EBBA5B5009C8B33 /* Supporting Files */,
 				9B6B4A681EBF533E009C8B33 /* SearchResultsViewController.h */,
 				9B6B4A691EBF533E009C8B33 /* SearchResultsViewController.m */,
+				9B6B4A6B1EBF5AF0009C8B33 /* WikipediaSearch.h */,
+				9B6B4A6C1EBF5AF0009C8B33 /* WikipediaSearch.m */,
+				9B6B4A6E1EBF5B74009C8B33 /* UtilityMethods.h */,
+				9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */,
 			);
 			path = NewSumm;
 			sourceTree = "<group>";
@@ -293,9 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6B4A6D1EBF5AF0009C8B33 /* WikipediaSearch.m in Sources */,
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
+				9B6B4A701EBF5B74009C8B33 /* UtilityMethods.m in Sources */,
 				9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */,
+				9B6B4A731EBF66DC009C8B33 /* WikipediaArticle.m in Sources */,
 				9B6B4A6A1EBF533E009C8B33 /* SearchResultsViewController.m in Sources */,
 				9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,

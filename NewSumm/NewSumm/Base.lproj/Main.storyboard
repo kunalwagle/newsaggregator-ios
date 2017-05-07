@@ -106,7 +106,7 @@
                     <connections>
                         <outlet property="searchButton" destination="ozW-Qq-uEv" id="MCP-Vn-RrJ"/>
                         <outlet property="searchField" destination="nER-6S-4o9" id="knR-Uf-uaf"/>
-                        <segue destination="DNJ-Nv-8VY" kind="show" id="PsS-Ex-aIt"/>
+                        <segue destination="DNJ-Nv-8VY" kind="show" identifier="showSearchResults" id="PsS-Ex-aIt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
