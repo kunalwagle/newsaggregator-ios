@@ -8,6 +8,7 @@
 
 #import "SearchResultsViewController.h"
 #import "WikipediaSearch.h"
+#import "WikipediaArticle.h"
 
 @interface SearchResultsViewController ()
 
@@ -36,9 +37,14 @@
 
 - (void)doSearch {
     [WikipediaSearch performSearch:searchTerm withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSError *jsonError;
-        NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
-        
+        if (!error) {
+            NSError *jsonError;
+            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
+            searchResults = [[NSMutableArray alloc] init];
+            for (NSDictionary *dictionary in array) {
+                [searchResults addObject:[[WikipediaArticle alloc] initWithDictionary:dictionary]];
+            }
+        }
     }];
 }
 
