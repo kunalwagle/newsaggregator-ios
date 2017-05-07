@@ -32,7 +32,7 @@
 
 - (IBAction)searchClicked:(id)sender {
     if (searchField.text.length>0) {
-        [self performSegueWithIdentifier:"showSearchResults" sender:self];
+        [self performSegueWithIdentifier:@"showSearchResults" sender:self];
     }
 }
 
