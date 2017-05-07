@@ -22,6 +22,7 @@
 		9B6B4A6D1EBF5AF0009C8B33 /* WikipediaSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A6C1EBF5AF0009C8B33 /* WikipediaSearch.m */; };
 		9B6B4A701EBF5B74009C8B33 /* UtilityMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */; };
 		9B6B4A731EBF66DC009C8B33 /* WikipediaArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A721EBF66DC009C8B33 /* WikipediaArticle.m */; };
+		9B6B4A751EBF8FC7009C8B33 /* default-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B6B4A741EBF8FC7009C8B33 /* default-thumbnail.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityMethods.m; sourceTree = "<group>"; };
 		9B6B4A711EBF66DC009C8B33 /* WikipediaArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaArticle.h; sourceTree = "<group>"; };
 		9B6B4A721EBF66DC009C8B33 /* WikipediaArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaArticle.m; sourceTree = "<group>"; };
+		9B6B4A741EBF8FC7009C8B33 /* default-thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "default-thumbnail.jpg"; path = "../../../../../475SoftwareEngineering/Main-CW2/default-thumbnail.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		9B6B4A291EBBA5B5009C8B33 /* NewSumm */ = {
 			isa = PBXGroup;
 			children = (
+				9B6B4A741EBF8FC7009C8B33 /* default-thumbnail.jpg */,
 				9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */,
 				9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */,
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
@@ -280,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6B4A751EBF8FC7009C8B33 /* default-thumbnail.jpg in Resources */,
 				9B6B4A3D1EBBA5B5009C8B33 /* LaunchScreen.storyboard in Resources */,
 				9B6B4A3A1EBBA5B5009C8B33 /* Assets.xcassets in Resources */,
 				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
