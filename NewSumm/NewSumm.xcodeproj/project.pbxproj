@@ -18,6 +18,7 @@
 		9B6B4A531EBBA5B5009C8B33 /* NewSummUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A521EBBA5B5009C8B33 /* NewSummUITests.m */; };
 		9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6B4A631EBF3D33009C8B33 /* LargePanel.xib */; };
 		9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A661EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m */; };
+		9B6B4A6A1EBF533E009C8B33 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A691EBF533E009C8B33 /* SearchResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		9B6B4A631EBF3D33009C8B33 /* LargePanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargePanel.xib; sourceTree = "<group>"; };
 		9B6B4A651EBF3FAF009C8B33 /* LargePanelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargePanelCollectionViewCell.h; sourceTree = "<group>"; };
 		9B6B4A661EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargePanelCollectionViewCell.m; sourceTree = "<group>"; };
+		9B6B4A681EBF533E009C8B33 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		9B6B4A691EBF533E009C8B33 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				9B6B4A3E1EBBA5B5009C8B33 /* Info.plist */,
 				9B6B4A361EBBA5B5009C8B33 /* NewSumm.xcdatamodeld */,
 				9B6B4A2A1EBBA5B5009C8B33 /* Supporting Files */,
+				9B6B4A681EBF533E009C8B33 /* SearchResultsViewController.h */,
+				9B6B4A691EBF533E009C8B33 /* SearchResultsViewController.m */,
 			);
 			path = NewSumm;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
 				9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */,
+				9B6B4A6A1EBF533E009C8B33 /* SearchResultsViewController.m in Sources */,
 				9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,
 			);

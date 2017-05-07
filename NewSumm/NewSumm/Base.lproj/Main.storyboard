@@ -116,7 +116,7 @@
         <!--Search Results-->
         <scene sceneID="NOq-TY-dsb">
             <objects>
-                <viewController id="DNJ-Nv-8VY" sceneMemberID="viewController">
+                <viewController id="DNJ-Nv-8VY" customClass="SearchResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="izy-o4-dcI"/>
                         <viewControllerLayoutGuide type="bottom" id="MfN-2q-axT"/>
@@ -140,6 +140,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="search:" destination="DNJ-Nv-8VY" eventType="touchUpInside" id="Sgq-O5-oo4"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uDP-ti-txA">
                                 <rect key="frame" x="-1" y="108" width="375" height="495"/>
@@ -194,6 +197,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search Results" id="hNZ-dv-niW"/>
+                    <connections>
+                        <outlet property="searchButton" destination="O0Z-gl-arx" id="m92-JW-0c2"/>
+                        <outlet property="searchField" destination="KvC-3a-Jjp" id="Oyz-Ef-LgV"/>
+                        <outlet property="searchResultCount" destination="cSp-3b-CZ2" id="vO6-ba-587"/>
+                        <outlet property="searchResultGrid" destination="n7f-cr-qhS" id="IFh-VW-9pQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHY-Mz-dWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
