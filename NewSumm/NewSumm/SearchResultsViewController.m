@@ -89,23 +89,31 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    CGFloat width = self.view.frame.size.width;
+    float count = width / 315.0f;
+    int total = floor(count);
+    NSInteger itemsRemaining = [searchResults count] - total*section;
+    return MIN(itemsRemaining, total);
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     if (!searchResults) {
         searchResults = [[NSMutableArray alloc] init];
     }
-    return [searchResults count];
+    CGFloat width = self.view.frame.size.width;
+    float count = floor(width / 315.0f);
+    return ceil([searchResults count]/count);
 }
 
 - (LargePanelCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LargePanelCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
-    WikipediaArticle *article = [searchResults objectAtIndex:[indexPath section]];
+    NSUInteger index = ([indexPath section]*[collectionView numberOfItemsInSection:0]) + [indexPath row];
+    WikipediaArticle *article = [searchResults objectAtIndex:index];
     cell.title.text = article.title;
     NSString *extract = article.extract;
     cell.text.text = extract;
     cell.text.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
+    cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
     dispatch_async(imageQueue, ^{
         NSError *error = nil;

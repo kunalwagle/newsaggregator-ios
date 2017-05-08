@@ -174,15 +174,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jbo-HO-6im">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jbo-HO-6im">
                                 <rect key="frame" x="169" y="283" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="n7f-cr-qhS" firstAttribute="width" secondItem="09v-jn-CEp" secondAttribute="width" id="5M8-cH-Dwc"/>
                             <constraint firstItem="O0Z-gl-arx" firstAttribute="leading" secondItem="KvC-3a-Jjp" secondAttribute="trailing" constant="74" id="Fnv-yn-BD1"/>
+                            <constraint firstItem="jbo-HO-6im" firstAttribute="centerY" secondItem="09v-jn-CEp" secondAttribute="centerY" id="J3K-Ye-V2Q"/>
                             <constraint firstItem="MfN-2q-axT" firstAttribute="top" secondItem="n7f-cr-qhS" secondAttribute="bottom" id="MkW-i7-7iK"/>
                             <constraint firstItem="KvC-3a-Jjp" firstAttribute="top" secondItem="izy-o4-dcI" secondAttribute="bottom" constant="14" id="PqP-c9-IgU"/>
                             <constraint firstAttribute="leadingMargin" secondItem="cSp-3b-CZ2" secondAttribute="leading" id="btH-i7-QpX"/>
@@ -192,6 +192,7 @@
                             <constraint firstItem="n7f-cr-qhS" firstAttribute="top" secondItem="cSp-3b-CZ2" secondAttribute="bottom" constant="26.5" id="olF-ot-5Kr"/>
                             <constraint firstItem="cSp-3b-CZ2" firstAttribute="top" secondItem="KvC-3a-Jjp" secondAttribute="bottom" constant="17" id="sy1-S4-fHZ"/>
                             <constraint firstItem="O0Z-gl-arx" firstAttribute="centerY" secondItem="KvC-3a-Jjp" secondAttribute="centerY" id="y1s-vf-Zf6"/>
+                            <constraint firstItem="jbo-HO-6im" firstAttribute="centerX" secondItem="09v-jn-CEp" secondAttribute="centerX" id="z3p-aS-l2H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search Results" id="hNZ-dv-niW"/>
