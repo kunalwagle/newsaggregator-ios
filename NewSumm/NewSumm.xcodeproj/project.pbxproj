@@ -23,6 +23,9 @@
 		9B6B4A701EBF5B74009C8B33 /* UtilityMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */; };
 		9B6B4A731EBF66DC009C8B33 /* WikipediaArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A721EBF66DC009C8B33 /* WikipediaArticle.m */; };
 		9B6B4A751EBF8FC7009C8B33 /* default-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B6B4A741EBF8FC7009C8B33 /* default-thumbnail.jpg */; };
+		9BA03BF81EC0E9E000C77F17 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03BF61EC0E9E000C77F17 /* ArticleTableViewCell.m */; };
+		9BA03BF91EC0E9E000C77F17 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03BF71EC0E9E000C77F17 /* ArticleTableViewCell.xib */; };
+		9BA03BFC1EC0EB4900C77F17 /* PhoneTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03BFB1EC0EB4900C77F17 /* PhoneTopicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,11 @@
 		9B6B4A711EBF66DC009C8B33 /* WikipediaArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaArticle.h; sourceTree = "<group>"; };
 		9B6B4A721EBF66DC009C8B33 /* WikipediaArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaArticle.m; sourceTree = "<group>"; };
 		9B6B4A741EBF8FC7009C8B33 /* default-thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "default-thumbnail.jpg"; path = "../../../../../475SoftwareEngineering/Main-CW2/default-thumbnail.jpg"; sourceTree = "<group>"; };
+		9BA03BF51EC0E9E000C77F17 /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
+		9BA03BF61EC0E9E000C77F17 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
+		9BA03BF71EC0E9E000C77F17 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		9BA03BFA1EC0EB4900C77F17 /* PhoneTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneTopicViewController.h; sourceTree = "<group>"; };
+		9BA03BFB1EC0EB4900C77F17 /* PhoneTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneTopicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +136,12 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9BA03BFA1EC0EB4900C77F17 /* PhoneTopicViewController.h */,
+				9BA03BFB1EC0EB4900C77F17 /* PhoneTopicViewController.m */,
+				9BA03BF71EC0E9E000C77F17 /* ArticleTableViewCell.xib */,
 				9B6B4A631EBF3D33009C8B33 /* LargePanel.xib */,
+				9BA03BF51EC0E9E000C77F17 /* ArticleTableViewCell.h */,
+				9BA03BF61EC0E9E000C77F17 /* ArticleTableViewCell.m */,
 				9B6B4A651EBF3FAF009C8B33 /* LargePanelCollectionViewCell.h */,
 				9B6B4A661EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m */,
 				9B6B4A391EBBA5B5009C8B33 /* Assets.xcassets */,
@@ -287,6 +300,7 @@
 				9B6B4A3D1EBBA5B5009C8B33 /* LaunchScreen.storyboard in Resources */,
 				9B6B4A3A1EBBA5B5009C8B33 /* Assets.xcassets in Resources */,
 				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
+				9BA03BF91EC0E9E000C77F17 /* ArticleTableViewCell.xib in Resources */,
 				9B6B4A351EBBA5B5009C8B33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B6B4A6D1EBF5AF0009C8B33 /* WikipediaSearch.m in Sources */,
+				9BA03BFC1EC0EB4900C77F17 /* PhoneTopicViewController.m in Sources */,
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
 				9B6B4A701EBF5B74009C8B33 /* UtilityMethods.m in Sources */,
@@ -320,6 +335,7 @@
 				9B6B4A731EBF66DC009C8B33 /* WikipediaArticle.m in Sources */,
 				9B6B4A6A1EBF533E009C8B33 /* SearchResultsViewController.m in Sources */,
 				9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */,
+				9BA03BF81EC0E9E000C77F17 /* ArticleTableViewCell.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +576,7 @@
 				9B6B4A591EBBA5B5009C8B33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B6B4A5A1EBBA5B5009C8B33 /* Build configuration list for PBXNativeTarget "NewSummTests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +585,7 @@
 				9B6B4A5C1EBBA5B5009C8B33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B6B4A5D1EBBA5B5009C8B33 /* Build configuration list for PBXNativeTarget "NewSummUITests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +594,7 @@
 				9B6B4A5F1EBBA5B5009C8B33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
