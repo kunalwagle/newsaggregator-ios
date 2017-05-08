@@ -10,6 +10,7 @@
 #import "WikipediaSearch.h"
 #import "LargePanelCollectionViewCell.h"
 #import "PhoneTopicViewController.h"
+#import "TopicCollectionViewController.h"
 #import "UtilityMethods.h"
 
 @interface SearchResultsViewController ()
@@ -74,6 +75,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"iPhoneTopic"]) {
         PhoneTopicViewController *vc = (PhoneTopicViewController *)[segue destinationViewController];
+        vc.topicId = chosenArticle._id;
+        vc.topicName = chosenArticle.title;
+    } else if ([[segue identifier] isEqualToString:@"iPadTopic"]) {
+        TopicCollectionViewController *vc = (TopicCollectionViewController*)[segue destinationViewController];
         vc.topicId = chosenArticle._id;
         vc.topicName = chosenArticle.title;
     }
@@ -143,7 +148,11 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     chosenArticle = [searchResults objectAtIndex:[indexPath section]];
-    [self performSegueWithIdentifier:@"iPhoneTopic" sender:self];
+    if ([UtilityMethods isIPad]) {
+        [self performSegueWithIdentifier:@"iPadTopic" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"iPhoneTopic" sender:self];
+    }
 }
 
 @end

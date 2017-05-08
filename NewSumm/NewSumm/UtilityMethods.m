@@ -24,4 +24,8 @@
     return flowLayout;
 }
 
++(BOOL)isIPad {
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+}
+
 @end

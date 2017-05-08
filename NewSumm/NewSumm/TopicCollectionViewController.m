@@ -9,12 +9,19 @@
 #import "TopicCollectionViewController.h"
 #import "LargePanelCollectionViewCell.h"
 #import "ExtraLargePanel.h"
+#import "TopicSearch.h"
+#import "Article.h"
 
 @interface TopicCollectionViewController ()
 
 @end
 
 @implementation TopicCollectionViewController
+
+@synthesize topicName;
+@synthesize topicId;
+@synthesize activityIndicator;
+@synthesize articles;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,25 +51,135 @@
 }
 */
 
+- (void)doSearch {
+    [activityIndicator startAnimating];
+    [activityIndicator setHidden:NO];
+    articles = [[NSMutableArray alloc] init];
+    [TopicSearch getTopic:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            NSError *jsonError;
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
+            NSArray *array = [dict objectForKey:@"clusters"];
+            for (NSDictionary *dictionary in array) {
+                NSArray *arts = [dictionary objectForKey:@"articles"];
+                if (arts && [arts count] > 0) {
+                    [articles addObject:[[Article alloc] initWithDictionary:dictionary]];
+                }
+            }
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [activityIndicator stopAnimating];
+                [activityIndicator setHidden:YES];
+                [self.collectionView reloadData];
+            });
+            
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    if (!articles) {
+        articles = [[NSMutableArray alloc] init];
+    }
+    return [articles count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
+    if ([indexPath row] == 0) {
+        ExtraLargePanel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"extraLargePanel" forIndexPath:indexPath];
+        Article *article = [articles objectAtIndex:[indexPath row]+1];
+        NSDictionary *source = [[article articles] objectAtIndex:0];
+        cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
+        cell.title.text = source[@"title"];
+        dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
+        dispatch_async(imageQueue, ^{
+            NSError *error = nil;
+            if (![source[@"imageUrl"] isKindOfClass:[NSNull class]]) {
+                NSURL *url = [NSURL URLWithString:source[@"imageUrl"]];
+                NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+                UIImage *image = [UIImage imageWithData:imageData];
+                NSLog(@"Finished asynchrously attempting download");
+                if (error)
+                    NSLog(@"Download error: %@", error);
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (image) {
+                        cell.image.image = image;
+                    } else {
+                        cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
+                    }
+                });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
+                });
+            }
+            
+        });
+        return cell;
+    }
+    
+    LargePanelCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
+    Article *article = [articles objectAtIndex:[indexPath row]+1];
+    NSDictionary *source = [[article articles] objectAtIndex:0];
+    cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
+    cell.title.text = source[@"title"];
+    dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
+    dispatch_async(imageQueue, ^{
+        NSError *error = nil;
+        if (![source[@"imageUrl"] isKindOfClass:[NSNull class]]) {
+            NSURL *url = [NSURL URLWithString:source[@"imageUrl"]];
+            NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+            UIImage *image = [UIImage imageWithData:imageData];
+            NSLog(@"Finished asynchrously attempting download");
+            if (error)
+                NSLog(@"Download error: %@", error);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (image) {
+                    cell.image.image = image;
+                } else {
+                    cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
+                }
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
+            });
+        }
+        
+    });
+    return cell;
+
     
     // Configure the cell
     
-    return cell;
+}
+
+-(float)collectionView:(UICollectionView *)collectionView relativeHeightForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath row] == 0) {
+        return 300;
+    }
+    return 150;
+}
+
+-(BOOL)collectionView:(UICollectionView *)collectionView isDoubleColumnAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] == 0 && [indexPath row] == 0) {
+        return YES;
+    }
+    return NO;
+}
+
+-(NSUInteger)numberOfColumnsInCollectionView:(UICollectionView *)collectionView {
+    return 4;
 }
 
 #pragma mark <UICollectionViewDelegate>

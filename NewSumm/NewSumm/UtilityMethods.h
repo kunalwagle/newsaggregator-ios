@@ -13,5 +13,6 @@
 
 +(NSString*)getIPAddress;
 +(UICollectionViewFlowLayout*)getCollectionViewFlowLayout;
++(BOOL)isIPad;
 
 @end
