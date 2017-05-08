@@ -12,6 +12,8 @@
 #import "PhoneTopicViewController.h"
 #import "TopicCollectionViewController.h"
 #import "UtilityMethods.h"
+#import "TopicSearch.h"
+#import "Article.h"
 
 @interface SearchResultsViewController ()
 
@@ -27,6 +29,7 @@
 @synthesize searchResults;
 @synthesize activityIndicator;
 @synthesize chosenArticle;
+@synthesize articles;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,6 +72,37 @@
     }];
 }
 
+- (void)getTopic:(NSString*)topicId {
+    [activityIndicator startAnimating];
+    [activityIndicator setHidden:NO];
+    articles = [[NSMutableArray alloc] init];
+    [TopicSearch getTopic:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            NSError *jsonError;
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
+            NSArray *array = [dict objectForKey:@"clusters"];
+            for (NSDictionary *dictionary in array) {
+                NSArray *arts = [dictionary objectForKey:@"articles"];
+                if (arts && [arts count] > 0) {
+                    [articles addObject:[[Article alloc] initWithDictionary:dictionary]];
+                }
+            }
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [activityIndicator stopAnimating];
+                [activityIndicator setHidden:YES];
+                if ([UtilityMethods isIPad]) {
+                    [self performSegueWithIdentifier:@"iPadTopic" sender:self];
+                } else {
+                    [self performSegueWithIdentifier:@"iPhoneTopic" sender:self];
+                }
+            });
+            
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+}
+
 
 #pragma Navigation
 
@@ -77,10 +111,12 @@
         PhoneTopicViewController *vc = (PhoneTopicViewController *)[segue destinationViewController];
         vc.topicId = chosenArticle._id;
         vc.topicName = chosenArticle.title;
+        vc.articles = articles;
     } else if ([[segue identifier] isEqualToString:@"iPadTopic"]) {
         TopicCollectionViewController *vc = (TopicCollectionViewController*)[segue destinationViewController];
         vc.topicId = chosenArticle._id;
         vc.topicName = chosenArticle.title;
+        vc.articles = articles;
     }
 }
 
@@ -148,11 +184,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     chosenArticle = [searchResults objectAtIndex:[indexPath section]];
-    if ([UtilityMethods isIPad]) {
-        [self performSegueWithIdentifier:@"iPadTopic" sender:self];
-    } else {
-        [self performSegueWithIdentifier:@"iPhoneTopic" sender:self];
-    }
+    [self getTopic:chosenArticle._id];
 }
 
 @end

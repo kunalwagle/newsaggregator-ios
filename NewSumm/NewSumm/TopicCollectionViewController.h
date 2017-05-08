@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MosaicLayoutDelegate.h"
 
-@interface TopicCollectionViewController : UICollectionViewController<MosaicLayoutDelegate>
+@interface TopicCollectionViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, MosaicLayoutDelegate>
 
 @property NSMutableArray *articles;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property NSString *topicName;
 @property NSString *topicId;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

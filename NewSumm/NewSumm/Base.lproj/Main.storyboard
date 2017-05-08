@@ -203,7 +203,7 @@
                         <outlet property="searchResultCount" destination="cSp-3b-CZ2" id="vO6-ba-587"/>
                         <outlet property="searchResultGrid" destination="n7f-cr-qhS" id="IFh-VW-9pQ"/>
                         <segue destination="QBp-bh-uZ6" kind="show" identifier="iPhoneTopic" id="mSs-PA-rze"/>
-                        <segue destination="LVV-uH-DSp" kind="show" identifier="iPadTopic" id="eE4-nw-qFX"/>
+                        <segue destination="6Oi-me-eK5" kind="show" identifier="iPadTopic" id="aEZ-eP-iNj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHY-Mz-dWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -289,35 +289,61 @@
             <point key="canvasLocation" x="1836" y="42.728635682158924"/>
         </scene>
         <!--Title-->
-        <scene sceneID="f0K-Zn-TOO">
+        <scene sceneID="KmL-WM-MFZ">
             <objects>
-                <collectionViewController id="LVV-uH-DSp" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IC2-qO-kcW">
+                <viewController id="6Oi-me-eK5" customClass="TopicCollectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZP7-kv-EUV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uri-c1-YqO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uz9-X9-P9u">
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewLayout key="collectionViewLayout" id="ztG-bn-0Vo" customClass="MosaicLayout"/>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="LVV-uH-DSp" id="hYZ-6Q-hNf"/>
-                            <outlet property="delegate" destination="LVV-uH-DSp" id="pQd-EN-bTb"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Title" id="ZL1-Gl-Efd">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="8V7-JZ-GFQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aWZ-77-YNC">
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qtr-Tk-Nxn">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="SQ9-eQ-Lfs" customClass="MosaicLayout"/>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Oi-me-eK5" id="WHy-tj-KN7"/>
+                                    <outlet property="delegate" destination="6Oi-me-eK5" id="lKd-N4-a3q"/>
+                                </connections>
+                            </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hhb-cS-7B1">
+                                <rect key="frame" x="494" y="334" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qtr-Tk-Nxn" firstAttribute="height" secondItem="uz9-X9-P9u" secondAttribute="height" id="BKk-Zs-8xC"/>
+                            <constraint firstItem="qtr-Tk-Nxn" firstAttribute="centerX" secondItem="uz9-X9-P9u" secondAttribute="centerX" id="GmI-4x-wb6"/>
+                            <constraint firstItem="qtr-Tk-Nxn" firstAttribute="centerY" secondItem="uz9-X9-P9u" secondAttribute="centerY" id="Oif-vX-6YG"/>
+                            <constraint firstItem="hhb-cS-7B1" firstAttribute="centerX" secondItem="uz9-X9-P9u" secondAttribute="centerX" id="TnJ-f1-5g4"/>
+                            <constraint firstItem="qtr-Tk-Nxn" firstAttribute="width" secondItem="uz9-X9-P9u" secondAttribute="width" id="ViB-rR-TbB"/>
+                            <constraint firstItem="hhb-cS-7B1" firstAttribute="centerY" secondItem="uz9-X9-P9u" secondAttribute="centerY" id="n3Z-lP-EOO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="gUg-BG-SJf">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="IIW-FN-8cx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GNV-FI-m4f">
                                 <rect key="frame" x="777" y="7" width="227" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Subscribe">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6z5-99-0ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hhb-cS-7B1" id="qOj-jN-vZi"/>
+                        <outlet property="collectionView" destination="qtr-Tk-Nxn" id="BQg-2z-WVt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwg-8X-2s2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="820"/>
+            <point key="canvasLocation" x="1610.7421875" y="744.53125"/>
         </scene>
     </scenes>
 </document>

@@ -35,41 +35,12 @@
     [leadArticle registerNib:[UINib nibWithNibName:@"LargePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     [tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     self.navigationItem.title = topicName;
-    [self doSearch];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)doSearch {
-    [activityIndicator startAnimating];
-    [activityIndicator setHidden:NO];
-    articles = [[NSMutableArray alloc] init];
-    [TopicSearch getTopic:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (!error) {
-            NSError *jsonError;
-            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
-            NSArray *array = [dict objectForKey:@"clusters"];
-            for (NSDictionary *dictionary in array) {
-                NSArray *arts = [dictionary objectForKey:@"articles"];
-                if (arts && [arts count] > 0) {
-                    [articles addObject:[[Article alloc] initWithDictionary:dictionary]];
-                }
-            }
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [activityIndicator stopAnimating];
-                [activityIndicator setHidden:YES];
-                [tableView reloadData];
-                [leadArticle reloadData];
-            });
-            
-        } else {
-            NSLog(@"Error: %@", error);
-        }
-    }];
 }
 
 

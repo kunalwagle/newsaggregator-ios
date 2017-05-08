@@ -10,6 +10,7 @@
 #import "LargePanelCollectionViewCell.h"
 #import "ExtraLargePanel.h"
 #import "TopicSearch.h"
+#import "MosaicLayout.h"
 #import "Article.h"
 
 @interface TopicCollectionViewController ()
@@ -30,9 +31,10 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
+    [(MosaicLayout *)_collectionView.collectionViewLayout setDelegate:self];
     [self.collectionView registerNib:[UINib nibWithNibName:@"ExtraLargePanel" bundle:nil] forCellWithReuseIdentifier:@"extraLargePanel"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"LargePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
-    
+    self.navigationItem.title = topicName;
     // Do any additional setup after loading the view.
 }
 
@@ -50,33 +52,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (void)doSearch {
-    [activityIndicator startAnimating];
-    [activityIndicator setHidden:NO];
-    articles = [[NSMutableArray alloc] init];
-    [TopicSearch getTopic:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (!error) {
-            NSError *jsonError;
-            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
-            NSArray *array = [dict objectForKey:@"clusters"];
-            for (NSDictionary *dictionary in array) {
-                NSArray *arts = [dictionary objectForKey:@"articles"];
-                if (arts && [arts count] > 0) {
-                    [articles addObject:[[Article alloc] initWithDictionary:dictionary]];
-                }
-            }
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [activityIndicator stopAnimating];
-                [activityIndicator setHidden:YES];
-                [self.collectionView reloadData];
-            });
-            
-        } else {
-            NSLog(@"Error: %@", error);
-        }
-    }];
-}
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -106,7 +81,7 @@
                 NSURL *url = [NSURL URLWithString:source[@"imageUrl"]];
                 NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
                 UIImage *image = [UIImage imageWithData:imageData];
-                NSLog(@"Finished asynchrously attempting download");
+                NSLog(@"Finished asynchrously attempting download on Topic Collection screen");
                 if (error)
                     NSLog(@"Download error: %@", error);
                 
@@ -179,6 +154,9 @@
 }
 
 -(NSUInteger)numberOfColumnsInCollectionView:(UICollectionView *)collectionView {
+    if ([articles count] == 0) {
+        return 0;
+    }
     return 4;
 }
 

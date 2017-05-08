@@ -19,6 +19,7 @@
 @property NSMutableArray *searchResults;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property WikipediaArticle *chosenArticle;
+@property NSMutableArray *articles;
 - (IBAction)search:(id)sender;
 
 @end
