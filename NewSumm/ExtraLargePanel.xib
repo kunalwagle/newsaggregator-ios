@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extraLargePanel" id="gTV-IL-0wX" customClass="ExtraLargePanel">
+            <rect key="frame" x="0.0" y="0.0" width="640" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="640" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EO0-4S-yS7">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="300"/>
+                    </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000000000002" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6z-Xc-fDk">
+                        <rect key="frame" x="0.0" y="172" width="640" height="128"/>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is a giant title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-Ob-qfe">
+                        <rect key="frame" x="20" y="172" width="620" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="620" id="8bc-EP-DnI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="EO0-4S-yS7" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="NyJ-CK-77y"/>
+                <constraint firstItem="P6z-Xc-fDk" firstAttribute="width" secondItem="EO0-4S-yS7" secondAttribute="width" id="OX9-iR-WlX"/>
+                <constraint firstItem="mcO-Ob-qfe" firstAttribute="height" secondItem="P6z-Xc-fDk" secondAttribute="height" id="Vk2-PY-Uqp"/>
+                <constraint firstItem="EO0-4S-yS7" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="ZpZ-jW-0Xs"/>
+                <constraint firstItem="mcO-Ob-qfe" firstAttribute="centerY" secondItem="P6z-Xc-fDk" secondAttribute="centerY" id="jZC-xs-qhb"/>
+                <constraint firstItem="P6z-Xc-fDk" firstAttribute="centerX" secondItem="EO0-4S-yS7" secondAttribute="centerX" id="nKM-RW-4Yn"/>
+                <constraint firstItem="EO0-4S-yS7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="pia-a7-LUa"/>
+                <constraint firstItem="mcO-Ob-qfe" firstAttribute="trailing" secondItem="P6z-Xc-fDk" secondAttribute="trailing" constant="20" id="v0l-R1-KBl"/>
+                <constraint firstItem="EO0-4S-yS7" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="v4j-ex-cTE"/>
+            </constraints>
+            <connections>
+                <outlet property="image" destination="EO0-4S-yS7" id="cUn-Dz-P6K"/>
+                <outlet property="title" destination="mcO-Ob-qfe" id="1Be-js-S3E"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

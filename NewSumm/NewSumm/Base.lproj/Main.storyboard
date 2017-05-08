@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bcA-L1-O5Y">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -42,11 +42,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-YX-vaQ">
-                                <rect key="frame" x="16" y="50" width="343" height="220"/>
+                                <rect key="frame" x="20" y="50" width="984" height="220"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search query here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nER-6S-4o9">
                                         <rect key="frame" x="16" y="121" width="319" height="30"/>
@@ -55,19 +55,19 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewSumm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIF-1M-htV">
-                                        <rect key="frame" x="130" y="28" width="83.5" height="21"/>
+                                        <rect key="frame" x="450.5" y="28" width="83.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Aggregator and Summariser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hv-nd-OxE">
-                                        <rect key="frame" x="40.5" y="59" width="262.5" height="21"/>
+                                        <rect key="frame" x="361" y="59" width="262.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozW-Qq-uEv">
-                                        <rect key="frame" x="122" y="170" width="100" height="30"/>
+                                        <rect key="frame" x="442.5" y="170" width="100" height="30"/>
                                         <color key="backgroundColor" red="0.43529411764705883" green="0.56470588235294117" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="epC-6q-BcC"/>
@@ -122,10 +122,10 @@
                         <viewControllerLayoutGuide type="bottom" id="MfN-2q-axT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="09v-jn-CEp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search query here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KvC-3a-Jjp">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search query here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KvC-3a-Jjp">
                                 <rect key="frame" x="16" y="14" width="223" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ubu-fZ-vZF"/>
@@ -134,7 +134,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-gl-arx">
+                            <button contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-gl-arx">
                                 <rect key="frame" x="266" y="14" width="100" height="30"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.56470588239999997" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -148,11 +148,11 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uDP-ti-txA">
-                                <rect key="frame" x="-1" y="108" width="375" height="495"/>
+                                <rect key="frame" x="-1" y="108" width="1024" height="616.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n7f-cr-qhS">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="495"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="616.5"/>
                                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mov-R6-GNU">
                                             <size key="itemSize" width="50" height="50"/>
@@ -169,13 +169,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your search returned 0 results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSp-3b-CZ2">
-                                <rect key="frame" x="16" y="61" width="231" height="20.5"/>
+                                <rect key="frame" x="20" y="61" width="231" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jbo-HO-6im">
-                                <rect key="frame" x="169" y="283" width="37" height="37"/>
+                                <rect key="frame" x="493.5" y="333.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -203,6 +203,7 @@
                         <outlet property="searchResultCount" destination="cSp-3b-CZ2" id="vO6-ba-587"/>
                         <outlet property="searchResultGrid" destination="n7f-cr-qhS" id="IFh-VW-9pQ"/>
                         <segue destination="QBp-bh-uZ6" kind="show" identifier="iPhoneTopic" id="mSs-PA-rze"/>
+                        <segue destination="LVV-uH-DSp" kind="show" identifier="iPadTopic" id="eE4-nw-qFX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHY-Mz-dWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -219,11 +220,11 @@
                         <viewControllerLayoutGuide type="bottom" id="5G8-X0-eqG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gp0-mZ-UJn">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-RN-efF">
-                                <rect key="frame" x="0.0" y="266" width="375" height="337"/>
+                                <rect key="frame" x="0.0" y="266" width="1024" height="438"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -232,7 +233,7 @@
                                 </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HpD-Pm-psI">
-                                <rect key="frame" x="0.0" y="8" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="8" width="1024" height="250"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="n3p-QS-hEA"/>
@@ -250,7 +251,7 @@
                                 </connections>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-Va-b1r">
-                                <rect key="frame" x="169" y="283.5" width="37" height="37"/>
+                                <rect key="frame" x="493.5" y="333.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,6 +287,37 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1836" y="42.728635682158924"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="f0K-Zn-TOO">
+            <objects>
+                <collectionViewController id="LVV-uH-DSp" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IC2-qO-kcW">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewLayout key="collectionViewLayout" id="ztG-bn-0Vo" customClass="MosaicLayout"/>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="LVV-uH-DSp" id="hYZ-6Q-hNf"/>
+                            <outlet property="delegate" destination="LVV-uH-DSp" id="pQd-EN-bTb"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Title" id="ZL1-Gl-Efd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="8V7-JZ-GFQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aWZ-77-YNC">
+                                <rect key="frame" x="777" y="7" width="227" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Subscribe">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6z5-99-0ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1626" y="820"/>
         </scene>
     </scenes>
 </document>

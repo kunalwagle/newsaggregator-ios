@@ -28,6 +28,10 @@
 		9BA03BFC1EC0EB4900C77F17 /* PhoneTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03BFB1EC0EB4900C77F17 /* PhoneTopicViewController.m */; };
 		9BA03BFF1EC0EF2500C77F17 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03BFE1EC0EF2500C77F17 /* Article.m */; };
 		9BA03C021EC0F4AA00C77F17 /* TopicSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C011EC0F4AA00C77F17 /* TopicSearch.m */; };
+		9BA03C0A1EC1176400C77F17 /* Libs in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03C071EC1176400C77F17 /* Libs */; };
+		9BA03C0F1EC1188C00C77F17 /* TopicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C0E1EC1188C00C77F17 /* TopicCollectionViewController.m */; };
+		9BA03C161EC118BF00C77F17 /* ExtraLargePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C141EC118BF00C77F17 /* ExtraLargePanel.m */; };
+		9BA03C171EC118BF00C77F17 /* ExtraLargePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03C151EC118BF00C77F17 /* ExtraLargePanel.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,12 @@
 		9BA03BFE1EC0EF2500C77F17 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		9BA03C001EC0F4AA00C77F17 /* TopicSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicSearch.h; sourceTree = "<group>"; };
 		9BA03C011EC0F4AA00C77F17 /* TopicSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicSearch.m; sourceTree = "<group>"; };
+		9BA03C071EC1176400C77F17 /* Libs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Libs; path = "../../../../../../../../../Downloads/MosaicLayout-master 2/MosaicCollectionView/Libs"; sourceTree = "<group>"; };
+		9BA03C0D1EC1188C00C77F17 /* TopicCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCollectionViewController.h; sourceTree = "<group>"; };
+		9BA03C0E1EC1188C00C77F17 /* TopicCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicCollectionViewController.m; sourceTree = "<group>"; };
+		9BA03C131EC118BF00C77F17 /* ExtraLargePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtraLargePanel.h; path = ../ExtraLargePanel.h; sourceTree = "<group>"; };
+		9BA03C141EC118BF00C77F17 /* ExtraLargePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtraLargePanel.m; path = ../ExtraLargePanel.m; sourceTree = "<group>"; };
+		9BA03C151EC118BF00C77F17 /* ExtraLargePanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExtraLargePanel.xib; path = ../ExtraLargePanel.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +152,11 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9BA03C131EC118BF00C77F17 /* ExtraLargePanel.h */,
+				9BA03C141EC118BF00C77F17 /* ExtraLargePanel.m */,
+				9BA03C151EC118BF00C77F17 /* ExtraLargePanel.xib */,
+				9BA03C0D1EC1188C00C77F17 /* TopicCollectionViewController.h */,
+				9BA03C0E1EC1188C00C77F17 /* TopicCollectionViewController.m */,
 				9BA03BFA1EC0EB4900C77F17 /* PhoneTopicViewController.h */,
 				9BA03BFB1EC0EB4900C77F17 /* PhoneTopicViewController.m */,
 				9BA03BF71EC0E9E000C77F17 /* ArticleTableViewCell.xib */,
@@ -167,6 +182,7 @@
 				9BA03C011EC0F4AA00C77F17 /* TopicSearch.m */,
 				9B6B4A6E1EBF5B74009C8B33 /* UtilityMethods.h */,
 				9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */,
+				9BA03C071EC1176400C77F17 /* Libs */,
 			);
 			path = NewSumm;
 			sourceTree = "<group>";
@@ -308,6 +324,8 @@
 			files = (
 				9B6B4A751EBF8FC7009C8B33 /* default-thumbnail.jpg in Resources */,
 				9B6B4A3D1EBBA5B5009C8B33 /* LaunchScreen.storyboard in Resources */,
+				9BA03C0A1EC1176400C77F17 /* Libs in Resources */,
+				9BA03C171EC118BF00C77F17 /* ExtraLargePanel.xib in Resources */,
 				9B6B4A3A1EBBA5B5009C8B33 /* Assets.xcassets in Resources */,
 				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
 				9BA03BF91EC0E9E000C77F17 /* ArticleTableViewCell.xib in Resources */,
@@ -338,6 +356,7 @@
 			files = (
 				9B6B4A6D1EBF5AF0009C8B33 /* WikipediaSearch.m in Sources */,
 				9BA03BFC1EC0EB4900C77F17 /* PhoneTopicViewController.m in Sources */,
+				9BA03C0F1EC1188C00C77F17 /* TopicCollectionViewController.m in Sources */,
 				9BA03C021EC0F4AA00C77F17 /* TopicSearch.m in Sources */,
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
@@ -349,6 +368,7 @@
 				9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */,
 				9BA03BF81EC0E9E000C77F17 /* ArticleTableViewCell.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,
+				9BA03C161EC118BF00C77F17 /* ExtraLargePanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
