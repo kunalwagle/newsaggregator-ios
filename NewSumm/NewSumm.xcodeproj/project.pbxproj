@@ -26,6 +26,8 @@
 		9BA03BF81EC0E9E000C77F17 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03BF61EC0E9E000C77F17 /* ArticleTableViewCell.m */; };
 		9BA03BF91EC0E9E000C77F17 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03BF71EC0E9E000C77F17 /* ArticleTableViewCell.xib */; };
 		9BA03BFC1EC0EB4900C77F17 /* PhoneTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03BFB1EC0EB4900C77F17 /* PhoneTopicViewController.m */; };
+		9BA03BFF1EC0EF2500C77F17 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03BFE1EC0EF2500C77F17 /* Article.m */; };
+		9BA03C021EC0F4AA00C77F17 /* TopicSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C011EC0F4AA00C77F17 /* TopicSearch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 		9BA03BF71EC0E9E000C77F17 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		9BA03BFA1EC0EB4900C77F17 /* PhoneTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneTopicViewController.h; sourceTree = "<group>"; };
 		9BA03BFB1EC0EB4900C77F17 /* PhoneTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneTopicViewController.m; sourceTree = "<group>"; };
+		9BA03BFD1EC0EF2500C77F17 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		9BA03BFE1EC0EF2500C77F17 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		9BA03C001EC0F4AA00C77F17 /* TopicSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicSearch.h; sourceTree = "<group>"; };
+		9BA03C011EC0F4AA00C77F17 /* TopicSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicSearch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,12 +155,16 @@
 				9B6B4A3E1EBBA5B5009C8B33 /* Info.plist */,
 				9B6B4A711EBF66DC009C8B33 /* WikipediaArticle.h */,
 				9B6B4A721EBF66DC009C8B33 /* WikipediaArticle.m */,
+				9BA03BFD1EC0EF2500C77F17 /* Article.h */,
+				9BA03BFE1EC0EF2500C77F17 /* Article.m */,
 				9B6B4A361EBBA5B5009C8B33 /* NewSumm.xcdatamodeld */,
 				9B6B4A2A1EBBA5B5009C8B33 /* Supporting Files */,
 				9B6B4A681EBF533E009C8B33 /* SearchResultsViewController.h */,
 				9B6B4A691EBF533E009C8B33 /* SearchResultsViewController.m */,
 				9B6B4A6B1EBF5AF0009C8B33 /* WikipediaSearch.h */,
 				9B6B4A6C1EBF5AF0009C8B33 /* WikipediaSearch.m */,
+				9BA03C001EC0F4AA00C77F17 /* TopicSearch.h */,
+				9BA03C011EC0F4AA00C77F17 /* TopicSearch.m */,
 				9B6B4A6E1EBF5B74009C8B33 /* UtilityMethods.h */,
 				9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */,
 			);
@@ -328,12 +338,14 @@
 			files = (
 				9B6B4A6D1EBF5AF0009C8B33 /* WikipediaSearch.m in Sources */,
 				9BA03BFC1EC0EB4900C77F17 /* PhoneTopicViewController.m in Sources */,
+				9BA03C021EC0F4AA00C77F17 /* TopicSearch.m in Sources */,
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
 				9B6B4A701EBF5B74009C8B33 /* UtilityMethods.m in Sources */,
 				9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */,
 				9B6B4A731EBF66DC009C8B33 /* WikipediaArticle.m in Sources */,
 				9B6B4A6A1EBF533E009C8B33 /* SearchResultsViewController.m in Sources */,
+				9BA03BFF1EC0EF2500C77F17 /* Article.m in Sources */,
 				9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */,
 				9BA03BF81EC0E9E000C77F17 /* ArticleTableViewCell.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,

@@ -8,8 +8,9 @@
 
 #import "SearchResultsViewController.h"
 #import "WikipediaSearch.h"
-#import "WikipediaArticle.h"
 #import "LargePanelCollectionViewCell.h"
+#import "PhoneTopicViewController.h"
+#import "UtilityMethods.h"
 
 @interface SearchResultsViewController ()
 
@@ -24,15 +25,11 @@
 @synthesize searchResultCount;
 @synthesize searchResults;
 @synthesize activityIndicator;
+@synthesize chosenArticle;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flowLayout setMinimumInteritemSpacing:-10.0f];
-    [flowLayout setMinimumLineSpacing:15.0f];
-    [flowLayout setItemSize:CGSizeMake(315, 250)];
-    flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 0.0f, 10.0f, 0.0f);
+    UICollectionViewFlowLayout *flowLayout = [UtilityMethods getCollectionViewFlowLayout];
     [searchResultGrid.collectionViewLayout invalidateLayout];
     searchResultGrid.collectionViewLayout = flowLayout;
     
@@ -71,15 +68,17 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"iPhoneTopic"]) {
+        PhoneTopicViewController *vc = (PhoneTopicViewController *)[segue destinationViewController];
+        vc.topicId = chosenArticle._id;
+        vc.topicName = chosenArticle.title;
+    }
 }
-*/
+
 
 - (IBAction)search:(id)sender {
     searchTerm = searchField.text;
@@ -140,6 +139,11 @@
         
     });
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    chosenArticle = [searchResults objectAtIndex:[indexPath section]];
+    [self performSegueWithIdentifier:@"iPhoneTopic" sender:self];
 }
 
 @end

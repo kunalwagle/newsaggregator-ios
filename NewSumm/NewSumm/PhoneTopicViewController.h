@@ -12,5 +12,9 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *leadArticle;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *subscribe;
+@property NSMutableArray *articles;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property NSString *topicName;
+@property NSString *topicId;
 
 @end

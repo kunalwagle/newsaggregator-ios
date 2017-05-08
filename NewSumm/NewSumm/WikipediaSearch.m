@@ -16,6 +16,7 @@
     NSString *url = [UtilityMethods getIPAddress];
     url = [url stringByAppendingString:@"wikipedia/"];
     url = [url stringByAppendingString:searchTerm];
+    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:callback] resume];

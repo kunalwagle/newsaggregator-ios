@@ -222,9 +222,14 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-RN-efF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-RN-efF">
                                 <rect key="frame" x="0.0" y="266" width="375" height="337"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QBp-bh-uZ6" id="rll-n2-fqZ"/>
+                                    <outlet property="delegate" destination="QBp-bh-uZ6" id="aFQ-pA-amS"/>
+                                </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HpD-Pm-psI">
                                 <rect key="frame" x="0.0" y="8" width="375" height="250"/>
@@ -244,13 +249,18 @@
                                     <outlet property="delegate" destination="QBp-bh-uZ6" id="wDL-gS-gyu"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="S3V-Va-b1r">
+                                <rect key="frame" x="169" y="283.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="HpD-Pm-psI" firstAttribute="centerX" secondItem="gp0-mZ-UJn" secondAttribute="centerX" id="LsF-gW-eDr"/>
                             <constraint firstItem="HpD-Pm-psI" firstAttribute="width" secondItem="gp0-mZ-UJn" secondAttribute="width" id="PJW-OX-O7o"/>
+                            <constraint firstItem="S3V-Va-b1r" firstAttribute="centerX" secondItem="gp0-mZ-UJn" secondAttribute="centerX" id="RVv-RZ-5zs"/>
                             <constraint firstItem="OYn-RN-efF" firstAttribute="centerX" secondItem="gp0-mZ-UJn" secondAttribute="centerX" id="UYP-nM-BlI"/>
                             <constraint firstItem="5G8-X0-eqG" firstAttribute="top" secondItem="OYn-RN-efF" secondAttribute="bottom" id="lbj-RP-eAI"/>
+                            <constraint firstItem="S3V-Va-b1r" firstAttribute="centerY" secondItem="gp0-mZ-UJn" secondAttribute="centerY" id="nQd-HU-ihp"/>
                             <constraint firstItem="HpD-Pm-psI" firstAttribute="top" secondItem="AcT-gG-1N5" secondAttribute="bottom" constant="8" id="tnL-OP-T7s"/>
                             <constraint firstItem="OYn-RN-efF" firstAttribute="top" secondItem="HpD-Pm-psI" secondAttribute="bottom" constant="8" id="wgC-ql-UEB"/>
                             <constraint firstItem="OYn-RN-efF" firstAttribute="width" secondItem="gp0-mZ-UJn" secondAttribute="width" id="xXG-HM-r6K"/>
@@ -268,6 +278,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="S3V-Va-b1r" id="MOa-O4-N4p"/>
                         <outlet property="leadArticle" destination="HpD-Pm-psI" id="5Uc-CQ-MR4"/>
                         <outlet property="subscribe" destination="y9v-lb-BgK" id="qzz-RD-WWK"/>
                         <outlet property="tableView" destination="OYn-RN-efF" id="J2X-c8-g5q"/>

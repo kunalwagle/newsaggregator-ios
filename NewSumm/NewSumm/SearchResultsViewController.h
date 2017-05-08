@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WikipediaArticle.h"
 
 @interface SearchResultsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *searchResultGrid;
 @property NSMutableArray *searchResults;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property WikipediaArticle *chosenArticle;
 - (IBAction)search:(id)sender;
 
 @end

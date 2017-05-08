@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UtilityMethods : NSObject
 
 +(NSString*)getIPAddress;
++(UICollectionViewFlowLayout*)getCollectionViewFlowLayout;
 
 @end
