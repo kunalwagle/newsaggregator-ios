@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MosaicLayoutDelegate.h"
 
-@interface TopicCollectionViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, MosaicLayoutDelegate>
+@interface TopicCollectionViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property NSMutableArray *articles;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;

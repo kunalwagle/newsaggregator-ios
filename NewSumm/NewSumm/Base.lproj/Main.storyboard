@@ -303,25 +303,25 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qtr-Tk-Nxn">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewLayout key="collectionViewLayout" id="SQ9-eQ-Lfs" customClass="MosaicLayout"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tQh-m4-BCP">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="6Oi-me-eK5" id="WHy-tj-KN7"/>
                                     <outlet property="delegate" destination="6Oi-me-eK5" id="lKd-N4-a3q"/>
                                 </connections>
                             </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hhb-cS-7B1">
-                                <rect key="frame" x="494" y="334" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qtr-Tk-Nxn" firstAttribute="height" secondItem="uz9-X9-P9u" secondAttribute="height" id="BKk-Zs-8xC"/>
                             <constraint firstItem="qtr-Tk-Nxn" firstAttribute="centerX" secondItem="uz9-X9-P9u" secondAttribute="centerX" id="GmI-4x-wb6"/>
                             <constraint firstItem="qtr-Tk-Nxn" firstAttribute="centerY" secondItem="uz9-X9-P9u" secondAttribute="centerY" id="Oif-vX-6YG"/>
-                            <constraint firstItem="hhb-cS-7B1" firstAttribute="centerX" secondItem="uz9-X9-P9u" secondAttribute="centerX" id="TnJ-f1-5g4"/>
                             <constraint firstItem="qtr-Tk-Nxn" firstAttribute="width" secondItem="uz9-X9-P9u" secondAttribute="width" id="ViB-rR-TbB"/>
-                            <constraint firstItem="hhb-cS-7B1" firstAttribute="centerY" secondItem="uz9-X9-P9u" secondAttribute="centerY" id="n3Z-lP-EOO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="gUg-BG-SJf">
@@ -337,7 +337,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="hhb-cS-7B1" id="qOj-jN-vZi"/>
                         <outlet property="collectionView" destination="qtr-Tk-Nxn" id="BQg-2z-WVt"/>
                     </connections>
                 </viewController>

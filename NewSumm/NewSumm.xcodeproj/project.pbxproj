@@ -43,6 +43,8 @@
 		9BA03C411EC11B8F00C77F17 /* MosaicLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C2F1EC11B8F00C77F17 /* MosaicLayout.m */; };
 		9BA03C421EC11B8F00C77F17 /* MosaicData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C321EC11B8F00C77F17 /* MosaicData.m */; };
 		9BA03C431EC11B8F00C77F17 /* MosaicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C371EC11B8F00C77F17 /* MosaicCell.m */; };
+		9BA03C471EC1BD1C00C77F17 /* LargeArticlePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C451EC1BD1C00C77F17 /* LargeArticlePanel.m */; };
+		9BA03C481EC1BD1C00C77F17 /* LargeArticlePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03C461EC1BD1C00C77F17 /* LargeArticlePanel.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,9 @@
 		9BA03C341EC11B8F00C77F17 /* MosaicLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicLayoutDelegate.h; sourceTree = "<group>"; };
 		9BA03C361EC11B8F00C77F17 /* MosaicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicCell.h; sourceTree = "<group>"; };
 		9BA03C371EC11B8F00C77F17 /* MosaicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicCell.m; sourceTree = "<group>"; };
+		9BA03C441EC1BD1C00C77F17 /* LargeArticlePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeArticlePanel.h; sourceTree = "<group>"; };
+		9BA03C451EC1BD1C00C77F17 /* LargeArticlePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeArticlePanel.m; sourceTree = "<group>"; };
+		9BA03C461EC1BD1C00C77F17 /* LargeArticlePanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeArticlePanel.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +202,9 @@
 				9BA03BFB1EC0EB4900C77F17 /* PhoneTopicViewController.m */,
 				9BA03BF71EC0E9E000C77F17 /* ArticleTableViewCell.xib */,
 				9B6B4A631EBF3D33009C8B33 /* LargePanel.xib */,
+				9BA03C441EC1BD1C00C77F17 /* LargeArticlePanel.h */,
+				9BA03C451EC1BD1C00C77F17 /* LargeArticlePanel.m */,
+				9BA03C461EC1BD1C00C77F17 /* LargeArticlePanel.xib */,
 				9BA03BF51EC0E9E000C77F17 /* ArticleTableViewCell.h */,
 				9BA03BF61EC0E9E000C77F17 /* ArticleTableViewCell.m */,
 				9B6B4A651EBF3FAF009C8B33 /* LargePanelCollectionViewCell.h */,
@@ -436,6 +444,7 @@
 				9BA03C171EC118BF00C77F17 /* ExtraLargePanel.xib in Resources */,
 				9B6B4A3A1EBBA5B5009C8B33 /* Assets.xcassets in Resources */,
 				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
+				9BA03C481EC1BD1C00C77F17 /* LargeArticlePanel.xib in Resources */,
 				9BA03BF91EC0E9E000C77F17 /* ArticleTableViewCell.xib in Resources */,
 				9B6B4A351EBBA5B5009C8B33 /* Main.storyboard in Resources */,
 			);
@@ -487,6 +496,7 @@
 				9BA03C401EC11B8F00C77F17 /* UIImageView+AFNetworking.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,
 				9BA03C161EC118BF00C77F17 /* ExtraLargePanel.m in Sources */,
+				9BA03C471EC1BD1C00C77F17 /* LargeArticlePanel.m in Sources */,
 				9BA03C391EC11B8F00C77F17 /* AFHTTPRequestOperation.m in Sources */,
 				9BA03C381EC11B8F00C77F17 /* AFHTTPClient.m in Sources */,
 			);

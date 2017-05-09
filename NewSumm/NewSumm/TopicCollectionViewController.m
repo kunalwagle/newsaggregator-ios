@@ -7,11 +7,11 @@
 //
 
 #import "TopicCollectionViewController.h"
-#import "LargePanelCollectionViewCell.h"
+#import "LargeArticlePanel.h"
 #import "ExtraLargePanel.h"
 #import "TopicSearch.h"
-#import "MosaicLayout.h"
 #import "Article.h"
+#import "UtilityMethods.h"
 
 @interface TopicCollectionViewController ()
 
@@ -30,10 +30,21 @@
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
+//    UICollectionViewFlowLayout *flowLayout = [UtilityMethods getCollectionViewFlowLayout];
+//    [self.collectionView.collectionViewLayout invalidateLayout];
+//    self.collectionView.collectionViewLayout = flowLayout;
+
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [flowLayout setMinimumInteritemSpacing:-10.0f];
+    [flowLayout setMinimumLineSpacing:15.0f];
+    flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 0.0f, 10.0f, 0.0f);
+    
+    [self.collectionView.collectionViewLayout invalidateLayout];
+    self.collectionView.collectionViewLayout = flowLayout;
     // Register cell classes
-    [(MosaicLayout *)_collectionView.collectionViewLayout setDelegate:self];
     [self.collectionView registerNib:[UINib nibWithNibName:@"ExtraLargePanel" bundle:nil] forCellWithReuseIdentifier:@"extraLargePanel"];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"LargePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"LargeArticlePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     self.navigationItem.title = topicName;
     // Do any additional setup after loading the view.
 }
@@ -56,7 +67,7 @@
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return 2;
 }
 
 
@@ -64,11 +75,14 @@
     if (!articles) {
         articles = [[NSMutableArray alloc] init];
     }
-    return [articles count];
+    if (section == 0) {
+        return MIN([articles count], 2);
+    }
+    return MAX([articles count] - 2, 0);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath row] == 0) {
+    if ([indexPath section] == 0) {
         ExtraLargePanel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"extraLargePanel" forIndexPath:indexPath];
         Article *article = [articles objectAtIndex:[indexPath row]+1];
         NSDictionary *source = [[article articles] objectAtIndex:0];
@@ -102,7 +116,7 @@
         return cell;
     }
     
-    LargePanelCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
+    LargeArticlePanel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
     Article *article = [articles objectAtIndex:[indexPath row]+1];
     NSDictionary *source = [[article articles] objectAtIndex:0];
     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
@@ -139,25 +153,11 @@
     
 }
 
--(float)collectionView:(UICollectionView *)collectionView relativeHeightForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath row] == 0) {
-        return 300;
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] == 0) {
+        return CGSizeMake(480, 350);
     }
-    return 150;
-}
-
--(BOOL)collectionView:(UICollectionView *)collectionView isDoubleColumnAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0 && [indexPath row] == 0) {
-        return YES;
-    }
-    return NO;
-}
-
--(NSUInteger)numberOfColumnsInCollectionView:(UICollectionView *)collectionView {
-    if ([articles count] == 0) {
-        return 0;
-    }
-    return 4;
+    return CGSizeMake(320, 250);
 }
 
 #pragma mark <UICollectionViewDelegate>

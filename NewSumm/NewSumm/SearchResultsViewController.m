@@ -183,7 +183,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    chosenArticle = [searchResults objectAtIndex:[indexPath section]];
+    chosenArticle = [searchResults objectAtIndex:(([indexPath section]*[collectionView numberOfItemsInSection:0]) + [indexPath row])];
     [self getTopic:chosenArticle._id];
 }
 
