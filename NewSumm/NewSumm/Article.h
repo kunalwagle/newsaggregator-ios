@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Article : NSObject
 
 @property NSArray *articles;
 @property NSMutableArray *summaries;
+@property UIImage *image;
 @property NSString *_id;
 
 -(Article*)initWithDictionary:(NSDictionary *)dictionary;

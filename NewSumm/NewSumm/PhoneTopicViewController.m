@@ -9,9 +9,9 @@
 #import "PhoneTopicViewController.h"
 #import "LargePanelCollectionViewCell.h"
 #import "ArticleTableViewCell.h"
-#import "Article.h"
 #import "TopicSearch.h"
 #import "UtilityMethods.h"
+#import "PhoneArticleViewController.h"
 
 @interface PhoneTopicViewController ()
 
@@ -26,6 +26,7 @@
 @synthesize activityIndicator;
 @synthesize topicId;
 @synthesize topicName;
+@synthesize chosenArticle;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,15 +45,18 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"showArticle"]) {
+        PhoneArticleViewController *vc = (PhoneArticleViewController*)[segue destinationViewController];
+        vc.article = [articles objectAtIndex:chosenArticle];
+        vc.topicName = topicName;
+    }
 }
-*/
+
 
 #pragma table
 
@@ -69,6 +73,7 @@
     NSDictionary *source = [[article articles] objectAtIndex:0];
     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     cell.title.text = source[@"title"];
+    article.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
     dispatch_async(imageQueue, ^{
         NSError *error = nil;
@@ -83,9 +88,11 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (image) {
                     cell.image.image = image;
+                    article.image = image;
                 } else {
                     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
                 }
+                
             });
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -113,10 +120,11 @@
     NSDictionary *source = [[article articles] objectAtIndex:0];
     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     cell.title.text = source[@"title"];
+    article.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
     dispatch_async(imageQueue, ^{
         NSError *error = nil;
-        if (source[@"imageUrl"] && [source[@"imageUrl"] length]>1) {
+        if (![source[@"imageUrl"] isKindOfClass:[NSNull class]]) {
             NSURL *url = [NSURL URLWithString:source[@"imageUrl"]];
             NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
             UIImage *image = [UIImage imageWithData:imageData];
@@ -127,19 +135,34 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (image) {
                     cell.image.image = image;
+                    article.image = image;
                 } else {
                     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
                 }
+                
             });
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
             });
         }
-        
     });
     return cell;
 
+}
+
+-(void)selectedArticle:(NSInteger)index {
+    chosenArticle = index;
+    [self performSegueWithIdentifier:@"showArticle" sender:self];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self selectedArticle:0];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self selectedArticle:[indexPath row]+1];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Article.h"
 
 @interface PhoneTopicViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *leadArticle;
@@ -16,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property NSString *topicName;
 @property NSString *topicId;
+@property NSInteger chosenArticle;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B686B0E1EC2126300F07AD2 /* PhoneArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B0D1EC2126300F07AD2 /* PhoneArticleViewController.m */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -68,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B686B0C1EC2126300F07AD2 /* PhoneArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneArticleViewController.h; sourceTree = "<group>"; };
+		9B686B0D1EC2126300F07AD2 /* PhoneArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneArticleViewController.m; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B0C1EC2126300F07AD2 /* PhoneArticleViewController.h */,
+				9B686B0D1EC2126300F07AD2 /* PhoneArticleViewController.m */,
 				9BA03C491EC1F3DD00C77F17 /* AvenirNextLTPro-Bold.otf */,
 				9BA03C4A1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf */,
 				9BA03C4B1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf */,
@@ -486,6 +491,7 @@
 				9BA03C3E1EC11B8F00C77F17 /* AFURLConnectionOperation.m in Sources */,
 				9B6B4A6D1EBF5AF0009C8B33 /* WikipediaSearch.m in Sources */,
 				9BA03BFC1EC0EB4900C77F17 /* PhoneTopicViewController.m in Sources */,
+				9B686B0E1EC2126300F07AD2 /* PhoneArticleViewController.m in Sources */,
 				9BA03C0F1EC1188C00C77F17 /* TopicCollectionViewController.m in Sources */,
 				9BA03C3B1EC11B8F00C77F17 /* AFJSONRequestOperation.m in Sources */,
 				9BA03C3F1EC11B8F00C77F17 /* AFXMLRequestOperation.m in Sources */,
