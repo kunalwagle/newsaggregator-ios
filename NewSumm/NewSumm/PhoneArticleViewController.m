@@ -17,6 +17,7 @@
 @synthesize article;
 @synthesize topicName;
 @synthesize articleText;
+@synthesize tv;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,9 +27,14 @@
     self.navigationItem.title = @"";
     articleText = @"";
     for (NSDictionary *dictionary in text) {
-        articleText = [articleText stringByAppendingString:[NSString stringWithFormat:@"%@\n", dictionary[@"sentence"]]];
+        articleText = [articleText stringByAppendingString:[NSString stringWithFormat:@"%@\n\n", dictionary[@"sentence"]]];
     }
-    
+    tv.estimatedRowHeight = 260;
+    tv.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [tv reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,38 +53,52 @@
             cell = [tableView dequeueReusableCellWithIdentifier:@"title" forIndexPath:indexPath];
             UILabel *title = [cell viewWithTag:99];
             title.text = [[[article articles] objectAtIndex:0] objectForKey:@"title"];
+            break;
         }
         case 1: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
             UIImageView *imageView = [cell viewWithTag:100];
-            imageView.image = [article image];
+            UIImage *image = [article image];
+            CGFloat aspect = image.size.width / image.size.height;
+            NSLayoutConstraint *aspectConstraint = [NSLayoutConstraint constraintWithItem:imageView
+                                                                attribute:NSLayoutAttributeWidth
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:imageView
+                                                                attribute:NSLayoutAttributeHeight
+                                                               multiplier:aspect
+                                                                 constant:0.0];
+            aspectConstraint.priority = 999;
+            [imageView setImage:image];
+            [cell.contentView addConstraint:aspectConstraint];
+            break;
         }
         case 2: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"text" forIndexPath:indexPath];
             UILabel *label = [cell viewWithTag:101];
             label.text = articleText;
+            break;
         }
     }
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch ([indexPath row]) {
-        case 0: {
-            NSString *title = [[[article articles] objectAtIndex:0] objectForKey:@"title"];
-            CGSize size = [title sizeWithAttributes:
-                           @{NSFontAttributeName: [UIFont systemFontOfSize:22.0f]}];
-            return ceilf(size.height)+10;
-        }
-        case 1:
-            return 260;
-        default: {
-            CGSize size = [articleText sizeWithAttributes:
-                           @{NSFontAttributeName: [UIFont systemFontOfSize:15.0f]}];
-            return ceilf(size.height)+10;
-        }
-    }
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    switch ([indexPath row]) {
+//        case 0: {
+//            NSString *title = [[[article articles] objectAtIndex:0] objectForKey:@"title"];
+//            CGSize size = [title sizeWithAttributes:
+//                           @{NSFontAttributeName: [UIFont systemFontOfSize:22.0f]}];
+//            return ceilf(size.height)+10;
+//        }
+//        case 1:
+//            return 260;
+//        default: {
+//            CGSize size = [articleText sizeWithAttributes:
+//                           @{NSFontAttributeName: [UIFont systemFontOfSize:15.0f]}];
+//            return ceilf(size.height)+10;
+//        }
+//    }
+//}
 
 /*
 #pragma mark - Navigation

@@ -14,5 +14,6 @@
 @property Article *article;
 @property NSString *topicName;
 @property NSString *articleText;
+@property (weak, nonatomic) IBOutlet UITableView *tv;
 
 @end

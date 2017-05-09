@@ -7,7 +7,7 @@
 //
 
 #import "PhoneTopicViewController.h"
-#import "LargePanelCollectionViewCell.h"
+#import "LargeArticlePanel.h"
 #import "ArticleTableViewCell.h"
 #import "TopicSearch.h"
 #import "UtilityMethods.h"
@@ -33,7 +33,7 @@
     UICollectionViewFlowLayout *flowLayout = [UtilityMethods getCollectionViewFlowLayout];
     [leadArticle.collectionViewLayout invalidateLayout];
     leadArticle.collectionViewLayout = flowLayout;
-    [leadArticle registerNib:[UINib nibWithNibName:@"LargePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
+    [leadArticle registerNib:[UINib nibWithNibName:@"LargeArticlePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     [tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     self.navigationItem.title = topicName;
     // Do any additional setup after loading the view.
@@ -114,8 +114,8 @@
     return [articles count]>0 ? 1 : 0;
 }
 
-- (LargePanelCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    LargePanelCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
+- (LargeArticlePanel *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    LargeArticlePanel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
     Article *article = [articles objectAtIndex:[indexPath row]];
     NSDictionary *source = [[article articles] objectAtIndex:0];
     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
