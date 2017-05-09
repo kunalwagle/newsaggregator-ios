@@ -45,6 +45,9 @@
 		9BA03C431EC11B8F00C77F17 /* MosaicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C371EC11B8F00C77F17 /* MosaicCell.m */; };
 		9BA03C471EC1BD1C00C77F17 /* LargeArticlePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA03C451EC1BD1C00C77F17 /* LargeArticlePanel.m */; };
 		9BA03C481EC1BD1C00C77F17 /* LargeArticlePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03C461EC1BD1C00C77F17 /* LargeArticlePanel.xib */; };
+		9BA03C4C1EC1F3DD00C77F17 /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03C491EC1F3DD00C77F17 /* AvenirNextLTPro-Bold.otf */; };
+		9BA03C4D1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03C4A1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf */; };
+		9BA03C4E1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA03C4B1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +140,9 @@
 		9BA03C441EC1BD1C00C77F17 /* LargeArticlePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeArticlePanel.h; sourceTree = "<group>"; };
 		9BA03C451EC1BD1C00C77F17 /* LargeArticlePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeArticlePanel.m; sourceTree = "<group>"; };
 		9BA03C461EC1BD1C00C77F17 /* LargeArticlePanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeArticlePanel.xib; sourceTree = "<group>"; };
+		9BA03C491EC1F3DD00C77F17 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
+		9BA03C4A1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-It.otf"; sourceTree = "<group>"; };
+		9BA03C4B1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,9 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9BA03C491EC1F3DD00C77F17 /* AvenirNextLTPro-Bold.otf */,
+				9BA03C4A1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf */,
+				9BA03C4B1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf */,
 				9BA03C131EC118BF00C77F17 /* ExtraLargePanel.h */,
 				9BA03C141EC118BF00C77F17 /* ExtraLargePanel.m */,
 				9BA03C151EC118BF00C77F17 /* ExtraLargePanel.xib */,
@@ -443,10 +452,13 @@
 				9B6B4A3D1EBBA5B5009C8B33 /* LaunchScreen.storyboard in Resources */,
 				9BA03C171EC118BF00C77F17 /* ExtraLargePanel.xib in Resources */,
 				9B6B4A3A1EBBA5B5009C8B33 /* Assets.xcassets in Resources */,
+				9BA03C4D1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf in Resources */,
 				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
+				9BA03C4E1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf in Resources */,
 				9BA03C481EC1BD1C00C77F17 /* LargeArticlePanel.xib in Resources */,
 				9BA03BF91EC0E9E000C77F17 /* ArticleTableViewCell.xib in Resources */,
 				9B6B4A351EBBA5B5009C8B33 /* Main.storyboard in Resources */,
+				9BA03C4C1EC1F3DD00C77F17 /* AvenirNextLTPro-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
