@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B686B0E1EC2126300F07AD2 /* PhoneArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B0D1EC2126300F07AD2 /* PhoneArticleViewController.m */; };
+		9B686B111EC27D4600F07AD2 /* business-insider-uk.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B101EC27D4600F07AD2 /* business-insider-uk.png */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		9B686B0C1EC2126300F07AD2 /* PhoneArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneArticleViewController.h; sourceTree = "<group>"; };
 		9B686B0D1EC2126300F07AD2 /* PhoneArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneArticleViewController.m; sourceTree = "<group>"; };
+		9B686B101EC27D4600F07AD2 /* business-insider-uk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "business-insider-uk.png"; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B686B0F1EC27D4600F07AD2 /* outlets */ = {
+			isa = PBXGroup;
+			children = (
+				9B686B101EC27D4600F07AD2 /* business-insider-uk.png */,
+			);
+			path = outlets;
+			sourceTree = "<group>";
+		};
 		9B6B4A1E1EBBA5B5009C8B33 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B0F1EC27D4600F07AD2 /* outlets */,
 				9B686B0C1EC2126300F07AD2 /* PhoneArticleViewController.h */,
 				9B686B0D1EC2126300F07AD2 /* PhoneArticleViewController.m */,
 				9BA03C491EC1F3DD00C77F17 /* AvenirNextLTPro-Bold.otf */,
@@ -455,6 +466,7 @@
 			files = (
 				9B6B4A751EBF8FC7009C8B33 /* default-thumbnail.jpg in Resources */,
 				9B6B4A3D1EBBA5B5009C8B33 /* LaunchScreen.storyboard in Resources */,
+				9B686B111EC27D4600F07AD2 /* business-insider-uk.png in Resources */,
 				9BA03C171EC118BF00C77F17 /* ExtraLargePanel.xib in Resources */,
 				9B6B4A3A1EBBA5B5009C8B33 /* Assets.xcassets in Resources */,
 				9BA03C4D1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf in Resources */,

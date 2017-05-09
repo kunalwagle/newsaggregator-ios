@@ -43,11 +43,26 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    if (section == 0) {
+        return 3;
+    } else {
+        return [[article articles] count];
+    }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell;
+    if ([indexPath section] == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"source" forIndexPath:indexPath];
+        NSDictionary *dictionary = [[article articles] objectAtIndex:[indexPath row]];
+        cell.textLabel.text = dictionary[@"title"];
+        cell.detailTextLabel.text = dictionary[@"articleUrl"];
+        UIImage *image = [UIImage imageNamed:dictionary[@"source"]];
+        cell.imageView.image = image;
+        cell.imageView.layer.cornerRadius = image.size.width / 2;
+        cell.imageView.layer.masksToBounds = YES;
+        return cell;
+    }
     switch ([indexPath row]) {
         case 0: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"title" forIndexPath:indexPath];
@@ -81,6 +96,20 @@
     }
     return cell;
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 1) {
+        return @"Summary Sources";
+    } else {
+        return @"";
+    }
+}
+
+
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    switch ([indexPath row]) {
