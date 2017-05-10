@@ -13,6 +13,9 @@
         <array key="AvenirNextLTPro-It.otf">
             <string>AvenirNextLTPro-It</string>
         </array>
+        <array key="AvenirNextLTPro-Regular.otf">
+            <string>AvenirNextLTPro-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -372,32 +375,44 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="source" textLabel="woS-8y-qxa" detailTextLabel="UCX-F7-pQ1" imageView="vLc-yj-fvV" rowHeight="66" style="IBUITableViewCellStyleSubtitle" id="Eiv-0h-Nf2">
-                                        <rect key="frame" x="0.0" y="535" width="375" height="66"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="source" rowHeight="102" id="Eiv-0h-Nf2">
+                                        <rect key="frame" x="0.0" y="535" width="375" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eiv-0h-Nf2" id="yzd-Sh-soy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="woS-8y-qxa">
-                                                    <rect key="frame" x="80" y="15" width="28.5" height="19.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SZ-Zv-idD">
+                                                    <rect key="frame" x="82" y="47" width="285" height="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="11"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UCX-F7-pQ1">
-                                                    <rect key="frame" x="80" y="34.5" width="42" height="16.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="business-insider-uk.png" id="vLc-yj-fvV">
-                                                    <rect key="frame" x="15" y="8" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-IL-quy">
+                                                    <rect key="frame" x="8" y="26" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="3Vx-bM-OGQ"/>
+                                                        <constraint firstAttribute="width" constant="50" id="Oqa-hZ-e3m"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjW-b3-z4U">
+                                                    <rect key="frame" x="82" y="8" width="285" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="KjW-b3-z4U" secondAttribute="trailing" id="288-ro-hj1"/>
+                                                <constraint firstItem="0SZ-Zv-idD" firstAttribute="top" secondItem="KjW-b3-z4U" secondAttribute="bottom" constant="19.5" id="2Cu-0q-j9d"/>
+                                                <constraint firstItem="KjW-b3-z4U" firstAttribute="leading" secondItem="M3Z-IL-quy" secondAttribute="trailing" constant="24" id="NYZ-he-4JB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0SZ-Zv-idD" secondAttribute="trailing" id="PRi-5G-nKV"/>
+                                                <constraint firstItem="M3Z-IL-quy" firstAttribute="centerY" secondItem="yzd-Sh-soy" secondAttribute="centerY" id="Wjn-X5-7Xg"/>
+                                                <constraint firstItem="0SZ-Zv-idD" firstAttribute="leading" secondItem="M3Z-IL-quy" secondAttribute="trailing" constant="24" id="bdC-cI-TpP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0SZ-Zv-idD" secondAttribute="bottom" constant="10" id="iVu-Ui-FlW"/>
+                                                <constraint firstAttribute="topMargin" secondItem="KjW-b3-z4U" secondAttribute="top" id="ur0-CK-cIs"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="M3Z-IL-quy" secondAttribute="leading" id="yYl-tB-oS8"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
@@ -484,7 +499,4 @@
             <point key="canvasLocation" x="1610.7421875" y="744.53125"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="business-insider-uk.png" width="50" height="50"/>
-    </resources>
 </document>

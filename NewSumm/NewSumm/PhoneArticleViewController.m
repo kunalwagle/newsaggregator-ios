@@ -55,12 +55,15 @@
     if ([indexPath section] == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"source" forIndexPath:indexPath];
         NSDictionary *dictionary = [[article articles] objectAtIndex:[indexPath row]];
-        cell.textLabel.text = dictionary[@"title"];
-        cell.detailTextLabel.text = dictionary[@"articleUrl"];
+        UILabel *textLabel = [cell viewWithTag:103];
+        UILabel *detailTextLabel = [cell viewWithTag:104];
+        UIImageView *imageView = [cell viewWithTag:102];
+        textLabel.text = dictionary[@"title"];
+        detailTextLabel.text = dictionary[@"articleUrl"];
         UIImage *image = [UIImage imageNamed:dictionary[@"source"]];
-        cell.imageView.image = image;
-        cell.imageView.layer.cornerRadius = image.size.width / 2;
-        cell.imageView.layer.masksToBounds = YES;
+        imageView.image = image;
+        imageView.layer.cornerRadius = image.size.width / 2;
+        imageView.layer.masksToBounds = YES;
         return cell;
     }
     switch ([indexPath row]) {
