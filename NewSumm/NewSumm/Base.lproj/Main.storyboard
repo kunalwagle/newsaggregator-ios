@@ -135,8 +135,8 @@
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search query here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KvC-3a-Jjp">
-                                <rect key="frame" x="16" y="14" width="211" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search query here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KvC-3a-Jjp">
+                                <rect key="frame" x="16" y="14" width="861" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ubu-fZ-vZF"/>
                                 </constraints>
@@ -144,7 +144,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-It" family="Avenir Next LT Pro" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-gl-arx">
+                            <button contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-gl-arx">
                                 <rect key="frame" x="911" y="11" width="100" height="36"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.56470588239999997" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -193,6 +193,7 @@
                         <constraints>
                             <constraint firstItem="n7f-cr-qhS" firstAttribute="width" secondItem="09v-jn-CEp" secondAttribute="width" id="5M8-cH-Dwc"/>
                             <constraint firstItem="jbo-HO-6im" firstAttribute="centerY" secondItem="09v-jn-CEp" secondAttribute="centerY" id="J3K-Ye-V2Q"/>
+                            <constraint firstItem="O0Z-gl-arx" firstAttribute="leading" secondItem="KvC-3a-Jjp" secondAttribute="trailing" constant="34" id="K7Z-iI-bhN"/>
                             <constraint firstItem="MfN-2q-axT" firstAttribute="top" secondItem="n7f-cr-qhS" secondAttribute="bottom" id="MkW-i7-7iK"/>
                             <constraint firstItem="KvC-3a-Jjp" firstAttribute="top" secondItem="izy-o4-dcI" secondAttribute="bottom" constant="14" id="PqP-c9-IgU"/>
                             <constraint firstAttribute="leadingMargin" secondItem="cSp-3b-CZ2" secondAttribute="leading" id="btH-i7-QpX"/>
@@ -218,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHY-Mz-dWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.6" y="42.728635682158924"/>
+            <point key="canvasLocation" x="1005.4687499999999" y="42.1875"/>
         </scene>
         <!--Title-->
         <scene sceneID="WTx-67-k2e">
