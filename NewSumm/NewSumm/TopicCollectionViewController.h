@@ -15,5 +15,6 @@
 @property NSString *topicName;
 @property NSString *topicId;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property NSInteger chosenArticle;
 
 @end

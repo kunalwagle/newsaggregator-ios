@@ -12,6 +12,7 @@
 #import "TopicSearch.h"
 #import "Article.h"
 #import "UtilityMethods.h"
+#import "PadArticleViewController.h"
 
 @interface TopicCollectionViewController ()
 
@@ -84,10 +85,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {
         ExtraLargePanel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"extraLargePanel" forIndexPath:indexPath];
-        Article *article = [articles objectAtIndex:[indexPath row]+1];
+        Article *article = [articles objectAtIndex:[indexPath row]];
         NSDictionary *source = [[article articles] objectAtIndex:0];
         cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
         cell.title.text = source[@"title"];
+        article.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
         dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
         dispatch_async(imageQueue, ^{
             NSError *error = nil;
@@ -102,6 +104,7 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (image) {
                         cell.image.image = image;
+                        article.image = image;
                     } else {
                         cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
                     }
@@ -117,10 +120,11 @@
     }
     
     LargeArticlePanel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
-    Article *article = [articles objectAtIndex:[indexPath row]+1];
+    Article *article = [articles objectAtIndex:[indexPath row]+2];
     NSDictionary *source = [[article articles] objectAtIndex:0];
     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     cell.title.text = source[@"title"];
+    article.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
     dispatch_async(imageQueue, ^{
         NSError *error = nil;
@@ -135,6 +139,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (image) {
                     cell.image.image = image;
+                    article.image = image;
                 } else {
                     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
                 }
@@ -158,6 +163,19 @@
         return CGSizeMake(480, 350);
     }
     return CGSizeMake(320, 250);
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    _chosenArticle = [indexPath row] + 2*[indexPath section];
+    [self performSegueWithIdentifier:@"showArticle" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showArticle"]) {
+        PadArticleViewController *vc = (PadArticleViewController*)[segue destinationViewController];
+        vc.article = [articles objectAtIndex:_chosenArticle];
+        vc.topicName = topicName;
+    }
 }
 
 #pragma mark <UICollectionViewDelegate>
