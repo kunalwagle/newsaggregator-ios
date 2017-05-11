@@ -25,9 +25,9 @@
     
     NSArray *text = [[article summaries] objectAtIndex:0];
     self.navigationItem.title = @"";
-    articleText = @"";
+    articleText = [[NSMutableArray alloc] init];
     for (NSDictionary *dictionary in text) {
-        articleText = [articleText stringByAppendingString:[NSString stringWithFormat:@"%@\n\n", dictionary[@"sentence"]]];
+        [articleText addObject:dictionary[@"sentence"]];
     }
     tv.estimatedRowHeight = 260;
     tv.rowHeight = UITableViewAutomaticDimension;
@@ -43,30 +43,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 3;
-    } else {
+    if (section == 2) {
+        return [articleText count];
+    } else if (section == 3) {
         return [[article articles] count];
     }
+    return 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell;
-    if ([indexPath section] == 1) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"source" forIndexPath:indexPath];
-        NSDictionary *dictionary = [[article articles] objectAtIndex:[indexPath row]];
-        UILabel *textLabel = [cell viewWithTag:103];
-        UILabel *detailTextLabel = [cell viewWithTag:104];
-        UIImageView *imageView = [cell viewWithTag:102];
-        textLabel.text = dictionary[@"title"];
-        detailTextLabel.text = dictionary[@"articleUrl"];
-        UIImage *image = [UIImage imageNamed:dictionary[@"source"]];
-        imageView.image = image;
-        imageView.layer.cornerRadius = image.size.width / 2;
-        imageView.layer.masksToBounds = YES;
-        return cell;
-    }
-    switch ([indexPath row]) {
+    switch ([indexPath section]) {
         case 0: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"title" forIndexPath:indexPath];
             UILabel *title = [cell viewWithTag:99];
@@ -93,7 +80,21 @@
         case 2: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"text" forIndexPath:indexPath];
             UILabel *label = [cell viewWithTag:101];
-            label.text = articleText;
+            label.text = [articleText objectAtIndex:[indexPath row]];
+            break;
+        }
+        case 3: {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"source" forIndexPath:indexPath];
+            NSDictionary *dictionary = [[article articles] objectAtIndex:[indexPath row]];
+            UILabel *textLabel = [cell viewWithTag:103];
+            UILabel *detailTextLabel = [cell viewWithTag:104];
+            UIImageView *imageView = [cell viewWithTag:102];
+            textLabel.text = dictionary[@"title"];
+            detailTextLabel.text = dictionary[@"articleUrl"];
+            UIImage *image = [UIImage imageNamed:dictionary[@"source"]];
+            imageView.image = image;
+            imageView.layer.cornerRadius = imageView.frame.size.width / 2;
+            imageView.layer.masksToBounds = YES;
             break;
         }
     }
@@ -101,11 +102,11 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 4;
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 1) {
+    if (section == 3) {
         return @"Summary Sources";
     } else {
         return @"";

@@ -14,6 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *sourceTableView;
 @property Article *article;
 @property NSString *topicName;
-@property NSString *articleText;
+@property NSMutableArray *articleText;
 
 @end

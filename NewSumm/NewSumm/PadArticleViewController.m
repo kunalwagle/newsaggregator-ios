@@ -26,9 +26,9 @@
     
     NSArray *text = [[article summaries] objectAtIndex:0];
     self.navigationItem.title = @"";
-    articleText = @"";
+    articleText = [[NSMutableArray alloc] init];
     for (NSDictionary *dictionary in text) {
-        articleText = [articleText stringByAppendingString:[NSString stringWithFormat:@"%@\n\n", dictionary[@"sentence"]]];
+        [articleText addObject:dictionary[@"sentence"]];
     }
     articleTableView.estimatedRowHeight = 260;
     articleTableView.rowHeight = UITableViewAutomaticDimension;
@@ -47,12 +47,18 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (tableView == articleTableView) {
+        return 3;
+    }
     return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (tableView == articleTableView) {
-        return 3;
+        if (section == 2) {
+            return [articleText count];
+        }
+        return 1;
     }
     return [[article articles] count];
 }
@@ -73,7 +79,7 @@
         imageView.layer.masksToBounds = YES;
         return cell;
     }
-    switch ([indexPath row]) {
+    switch ([indexPath section]) {
         case 0: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"title" forIndexPath:indexPath];
             UILabel *title = [cell viewWithTag:99];
@@ -100,7 +106,7 @@
         case 2: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"text" forIndexPath:indexPath];
             UILabel *label = [cell viewWithTag:101];
-            label.text = articleText;
+            label.text = [articleText objectAtIndex:[indexPath row]];
             break;
         }
     }
