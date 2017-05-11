@@ -18,12 +18,18 @@
 @synthesize topicName;
 @synthesize articleText;
 @synthesize tv;
+@synthesize sources;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    NSArray *text = [[article summaries] objectAtIndex:0];
+    // Do any additional setup after loading the view;
+    sources = [[NSMutableArray alloc] init];
+    for (NSDictionary *dictionary in article.articles) {
+        [sources addObject:[dictionary objectForKey:@"source"]];
+    }
+    [sources sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    NSString *sourceString = [NSString stringWithFormat:@"[%@]", [sources componentsJoinedByString:@","]];
+    NSArray *text = [[article summaryMap] objectForKey:sourceString];
     self.navigationItem.title = @"";
     articleText = [[NSMutableArray alloc] init];
     for (NSDictionary *dictionary in text) {

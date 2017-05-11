@@ -15,6 +15,7 @@
 @property NSMutableArray *summaries;
 @property UIImage *image;
 @property NSString *_id;
+@property NSDictionary *summaryMap;
 
 -(Article*)initWithDictionary:(NSDictionary *)dictionary;
 

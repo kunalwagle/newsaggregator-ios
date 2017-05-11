@@ -14,6 +14,7 @@
     self = [super init];
     self.articles = dictionary[@"articles"];
     self.summaries = dictionary[@"summaries"];
+    self.summaryMap = dictionary[@"summaryMap"];
     if (!self.summaries) {
         self.summaries = [[NSMutableArray alloc] init];
         NSArray *summary = [[dictionary objectForKey:@"summary"] objectAtIndex: 0];
