@@ -22,7 +22,7 @@
         <scene sceneID="ymw-0A-cXj">
             <objects>
                 <navigationController id="bcA-L1-O5Y" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="pfz-Nq-xph">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="pfz-Nq-xph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -386,7 +386,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SZ-Zv-idD">
-                                                    <rect key="frame" x="82" y="47" width="285" height="11"/>
+                                                    <rect key="frame" x="82" y="47" width="205" height="11"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="11"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -399,21 +399,27 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjW-b3-z4U">
-                                                    <rect key="frame" x="82" y="8" width="285" height="19.5"/>
+                                                    <rect key="frame" x="82" y="8" width="205" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" tag="105" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGJ-Bw-U4g">
+                                                    <rect key="frame" x="318" y="35.5" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="KjW-b3-z4U" secondAttribute="trailing" id="288-ro-hj1"/>
                                                 <constraint firstItem="0SZ-Zv-idD" firstAttribute="top" secondItem="KjW-b3-z4U" secondAttribute="bottom" constant="19.5" id="2Cu-0q-j9d"/>
+                                                <constraint firstItem="dGJ-Bw-U4g" firstAttribute="leading" secondItem="0SZ-Zv-idD" secondAttribute="trailing" constant="31" id="2Ef-fa-3am"/>
                                                 <constraint firstItem="KjW-b3-z4U" firstAttribute="leading" secondItem="M3Z-IL-quy" secondAttribute="trailing" constant="24" id="NYZ-he-4JB"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="0SZ-Zv-idD" secondAttribute="trailing" id="PRi-5G-nKV"/>
                                                 <constraint firstItem="M3Z-IL-quy" firstAttribute="centerY" secondItem="yzd-Sh-soy" secondAttribute="centerY" id="Wjn-X5-7Xg"/>
                                                 <constraint firstItem="0SZ-Zv-idD" firstAttribute="leading" secondItem="M3Z-IL-quy" secondAttribute="trailing" constant="24" id="bdC-cI-TpP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dGJ-Bw-U4g" secondAttribute="trailing" id="caB-cL-EkM"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="0SZ-Zv-idD" secondAttribute="bottom" constant="10" id="iVu-Ui-FlW"/>
+                                                <constraint firstItem="dGJ-Bw-U4g" firstAttribute="leading" secondItem="KjW-b3-z4U" secondAttribute="trailing" constant="31" id="kKe-WQ-XRT"/>
                                                 <constraint firstAttribute="topMargin" secondItem="KjW-b3-z4U" secondAttribute="top" id="ur0-CK-cIs"/>
+                                                <constraint firstItem="dGJ-Bw-U4g" firstAttribute="centerY" secondItem="yzd-Sh-soy" secondAttribute="centerY" id="yUj-Kc-JKk"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="M3Z-IL-quy" secondAttribute="leading" id="yYl-tB-oS8"/>
                                             </constraints>
                                         </tableViewCellContentView>
