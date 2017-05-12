@@ -203,7 +203,7 @@
         _chosenSentence = indexPath;
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         [self performSegueWithIdentifier:@"showSources" sender:self];
-    } else if ([indexPath section] == 3) {
+    } else if (tableView == sourceTableView) {
         _chosenLink = [indexPath row];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         [self performSegueWithIdentifier:@"showArticle" sender:self];
@@ -224,7 +224,7 @@
     } else if ([[segue identifier] isEqualToString:@"showArticle"]) {
         NSDictionary *art = [[article articles] objectAtIndex:_chosenLink];
         WebViewController *vc = (WebViewController*) [segue destinationViewController];
-        vc.url = art[@"articleUrl"];
+        vc.url = @"http://www.bbc.co.uk/news/health-39899646";//art[@"articleUrl"];
         vc.source = art[@"source"];
     }
 }
