@@ -15,5 +15,11 @@
 @property Article *article;
 @property NSString *topicName;
 @property NSMutableArray *articleText;
+@property NSMutableArray *sources;
+- (IBAction)summaryAnalysis:(id)sender;
+@property BOOL summaryAnalysis;
+@property NSIndexPath* chosenSentence;
+@property NSInteger chosenLink;
+@property (weak, nonatomic) IBOutlet UIButton *summaryAnalysisButton;
 
 @end
