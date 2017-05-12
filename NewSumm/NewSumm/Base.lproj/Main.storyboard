@@ -533,7 +533,7 @@
             <objects>
                 <navigationController modalPresentationStyle="overFullScreen" id="dsT-86-0ZZ" sceneMemberID="viewController">
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4Jo-lh-MZa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4Jo-lh-MZa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>

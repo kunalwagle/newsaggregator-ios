@@ -125,6 +125,7 @@
                 [toggle addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
             }
             toggle.on = on;
+            toggle.onTintColor = [UtilityMethods getColour:source];
             toggle.tag = 105 + [indexPath row];
             textLabel.text = dictionary[@"title"];
             UIImage *image = [UIImage imageNamed:source];

@@ -113,6 +113,7 @@
             toggle.enabled = YES;
             [toggle addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
         }
+        toggle.onTintColor = [UtilityMethods getColour:source];
         toggle.on = on;
         toggle.tag = 105 + [indexPath row];
         textLabel.text = dictionary[@"title"];
