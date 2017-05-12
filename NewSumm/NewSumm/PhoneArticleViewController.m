@@ -7,6 +7,7 @@
 //
 
 #import "PhoneArticleViewController.h"
+#import "UtilityMethods.h"
 
 @interface PhoneArticleViewController ()
 
@@ -78,12 +79,34 @@
         }
         case 2: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"text" forIndexPath:indexPath];
+            NSString *string = [articleText objectAtIndex:[indexPath row]];
             UILabel *label = [cell viewWithTag:101];
-            label.text = [articleText objectAtIndex:[indexPath row]];
+            if (_summaryAnalysis) {
+                cell.selectionStyle = UITableViewCellSelectionStyleGray;
+                NSString *sourceString = [NSString stringWithFormat:@"[%@]", [sources componentsJoinedByString:@","]];
+                NSArray *sentences = [[article summaryMap] objectForKey:sourceString];
+                NSDictionary *sentence = [sentences objectAtIndex:[indexPath row]];
+                if (sentence[@"relatedNodes"] && [sentence[@"relatedNodes"] count]>0) {
+                    label.text = string;
+                } else {
+                    NSMutableAttributedString *s =
+                    [[NSMutableAttributedString alloc] initWithString:string];
+                
+                    [s addAttribute:NSBackgroundColorAttributeName
+                              value:[UtilityMethods getColour:sentence[@"source"]]
+                          range:NSMakeRange(0, s.length)];
+                    [s addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, s.length)];
+                    label.attributedText = s;
+                }
+            } else {
+                label.text = string;
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
             break;
         }
         case 3: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"source" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
             NSDictionary *dictionary = [[article articles] objectAtIndex:[indexPath row]];
             NSString *source = dictionary[@"source"];
             UILabel *textLabel = [cell viewWithTag:103];
@@ -149,7 +172,17 @@
     [tv reloadData];
 }
 
-
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] < 2) {
+        return nil;
+    }
+    if ([indexPath section] == 2) {
+        if (!_summaryAnalysis) {
+            return nil;
+        }
+    }
+    return indexPath;
+}
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    switch ([indexPath row]) {
@@ -179,4 +212,13 @@
 }
 */
 
+- (IBAction)summaryAnalysisButtonClicked:(id)sender {
+    if (_summaryAnalysis) {
+        [_summaryAnalysisButton setTitle:@"Show Summary Analysis" forState:UIControlStateNormal];
+    } else {
+        [_summaryAnalysisButton setTitle:@"Hide Summary Analysis" forState:UIControlStateNormal];
+    }
+    _summaryAnalysis = !_summaryAnalysis;
+    [tv reloadData];
+}
 @end

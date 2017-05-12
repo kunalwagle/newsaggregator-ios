@@ -15,6 +15,9 @@
 @property NSString *topicName;
 @property NSMutableArray *articleText;
 @property NSMutableArray *sources;
+@property (weak, nonatomic) IBOutlet UIButton *summaryAnalysisButton;
 @property (weak, nonatomic) IBOutlet UITableView *tv;
+@property BOOL summaryAnalysis;
+- (IBAction)summaryAnalysisButtonClicked:(id)sender;
 
 @end

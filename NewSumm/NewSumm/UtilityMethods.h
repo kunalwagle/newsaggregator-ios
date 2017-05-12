@@ -14,5 +14,7 @@
 +(NSString*)getIPAddress;
 +(UICollectionViewFlowLayout*)getCollectionViewFlowLayout;
 +(BOOL)isIPad;
++(UIColor*)getColour:(NSString*)source;
++(NSString*)getPublicationName:(NSString*)source;
 
 @end
