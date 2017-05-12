@@ -460,6 +460,7 @@
                         <outlet property="summaryAnalysisButton" destination="4zh-Ko-QcO" id="gCQ-rf-kgR"/>
                         <outlet property="tv" destination="Sr3-jN-erP" id="D1y-aw-khQ"/>
                         <segue destination="NbV-ut-NJy" kind="show" identifier="showSources" id="Lcd-Ff-y0V"/>
+                        <segue destination="5iW-f5-DdY" kind="show" identifier="showArticle" id="vnY-53-tuB"/>
                     </connections>
                 </viewController>
             </objects>
@@ -705,6 +706,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivg-Ph-crO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2264.6484375" y="731.25"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="STL-FJ-CNS">
+            <objects>
+                <viewController id="5iW-f5-DdY" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nkq-m6-wgq"/>
+                        <viewControllerLayoutGuide type="bottom" id="tLy-nt-TGt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I5A-AZ-ZSr">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cuc-em-N5Q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cuc-em-N5Q" firstAttribute="centerY" secondItem="I5A-AZ-ZSr" secondAttribute="centerY" id="86w-dp-2rK"/>
+                            <constraint firstItem="Cuc-em-N5Q" firstAttribute="height" secondItem="I5A-AZ-ZSr" secondAttribute="height" id="88H-ty-sKg"/>
+                            <constraint firstItem="Cuc-em-N5Q" firstAttribute="width" secondItem="I5A-AZ-ZSr" secondAttribute="width" id="FJU-5h-IKX"/>
+                            <constraint firstItem="Cuc-em-N5Q" firstAttribute="centerX" secondItem="I5A-AZ-ZSr" secondAttribute="centerX" id="UP7-am-y0G"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="z1P-wD-Fn8"/>
+                    <connections>
+                        <outlet property="webView" destination="Cuc-em-N5Q" id="z9j-pg-TrV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I69-KF-2zF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3197.5999999999999" y="729.98500749625191"/>
         </scene>
         <!--Title-->
         <scene sceneID="KmL-WM-MFZ">

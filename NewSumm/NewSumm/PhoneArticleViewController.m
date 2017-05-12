@@ -9,6 +9,7 @@
 #import "PhoneArticleViewController.h"
 #import "UtilityMethods.h"
 #import "SourceTableViewController.h"
+#import "WebViewController.h"
 
 @interface PhoneArticleViewController ()
 
@@ -190,6 +191,10 @@
         _chosenSentence = [indexPath row];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         [self performSegueWithIdentifier:@"showSources" sender:self];
+    } else if ([indexPath section] == 3) {
+        _chosenLink = [indexPath row];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self performSegueWithIdentifier:@"showArticle" sender:self];
     }
 }
 
@@ -200,6 +205,11 @@
         NSArray *sentences = [[article summaryMap] objectForKey:sourceString];
         NSDictionary *sentence = [sentences objectAtIndex:_chosenSentence];
         vc.sentence = sentence;
+    } else if ([[segue identifier] isEqualToString:@"showArticle"]) {
+        NSDictionary *art = [[article articles] objectAtIndex:_chosenLink];
+        WebViewController *vc = (WebViewController*) [segue destinationViewController];
+        vc.url = art[@"articleUrl"];
+        vc.source = art[@"source"];
     }
 }
 

@@ -22,6 +22,7 @@
 		9B686B2A1EC313A200F07AD2 /* the-times-of-india.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B1E1EC313A200F07AD2 /* the-times-of-india.png */; };
 		9B686B2D1EC3185D00F07AD2 /* PadArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B2C1EC3185D00F07AD2 /* PadArticleViewController.m */; };
 		9B686B301EC5FBBE00F07AD2 /* SourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B2F1EC5FBBE00F07AD2 /* SourceTableViewController.m */; };
+		9B686B331EC605DB00F07AD2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B321EC605DB00F07AD2 /* WebViewController.m */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -101,6 +102,8 @@
 		9B686B2C1EC3185D00F07AD2 /* PadArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadArticleViewController.m; sourceTree = "<group>"; };
 		9B686B2E1EC5FBBE00F07AD2 /* SourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceTableViewController.h; sourceTree = "<group>"; };
 		9B686B2F1EC5FBBE00F07AD2 /* SourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceTableViewController.m; sourceTree = "<group>"; };
+		9B686B311EC605DB00F07AD2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		9B686B321EC605DB00F07AD2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B311EC605DB00F07AD2 /* WebViewController.h */,
+				9B686B321EC605DB00F07AD2 /* WebViewController.m */,
 				9B686B2E1EC5FBBE00F07AD2 /* SourceTableViewController.h */,
 				9B686B2F1EC5FBBE00F07AD2 /* SourceTableViewController.m */,
 				9B686B2B1EC3185D00F07AD2 /* PadArticleViewController.h */,
@@ -566,6 +571,7 @@
 				9BA03C3C1EC11B8F00C77F17 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				9BA03C021EC0F4AA00C77F17 /* TopicSearch.m in Sources */,
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
+				9B686B331EC605DB00F07AD2 /* WebViewController.m in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
 				9BA03C3D1EC11B8F00C77F17 /* AFPropertyListRequestOperation.m in Sources */,
 				9BA03C3A1EC11B8F00C77F17 /* AFImageRequestOperation.m in Sources */,
