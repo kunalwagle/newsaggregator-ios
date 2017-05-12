@@ -8,6 +8,7 @@
 
 #import "PhoneArticleViewController.h"
 #import "UtilityMethods.h"
+#import "SourceTableViewController.h"
 
 @interface PhoneArticleViewController ()
 
@@ -182,6 +183,24 @@
         }
     }
     return indexPath;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] == 2) {
+        _chosenSentence = [indexPath row];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self performSegueWithIdentifier:@"showSources" sender:self];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showSources"]) {
+        SourceTableViewController *vc = (SourceTableViewController*)[segue destinationViewController];
+        NSString *sourceString = [NSString stringWithFormat:@"[%@]", [sources componentsJoinedByString:@","]];
+        NSArray *sentences = [[article summaryMap] objectForKey:sourceString];
+        NSDictionary *sentence = [sentences objectAtIndex:_chosenSentence];
+        vc.sentence = sentence;
+    }
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

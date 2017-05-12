@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *summaryAnalysisButton;
 @property (weak, nonatomic) IBOutlet UITableView *tv;
 @property BOOL summaryAnalysis;
+@property NSInteger chosenSentence;
+@property NSInteger chosenLink;
 - (IBAction)summaryAnalysisButtonClicked:(id)sender;
 
 @end
