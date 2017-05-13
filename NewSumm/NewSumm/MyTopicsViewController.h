@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyTopicsViewController : UIViewController
+@protocol LoginDelegate <NSObject>
+- (void)loggedIn;
+@end
+
+@interface MyTopicsViewController : UIViewController<LoginDelegate, UITableViewDelegate, UITableViewDataSource>
+
+@property NSArray *topics;
+@property (weak, nonatomic) IBOutlet UITableView *tv;
+@property (weak, nonatomic) IBOutlet UILabel *loginLabel;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+- (IBAction)login:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property NSMutableArray *articles;
+@property NSDictionary *chosenArticle;
 
 @end

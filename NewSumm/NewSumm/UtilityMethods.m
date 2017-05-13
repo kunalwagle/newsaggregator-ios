@@ -11,7 +11,7 @@
 @implementation UtilityMethods
 
 +(NSString*)getIPAddress {
-    return @"http://localhost:8182/api/";
+    return @"http://192.168.0.20:8182/api/";
 }
 
 +(UICollectionViewFlowLayout*)getCollectionViewFlowLayout {

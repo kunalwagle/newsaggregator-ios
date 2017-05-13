@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyTopicsViewController.h"
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailAddress;
+@property (nonatomic, weak) id<LoginDelegate> delegate;
 @property CGFloat animatedDistance;
 - (IBAction)registerClicked:(id)sender;
 - (IBAction)cancel:(id)sender;

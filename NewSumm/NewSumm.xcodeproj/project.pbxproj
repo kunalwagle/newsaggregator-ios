@@ -27,6 +27,8 @@
 		9B686B371EC73D9B00F07AD2 /* LogoShortForm.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B351EC73D9B00F07AD2 /* LogoShortForm.png */; };
 		9B686B3A1EC7467E00F07AD2 /* MyTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B391EC7467E00F07AD2 /* MyTopicsViewController.m */; };
 		9B686B3D1EC7468F00F07AD2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B3C1EC7468F00F07AD2 /* LoginViewController.m */; };
+		9B686B401EC7501700F07AD2 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B3F1EC7501700F07AD2 /* Login.m */; };
+		9B686B431EC7595900F07AD2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B421EC7595900F07AD2 /* InitialViewController.m */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -114,6 +116,10 @@
 		9B686B391EC7467E00F07AD2 /* MyTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTopicsViewController.m; sourceTree = "<group>"; };
 		9B686B3B1EC7468F00F07AD2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9B686B3C1EC7468F00F07AD2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9B686B3E1EC7501700F07AD2 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		9B686B3F1EC7501700F07AD2 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		9B686B411EC7595900F07AD2 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		9B686B421EC7595900F07AD2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -265,6 +271,8 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B411EC7595900F07AD2 /* InitialViewController.h */,
+				9B686B421EC7595900F07AD2 /* InitialViewController.m */,
 				9B686B381EC7467E00F07AD2 /* MyTopicsViewController.h */,
 				9B686B391EC7467E00F07AD2 /* MyTopicsViewController.m */,
 				9B686B3B1EC7468F00F07AD2 /* LoginViewController.h */,
@@ -314,6 +322,8 @@
 				9B6B4A6C1EBF5AF0009C8B33 /* WikipediaSearch.m */,
 				9BA03C001EC0F4AA00C77F17 /* TopicSearch.h */,
 				9BA03C011EC0F4AA00C77F17 /* TopicSearch.m */,
+				9B686B3E1EC7501700F07AD2 /* Login.h */,
+				9B686B3F1EC7501700F07AD2 /* Login.m */,
 				9B6B4A6E1EBF5B74009C8B33 /* UtilityMethods.h */,
 				9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */,
 				9BA03C181EC11B8F00C77F17 /* AFNetworking */,
@@ -588,6 +598,7 @@
 				9BA03C3F1EC11B8F00C77F17 /* AFXMLRequestOperation.m in Sources */,
 				9BA03C3C1EC11B8F00C77F17 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				9BA03C021EC0F4AA00C77F17 /* TopicSearch.m in Sources */,
+				9B686B401EC7501700F07AD2 /* Login.m in Sources */,
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
 				9B686B331EC605DB00F07AD2 /* WebViewController.m in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
@@ -604,6 +615,7 @@
 				9BA03C411EC11B8F00C77F17 /* MosaicLayout.m in Sources */,
 				9B686B3D1EC7468F00F07AD2 /* LoginViewController.m in Sources */,
 				9BA03C421EC11B8F00C77F17 /* MosaicData.m in Sources */,
+				9B686B431EC7595900F07AD2 /* InitialViewController.m in Sources */,
 				9B686B3A1EC7467E00F07AD2 /* MyTopicsViewController.m in Sources */,
 				9BA03BF81EC0E9E000C77F17 /* ArticleTableViewCell.m in Sources */,
 				9BA03C401EC11B8F00C77F17 /* UIImageView+AFNetworking.m in Sources */,

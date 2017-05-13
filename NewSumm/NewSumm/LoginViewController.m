@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "Login.h"
 
 @interface LoginViewController ()
 
@@ -44,6 +45,41 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 */
 
 - (IBAction)registerClicked:(id)sender {
+    [Login login:emailAddress.text withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:emailAddress.text forKey:@"emailAddress"];
+            [defaults setBool:YES forKey:@"loggedIn"];
+            [defaults synchronize];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self dismissViewControllerAnimated:YES completion:^{
+                    [self.delegate loggedIn];
+                }];
+            });
+            
+        } else {
+            NSLog(@"Error: %@", error);
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                UIAlertController * alert=   [UIAlertController
+                                              alertControllerWithTitle:@"Error"
+                                              message:@"Something went wrong there. Sorry about that"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* ok = [UIAlertAction
+                                     actionWithTitle:@"OK"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action)
+                                     {
+                                         [alert dismissViewControllerAnimated:YES completion:nil];
+                                         
+                                     }];
+                
+                [alert addAction:ok];
+                
+                [self presentViewController:alert animated:YES completion:nil];
+            });
+        }
+    }];
 }
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
