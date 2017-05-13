@@ -94,7 +94,7 @@
             <objects>
                 <navigationController id="bcA-L1-O5Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="M1k-Em-7S7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="pfz-Nq-xph">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="pfz-Nq-xph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,7 +193,7 @@
             <objects>
                 <navigationController id="T2b-p2-dVh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="0Qi-Mt-m1W"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UNv-e1-n8N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UNv-e1-n8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -334,7 +334,7 @@
             <objects>
                 <navigationController id="Mde-LZ-dv7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="jQs-DR-5CA"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fQW-Ra-WQj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQW-Ra-WQj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -895,7 +895,7 @@
             <objects>
                 <navigationController modalPresentationStyle="overFullScreen" id="dsT-86-0ZZ" sceneMemberID="viewController">
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4Jo-lh-MZa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4Jo-lh-MZa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -922,8 +922,8 @@
                         <viewControllerLayoutGuide type="top" id="8bh-Wk-raD"/>
                         <viewControllerLayoutGuide type="bottom" id="kU7-ot-DUi"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="w95-IQ-2d9">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="w95-IQ-2d9">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X3t-K2-uwR">
@@ -1090,6 +1090,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="lSF-cK-qsQ" secondAttribute="trailing" constant="-20" id="uf4-N8-IkY"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Title" id="gID-k9-A5d">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="gZl-ve-cjV">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8dt-DE-2Cj">
@@ -1193,7 +1194,7 @@
                     <navigationItem key="navigationItem" title="Title" id="gUg-BG-SJf">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="IIW-FN-8cx">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GNV-FI-m4f">
-                                <rect key="frame" x="132" y="7" width="227" height="30"/>
+                                <rect key="frame" x="777" y="7" width="227" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

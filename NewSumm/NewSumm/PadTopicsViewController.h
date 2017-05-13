@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "MyTopicsViewController.h"
+#import "TopicCollectionViewController.h"
 
-@interface PadTopicsViewController : UIViewController<LoginDelegate>
+@interface PadTopicsViewController : UIViewController<LoginDelegate, UIPageViewControllerDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 - (IBAction)login:(id)sender;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property NSArray *topics;
+@property (strong, nonatomic) UIPageViewController *pageViewController;
 
 @end
