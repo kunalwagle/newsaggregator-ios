@@ -64,7 +64,20 @@
                     <view key="view" contentMode="scaleToFill" id="ozm-6j-gZI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LogoFullForm.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vmf-Zi-YCt">
+                                <rect key="frame" x="28" y="217" width="331" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="331" id="zcM-VX-iTd"/>
+                                    <constraint firstAttribute="height" constant="200" id="zxj-Js-itf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vmf-Zi-YCt" firstAttribute="centerX" secondItem="ozm-6j-gZI" secondAttribute="centerX" id="5H0-Kg-l8l"/>
+                            <constraint firstItem="Vmf-Zi-YCt" firstAttribute="centerY" secondItem="ozm-6j-gZI" secondAttribute="centerY" id="rP7-JO-ean"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="ube-Fb-0X6" kind="presentation" identifier="iPhone" id="Wps-ea-b6F"/>
@@ -178,7 +191,7 @@
         <scene sceneID="t4s-OR-hl5">
             <objects>
                 <navigationController id="T2b-p2-dVh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Topics" id="0Qi-Mt-m1W"/>
+                    <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="0Qi-Mt-m1W"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UNv-e1-n8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1107,6 +1120,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="List Filled_30.png" width="30" height="30"/>
         <image name="LogoFullForm.png" width="1655" height="894"/>
     </resources>
     <inferredMetricsTieBreakers>

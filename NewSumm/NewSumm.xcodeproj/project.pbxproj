@@ -29,6 +29,8 @@
 		9B686B3D1EC7468F00F07AD2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B3C1EC7468F00F07AD2 /* LoginViewController.m */; };
 		9B686B401EC7501700F07AD2 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B3F1EC7501700F07AD2 /* Login.m */; };
 		9B686B431EC7595900F07AD2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B421EC7595900F07AD2 /* InitialViewController.m */; };
+		9B686B451EC7698E00F07AD2 /* List Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B441EC7698E00F07AD2 /* List Filled-50.png */; };
+		9B686B471EC76A1C00F07AD2 /* List Filled_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B461EC76A1C00F07AD2 /* List Filled_30.png */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -120,6 +122,8 @@
 		9B686B3F1EC7501700F07AD2 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		9B686B411EC7595900F07AD2 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		9B686B421EC7595900F07AD2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		9B686B441EC7698E00F07AD2 /* List Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "List Filled-50.png"; sourceTree = "<group>"; };
+		9B686B461EC76A1C00F07AD2 /* List Filled_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "List Filled_30.png"; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B461EC76A1C00F07AD2 /* List Filled_30.png */,
+				9B686B441EC7698E00F07AD2 /* List Filled-50.png */,
 				9B686B411EC7595900F07AD2 /* InitialViewController.h */,
 				9B686B421EC7595900F07AD2 /* InitialViewController.m */,
 				9B686B381EC7467E00F07AD2 /* MyTopicsViewController.h */,
@@ -550,8 +556,10 @@
 				9B686B241EC313A200F07AD2 /* metro.png in Resources */,
 				9BA03C4D1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf in Resources */,
 				9B686B2A1EC313A200F07AD2 /* the-times-of-india.png in Resources */,
+				9B686B471EC76A1C00F07AD2 /* List Filled_30.png in Resources */,
 				9B686B1F1EC313A200F07AD2 /* associated-press.jpg in Resources */,
 				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
+				9B686B451EC7698E00F07AD2 /* List Filled-50.png in Resources */,
 				9BA03C4E1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf in Resources */,
 				9B686B201EC313A200F07AD2 /* business-insider-uk.png in Resources */,
 				9B686B371EC73D9B00F07AD2 /* LogoShortForm.png in Resources */,
