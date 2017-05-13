@@ -25,6 +25,8 @@
 		9B686B331EC605DB00F07AD2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B321EC605DB00F07AD2 /* WebViewController.m */; };
 		9B686B361EC73D9B00F07AD2 /* LogoFullForm.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B341EC73D9B00F07AD2 /* LogoFullForm.png */; };
 		9B686B371EC73D9B00F07AD2 /* LogoShortForm.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B351EC73D9B00F07AD2 /* LogoShortForm.png */; };
+		9B686B3A1EC7467E00F07AD2 /* MyTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B391EC7467E00F07AD2 /* MyTopicsViewController.m */; };
+		9B686B3D1EC7468F00F07AD2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B3C1EC7468F00F07AD2 /* LoginViewController.m */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -108,6 +110,10 @@
 		9B686B321EC605DB00F07AD2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9B686B341EC73D9B00F07AD2 /* LogoFullForm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoFullForm.png; sourceTree = "<group>"; };
 		9B686B351EC73D9B00F07AD2 /* LogoShortForm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoShortForm.png; sourceTree = "<group>"; };
+		9B686B381EC7467E00F07AD2 /* MyTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTopicsViewController.h; sourceTree = "<group>"; };
+		9B686B391EC7467E00F07AD2 /* MyTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTopicsViewController.m; sourceTree = "<group>"; };
+		9B686B3B1EC7468F00F07AD2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9B686B3C1EC7468F00F07AD2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -259,6 +265,10 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B381EC7467E00F07AD2 /* MyTopicsViewController.h */,
+				9B686B391EC7467E00F07AD2 /* MyTopicsViewController.m */,
+				9B686B3B1EC7468F00F07AD2 /* LoginViewController.h */,
+				9B686B3C1EC7468F00F07AD2 /* LoginViewController.m */,
 				9B686B341EC73D9B00F07AD2 /* LogoFullForm.png */,
 				9B686B351EC73D9B00F07AD2 /* LogoShortForm.png */,
 				9B686B311EC605DB00F07AD2 /* WebViewController.h */,
@@ -592,7 +602,9 @@
 				9BA03BFF1EC0EF2500C77F17 /* Article.m in Sources */,
 				9B6B4A671EBF3FAF009C8B33 /* LargePanelCollectionViewCell.m in Sources */,
 				9BA03C411EC11B8F00C77F17 /* MosaicLayout.m in Sources */,
+				9B686B3D1EC7468F00F07AD2 /* LoginViewController.m in Sources */,
 				9BA03C421EC11B8F00C77F17 /* MosaicData.m in Sources */,
+				9B686B3A1EC7467E00F07AD2 /* MyTopicsViewController.m in Sources */,
 				9BA03BF81EC0E9E000C77F17 /* ArticleTableViewCell.m in Sources */,
 				9BA03C401EC11B8F00C77F17 /* UIImageView+AFNetworking.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,
