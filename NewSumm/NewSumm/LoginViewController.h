@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *emailAddress;
+@property CGFloat animatedDistance;
+- (IBAction)registerClicked:(id)sender;
+- (IBAction)cancel:(id)sender;
 
 @end

@@ -41,7 +41,7 @@
             <objects>
                 <navigationController id="bcA-L1-O5Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="M1k-Em-7S7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="pfz-Nq-xph">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="pfz-Nq-xph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -161,7 +161,7 @@
         <!--My Topics-->
         <scene sceneID="gi8-4v-Mb9">
             <objects>
-                <viewController id="Szc-gc-QaH" sceneMemberID="viewController">
+                <viewController id="Szc-gc-QaH" customClass="MyTopicsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TAa-oX-hj2"/>
                         <viewControllerLayoutGuide type="bottom" id="Srt-Cy-OLt"/>
@@ -188,29 +188,31 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="QLg-Od-mPo" kind="presentation" id="gij-bB-J9f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oq9-Fm-buf" firstAttribute="centerX" secondItem="sg4-2B-wa3" secondAttribute="centerX" id="2Hg-a7-VfF"/>
+                            <constraint firstItem="gDz-ft-Za5" firstAttribute="leading" secondItem="sg4-2B-wa3" secondAttribute="leadingMargin" constant="25" id="3pd-Zp-5vw"/>
                             <constraint firstItem="oq9-Fm-buf" firstAttribute="top" secondItem="gDz-ft-Za5" secondAttribute="bottom" constant="45" id="bx6-ts-lxx"/>
                             <constraint firstItem="gDz-ft-Za5" firstAttribute="centerY" secondItem="sg4-2B-wa3" secondAttribute="centerY" id="cfG-Oo-B0d"/>
                             <constraint firstItem="gDz-ft-Za5" firstAttribute="centerX" secondItem="sg4-2B-wa3" secondAttribute="centerX" id="eRS-b8-nod"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gDz-ft-Za5" secondAttribute="trailing" constant="26" id="eZ9-RJ-kFj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Topics" id="0ar-6F-Tya"/>
-                    <connections>
-                        <segue destination="QLg-Od-mPo" kind="presentation" identifier="login" id="Vms-B3-TBb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikf-GE-Wna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="223.19999999999999" y="736.28185907046486"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ZzV-IK-y46">
             <objects>
-                <viewController id="QLg-Od-mPo" sceneMemberID="viewController">
+                <viewController id="QLg-Od-mPo" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7nb-g9-vax"/>
                         <viewControllerLayoutGuide type="bottom" id="vvG-E9-N9j"/>
@@ -219,8 +221,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Registering is simple. As no sensitive data is stored we just need your email address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHs-QI-tqq">
-                                <rect key="frame" x="66" y="244" width="242" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Registering is simple. As no sensitive data is stored we just need your email address." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHs-QI-tqq">
+                                <rect key="frame" x="66" y="244" width="252" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -230,6 +232,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QLg-Od-mPo" id="jh0-bg-gzP"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG8-Nm-MCt">
                                 <rect key="frame" x="66" y="413.5" width="102" height="30"/>
@@ -237,6 +242,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancel:" destination="QLg-Od-mPo" eventType="touchUpInside" id="4yK-P8-gcP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHH-ZY-j1R">
                                 <rect key="frame" x="261" y="347" width="57" height="30"/>
@@ -244,11 +252,15 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerClicked:" destination="QLg-Od-mPo" eventType="touchUpInside" id="PmE-60-kza"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="YHH-ZY-j1R" secondAttribute="trailing" constant="41" id="Ffc-iZ-ZhE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qHs-QI-tqq" secondAttribute="trailing" constant="50" id="Kdo-yI-PTP"/>
                             <constraint firstItem="tG8-Nm-MCt" firstAttribute="width" secondItem="YHH-ZY-j1R" secondAttribute="width" id="RWL-H4-bjT"/>
                             <constraint firstItem="Feu-91-dgO" firstAttribute="top" secondItem="qHs-QI-tqq" secondAttribute="bottom" constant="51" id="XW6-BD-SS9"/>
                             <constraint firstItem="YHH-ZY-j1R" firstAttribute="leading" secondItem="tG8-Nm-MCt" secondAttribute="trailing" constant="48" id="dyd-lf-K7m"/>
@@ -259,8 +271,12 @@
                             <constraint firstItem="tG8-Nm-MCt" firstAttribute="top" secondItem="Feu-91-dgO" secondAttribute="bottom" constant="65" id="ix7-GR-5ZN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Feu-91-dgO" secondAttribute="trailing" constant="41" id="kUl-mC-Beq"/>
                             <constraint firstItem="YHH-ZY-j1R" firstAttribute="top" secondItem="Feu-91-dgO" secondAttribute="bottom" constant="65" id="nsP-r4-dOm"/>
+                            <constraint firstItem="qHs-QI-tqq" firstAttribute="leading" secondItem="kot-Rc-GrU" secondAttribute="leadingMargin" constant="50" id="xHM-DU-GJK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailAddress" destination="Feu-91-dgO" id="58A-dn-WaN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgC-35-21B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -302,11 +318,11 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uDP-ti-txA">
-                                <rect key="frame" x="-1" y="108" width="375" height="515.5"/>
+                                <rect key="frame" x="-1" y="108" width="375" height="466.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n7f-cr-qhS">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="515.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="466.5"/>
                                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mov-R6-GNU">
                                             <size key="itemSize" width="50" height="50"/>
