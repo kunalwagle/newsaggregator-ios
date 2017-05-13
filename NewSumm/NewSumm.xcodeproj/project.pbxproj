@@ -31,6 +31,7 @@
 		9B686B431EC7595900F07AD2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B421EC7595900F07AD2 /* InitialViewController.m */; };
 		9B686B451EC7698E00F07AD2 /* List Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B441EC7698E00F07AD2 /* List Filled-50.png */; };
 		9B686B471EC76A1C00F07AD2 /* List Filled_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B461EC76A1C00F07AD2 /* List Filled_30.png */; };
+		9B686B4A1EC76E9D00F07AD2 /* PadTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B491EC76E9D00F07AD2 /* PadTopicsViewController.m */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -124,6 +125,8 @@
 		9B686B421EC7595900F07AD2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		9B686B441EC7698E00F07AD2 /* List Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "List Filled-50.png"; sourceTree = "<group>"; };
 		9B686B461EC76A1C00F07AD2 /* List Filled_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "List Filled_30.png"; sourceTree = "<group>"; };
+		9B686B481EC76E9D00F07AD2 /* PadTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadTopicsViewController.h; sourceTree = "<group>"; };
+		9B686B491EC76E9D00F07AD2 /* PadTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadTopicsViewController.m; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B481EC76E9D00F07AD2 /* PadTopicsViewController.h */,
+				9B686B491EC76E9D00F07AD2 /* PadTopicsViewController.m */,
 				9B686B461EC76A1C00F07AD2 /* List Filled_30.png */,
 				9B686B441EC7698E00F07AD2 /* List Filled-50.png */,
 				9B686B411EC7595900F07AD2 /* InitialViewController.h */,
@@ -624,6 +629,7 @@
 				9B686B3D1EC7468F00F07AD2 /* LoginViewController.m in Sources */,
 				9BA03C421EC11B8F00C77F17 /* MosaicData.m in Sources */,
 				9B686B431EC7595900F07AD2 /* InitialViewController.m in Sources */,
+				9B686B4A1EC76E9D00F07AD2 /* PadTopicsViewController.m in Sources */,
 				9B686B3A1EC7467E00F07AD2 /* MyTopicsViewController.m in Sources */,
 				9BA03BF81EC0E9E000C77F17 /* ArticleTableViewCell.m in Sources */,
 				9BA03C401EC11B8F00C77F17 /* UIImageView+AFNetworking.m in Sources */,
