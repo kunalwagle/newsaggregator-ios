@@ -23,6 +23,8 @@
 		9B686B2D1EC3185D00F07AD2 /* PadArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B2C1EC3185D00F07AD2 /* PadArticleViewController.m */; };
 		9B686B301EC5FBBE00F07AD2 /* SourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B2F1EC5FBBE00F07AD2 /* SourceTableViewController.m */; };
 		9B686B331EC605DB00F07AD2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B321EC605DB00F07AD2 /* WebViewController.m */; };
+		9B686B361EC73D9B00F07AD2 /* LogoFullForm.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B341EC73D9B00F07AD2 /* LogoFullForm.png */; };
+		9B686B371EC73D9B00F07AD2 /* LogoShortForm.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B351EC73D9B00F07AD2 /* LogoShortForm.png */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -104,6 +106,8 @@
 		9B686B2F1EC5FBBE00F07AD2 /* SourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceTableViewController.m; sourceTree = "<group>"; };
 		9B686B311EC605DB00F07AD2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9B686B321EC605DB00F07AD2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		9B686B341EC73D9B00F07AD2 /* LogoFullForm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoFullForm.png; sourceTree = "<group>"; };
+		9B686B351EC73D9B00F07AD2 /* LogoShortForm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoShortForm.png; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B341EC73D9B00F07AD2 /* LogoFullForm.png */,
+				9B686B351EC73D9B00F07AD2 /* LogoShortForm.png */,
 				9B686B311EC605DB00F07AD2 /* WebViewController.h */,
 				9B686B321EC605DB00F07AD2 /* WebViewController.m */,
 				9B686B2E1EC5FBBE00F07AD2 /* SourceTableViewController.h */,
@@ -528,10 +534,12 @@
 				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
 				9BA03C4E1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf in Resources */,
 				9B686B201EC313A200F07AD2 /* business-insider-uk.png in Resources */,
+				9B686B371EC73D9B00F07AD2 /* LogoShortForm.png in Resources */,
 				9BA03C481EC1BD1C00C77F17 /* LargeArticlePanel.xib in Resources */,
 				9BA03BF91EC0E9E000C77F17 /* ArticleTableViewCell.xib in Resources */,
 				9B686B291EC313A200F07AD2 /* the-telegraph.png in Resources */,
 				9B6B4A351EBBA5B5009C8B33 /* Main.storyboard in Resources */,
+				9B686B361EC73D9B00F07AD2 /* LogoFullForm.png in Resources */,
 				9B686B221EC313A200F07AD2 /* espn-cric-info.png in Resources */,
 				9B686B211EC313A200F07AD2 /* daily-mail.png in Resources */,
 				9B686B251EC313A200F07AD2 /* mirror.png in Resources */,

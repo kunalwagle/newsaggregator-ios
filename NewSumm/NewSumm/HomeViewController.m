@@ -22,6 +22,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     searchButton.layer.cornerRadius = 5;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 37)];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.navigationItem.titleView = imageView;
+    imageView.image = [UIImage imageNamed:@"LogoShortForm.png"];
 }
 
 
