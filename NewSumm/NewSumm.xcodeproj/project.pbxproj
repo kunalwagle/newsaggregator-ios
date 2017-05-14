@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B686B0E1EC2126300F07AD2 /* PhoneArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B0D1EC2126300F07AD2 /* PhoneArticleViewController.m */; };
-		9B686B1F1EC313A200F07AD2 /* associated-press.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B131EC313A200F07AD2 /* associated-press.jpg */; };
+		9B686B1F1EC313A200F07AD2 /* associated-press.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B131EC313A200F07AD2 /* associated-press.png */; };
 		9B686B201EC313A200F07AD2 /* business-insider-uk.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B141EC313A200F07AD2 /* business-insider-uk.png */; };
 		9B686B211EC313A200F07AD2 /* daily-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B151EC313A200F07AD2 /* daily-mail.png */; };
 		9B686B221EC313A200F07AD2 /* espn-cric-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B161EC313A200F07AD2 /* espn-cric-info.png */; };
@@ -99,7 +99,7 @@
 /* Begin PBXFileReference section */
 		9B686B0C1EC2126300F07AD2 /* PhoneArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneArticleViewController.h; sourceTree = "<group>"; };
 		9B686B0D1EC2126300F07AD2 /* PhoneArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneArticleViewController.m; sourceTree = "<group>"; };
-		9B686B131EC313A200F07AD2 /* associated-press.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "associated-press.jpg"; sourceTree = "<group>"; };
+		9B686B131EC313A200F07AD2 /* associated-press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "associated-press.png"; sourceTree = "<group>"; };
 		9B686B141EC313A200F07AD2 /* business-insider-uk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "business-insider-uk.png"; sourceTree = "<group>"; };
 		9B686B151EC313A200F07AD2 /* daily-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "daily-mail.png"; sourceTree = "<group>"; };
 		9B686B161EC313A200F07AD2 /* espn-cric-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "espn-cric-info.png"; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 		9B686B121EC313A200F07AD2 /* outlets */ = {
 			isa = PBXGroup;
 			children = (
-				9B686B131EC313A200F07AD2 /* associated-press.jpg */,
+				9B686B131EC313A200F07AD2 /* associated-press.png */,
 				9B686B141EC313A200F07AD2 /* business-insider-uk.png */,
 				9B686B151EC313A200F07AD2 /* daily-mail.png */,
 				9B686B161EC313A200F07AD2 /* espn-cric-info.png */,
@@ -581,7 +581,7 @@
 				9BA03C4D1EC1F3DD00C77F17 /* AvenirNextLTPro-It.otf in Resources */,
 				9B686B2A1EC313A200F07AD2 /* the-times-of-india.png in Resources */,
 				9B686B471EC76A1C00F07AD2 /* List Filled_30.png in Resources */,
-				9B686B1F1EC313A200F07AD2 /* associated-press.jpg in Resources */,
+				9B686B1F1EC313A200F07AD2 /* associated-press.png in Resources */,
 				9B6B4A641EBF3D33009C8B33 /* LargePanel.xib in Resources */,
 				9B686B451EC7698E00F07AD2 /* List Filled-50.png in Resources */,
 				9BA03C4E1EC1F3DD00C77F17 /* AvenirNextLTPro-Regular.otf in Resources */,

@@ -96,7 +96,7 @@
             <objects>
                 <navigationController id="bcA-L1-O5Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="M1k-Em-7S7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="pfz-Nq-xph">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="pfz-Nq-xph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,7 +195,7 @@
             <objects>
                 <navigationController id="T2b-p2-dVh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="0Qi-Mt-m1W"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UNv-e1-n8N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UNv-e1-n8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -432,17 +432,17 @@
                         <outlet property="loginLabel" destination="A5V-LK-fq9" id="ygT-gy-YtX"/>
                         <outlet property="logout" destination="q9v-2u-CzJ" id="Mi5-uO-XFW"/>
                         <outlet property="tv" destination="Sur-3N-P1Y" id="LFX-bq-fM0"/>
-                        <segue destination="oMo-Xf-eVg" kind="show" id="IJm-eR-qkL"/>
+                        <segue destination="oMo-Xf-eVg" kind="show" identifier="showSettings" id="IJm-eR-qkL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAM-7J-GIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2130.4000000000001" y="1451.4242878560722"/>
         </scene>
-        <!--View Controller-->
+        <!--Topic Settings View Controller-->
         <scene sceneID="iPi-vo-scT">
             <objects>
-                <viewController id="oMo-Xf-eVg" sceneMemberID="viewController">
+                <viewController id="oMo-Xf-eVg" customClass="TopicSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wwP-28-B0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="yZB-b7-nFq"/>
@@ -461,6 +461,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oMo-Xf-eVg" id="aSe-nQ-gOz"/>
+                                    <outlet property="delegate" destination="oMo-Xf-eVg" id="GUi-SS-fSA"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPA-fU-Ahl">
                                 <rect key="frame" x="16" y="535" width="100" height="48"/>
@@ -474,6 +478,9 @@
                                 <state key="normal" title="Unsubscribe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="unsubscribe:" destination="oMo-Xf-eVg" eventType="touchUpInside" id="I3X-RE-apH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJa-MD-h2E">
                                 <rect key="frame" x="259" y="535" width="100" height="48"/>
@@ -487,6 +494,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="save:" destination="oMo-Xf-eVg" eventType="touchUpInside" id="rYe-TH-zwF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default sources for summaries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujK-v9-Mo2">
                                 <rect key="frame" x="16" y="87" width="341" height="23.5"/>
@@ -526,6 +536,12 @@
                             <constraint firstItem="ujK-v9-Mo2" firstAttribute="top" secondItem="wwP-28-B0Q" secondAttribute="bottom" constant="23" id="xrs-46-EYm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dailyDigest" destination="6Pm-cT-YJq" id="aQg-me-KCT"/>
+                        <outlet property="outletCollectionView" destination="Lg3-Vj-CEG" id="iR8-r3-hMh"/>
+                        <outlet property="save" destination="xJa-MD-h2E" id="qVa-uP-dnf"/>
+                        <outlet property="unsubscribe" destination="LPA-fU-Ahl" id="UcQ-jc-oeJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPg-P5-QjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -546,7 +562,7 @@
             <objects>
                 <navigationController id="Mde-LZ-dv7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="jQs-DR-5CA"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fQW-Ra-WQj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQW-Ra-WQj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1107,7 +1123,7 @@
             <objects>
                 <navigationController modalPresentationStyle="overFullScreen" id="dsT-86-0ZZ" sceneMemberID="viewController">
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4Jo-lh-MZa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4Jo-lh-MZa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1430,7 +1446,7 @@
             <objects>
                 <navigationController id="ZIh-VH-ib7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="List Filled_30.png" id="B6A-KQ-nTn"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qcs-SV-TTD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qcs-SV-TTD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>

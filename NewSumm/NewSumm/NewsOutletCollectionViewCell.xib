@@ -42,6 +42,10 @@
                 <constraint firstItem="twM-cZ-kjS" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="c4r-9L-c9e"/>
                 <constraint firstAttribute="bottom" secondItem="5Zo-No-p8R" secondAttribute="bottom" constant="6" id="sCs-7S-7mn"/>
             </constraints>
+            <connections>
+                <outlet property="imageView" destination="twM-cZ-kjS" id="Zxt-kB-g3K"/>
+                <outlet property="label" destination="5Zo-No-p8R" id="q49-qn-gJe"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

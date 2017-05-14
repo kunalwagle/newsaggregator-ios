@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "Login.h"
 #import "LoginViewController.h"
+#import "TopicSettingsViewController.h"
 
 @interface SettingsViewController ()
 
@@ -86,6 +87,11 @@
     return @"Select a topic to alter settings or unsubscribe";
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    [self performSegueWithIdentifier:@"showSettings" sender:self];
+}
+
 - (IBAction)login:(id)sender {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -95,15 +101,21 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"showSettings"]) {
+        TopicSettingsViewController *vc = (TopicSettingsViewController*)[segue destinationViewController];
+        NSIndexPath *indexPath = [self.tv indexPathForSelectedRow];
+        vc.topicName = [[topics objectAtIndex:[indexPath row]] objectForKey:@"label"];
+        [self.tv deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
-*/
+
 
 - (IBAction)logout:(id)sender {
 }

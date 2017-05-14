@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopicSettingsViewController : UIViewController
+@interface TopicSettingsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UICollectionView *outletCollectionView;
+@property (weak, nonatomic) IBOutlet UISwitch *dailyDigest;
+- (IBAction)save:(id)sender;
+- (IBAction)unsubscribe:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *save;
+@property (weak, nonatomic) IBOutlet UIButton *unsubscribe;
+@property NSArray *outlets;
+@property NSString *topicName;
 
 @end
