@@ -10,7 +10,7 @@
 #import "MyTopicsViewController.h"
 #import "TopicCollectionViewController.h"
 
-@interface PadTopicsViewController : UIViewController<LoginDelegate, UIPageViewControllerDataSource>
+@interface PadTopicsViewController : UIViewController<LoginDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;

@@ -46,6 +46,7 @@
                     [self setLoginItemsHidden];
                     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageViewController"];
                     self.pageViewController.dataSource = self;
+                    self.pageViewController.delegate = self;
                     
                     TopicCollectionViewController *startingViewController = [self viewControllerAtIndex:0];
                     NSArray *viewControllers = @[startingViewController];
@@ -57,6 +58,8 @@
                     [self addChildViewController:_pageViewController];
                     [self.view addSubview:_pageViewController.view];
                     [self.pageViewController didMoveToParentViewController:self];
+                    UIViewController* vc = self.pageViewController.viewControllers[0];
+                    self.navigationItem.title = vc.navigationItem.title;
                 });
             } else {
                 NSLog(@"Error: %@", error);
@@ -142,10 +145,19 @@
     pageContentViewController.topicId = chosenArticle[@"_id"];
     pageContentViewController.topicName = chosenArticle[@"label"];
     
-    self.navigationItem.title = chosenArticle[@"label"];
-    
     return pageContentViewController;
 }
+
+- (void)pageViewController:(UIPageViewController *)pageViewController
+        didFinishAnimating:(BOOL)finished
+   previousViewControllers:(NSArray *)previousViewControllers
+       transitionCompleted:(BOOL)completed {
+    
+    // .viewControllers[0] is always (in my case at least) the 'current' viewController.
+    UIViewController* vc = self.pageViewController.viewControllers[0];
+    self.navigationItem.title = vc.navigationItem.title;
+}
+
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
