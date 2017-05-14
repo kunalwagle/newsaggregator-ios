@@ -12,6 +12,7 @@
 #import "TopicSearch.h"
 #import "UtilityMethods.h"
 #import "PhoneArticleViewController.h"
+#import "Subscribe.h"
 
 @interface PhoneTopicViewController ()
 
@@ -27,6 +28,8 @@
 @synthesize topicId;
 @synthesize topicName;
 @synthesize chosenArticle;
+@synthesize isSubscribed;
+@synthesize subscribeButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +39,19 @@
     [leadArticle registerNib:[UINib nibWithNibName:@"LargeArticlePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     [tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     self.navigationItem.title = topicName;
+    
+    [self checkSubscription];
+    
+    
+
     // Do any additional setup after loading the view.
+}
+
+-(void)checkSubscription {
+    if (isSubscribed) {
+        [subscribeButton setTitle:@"Unsubscribe" forState:UIControlStateNormal];
+        [subscribeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -163,6 +178,18 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self selectedArticle:[indexPath row]+1];
+}
+
+-(IBAction)subscribe:(id)sender {
+    if (!isSubscribed) {
+        [Subscribe subscribe:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (!error) {
+                isSubscribed = true;
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self checkSubscription];            });
+            }
+        }];
+    }
 }
 
 @end

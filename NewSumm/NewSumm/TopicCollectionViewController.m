@@ -13,6 +13,7 @@
 #import "Article.h"
 #import "UtilityMethods.h"
 #import "PadArticleViewController.h"
+#import "Subscribe.h"
 
 @interface TopicCollectionViewController ()
 
@@ -50,12 +51,16 @@
     [self.collectionView registerNib:[UINib nibWithNibName:@"LargeArticlePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     self.navigationItem.title = topicName;
     
+    [self checkSubscription];
+    
+    // Do any additional setup after loading the view.
+}
+
+- (void)checkSubscription {
     if (isSubscribed) {
         [subscribeButton setTitle:@"Unsubscribe" forState:UIControlStateNormal];
         [subscribeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -218,5 +223,14 @@
 */
 
 - (IBAction)subscribe:(id)sender {
+    if (!isSubscribed) {
+        [Subscribe subscribe:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (!error) {
+                isSubscribed = true;
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self checkSubscription];            });
+            }
+        }];
+    }
 }
 @end

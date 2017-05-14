@@ -114,6 +114,7 @@
         vc.topicId = chosenArticle._id;
         vc.topicName = chosenArticle.title;
         vc.articles = articles;
+        vc.isSubscribed = isSubscribed;
     } else if ([[segue identifier] isEqualToString:@"iPadTopic"]) {
         TopicCollectionViewController *vc = (TopicCollectionViewController*)[segue destinationViewController];
         vc.topicId = chosenArticle._id;

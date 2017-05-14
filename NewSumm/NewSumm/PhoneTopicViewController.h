@@ -18,5 +18,9 @@
 @property NSString *topicName;
 @property NSString *topicId;
 @property NSInteger chosenArticle;
+@property BOOL isSubscribed;
+@property (weak, nonatomic) IBOutlet UIButton *subscribeButton;
+- (IBAction)subscribe:(id)sender;
+
 
 @end
