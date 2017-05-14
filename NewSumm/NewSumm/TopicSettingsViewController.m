@@ -67,6 +67,18 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NewsOutletCollectionViewCell *cell = (NewsOutletCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    NewsOutletCollectionViewCell *cell = (NewsOutletCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:0.12 green:0.141 blue:0.212 alpha:1.0];
+}
+
 - (IBAction)save:(id)sender {
     
 }
