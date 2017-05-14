@@ -96,7 +96,7 @@
             <objects>
                 <navigationController id="bcA-L1-O5Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="M1k-Em-7S7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="pfz-Nq-xph">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="pfz-Nq-xph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,7 +195,7 @@
             <objects>
                 <navigationController id="T2b-p2-dVh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="0Qi-Mt-m1W"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UNv-e1-n8N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UNv-e1-n8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -442,7 +442,7 @@
         <!--Topic Settings View Controller-->
         <scene sceneID="iPi-vo-scT">
             <objects>
-                <viewController id="oMo-Xf-eVg" customClass="TopicSettingsViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="oMo-Xf-eVg" customClass="TopicSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wwP-28-B0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="yZB-b7-nFq"/>
@@ -452,7 +452,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lg3-Vj-CEG">
-                                <rect key="frame" x="0.0" y="135.5" width="375" height="320"/>
+                                <rect key="frame" x="26" y="120.5" width="323" height="335"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a9W-mD-Ilc">
                                     <size key="itemSize" width="50" height="50"/>
@@ -523,11 +523,11 @@
                             <constraint firstItem="xJa-MD-h2E" firstAttribute="top" secondItem="6Pm-cT-YJq" secondAttribute="bottom" constant="19" id="5QL-4O-Two"/>
                             <constraint firstItem="LPA-fU-Ahl" firstAttribute="top" secondItem="L7o-u7-JlP" secondAttribute="bottom" constant="24" id="Ao5-59-sAK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xJa-MD-h2E" secondAttribute="trailing" id="Asr-Xy-z1t"/>
-                            <constraint firstItem="Lg3-Vj-CEG" firstAttribute="top" secondItem="ujK-v9-Mo2" secondAttribute="bottom" constant="25" id="JfP-Wr-OpM"/>
+                            <constraint firstItem="Lg3-Vj-CEG" firstAttribute="top" secondItem="ujK-v9-Mo2" secondAttribute="bottom" constant="10" id="JfP-Wr-OpM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ujK-v9-Mo2" secondAttribute="trailing" constant="2" id="WBN-j8-4hm"/>
-                            <constraint firstItem="Lg3-Vj-CEG" firstAttribute="width" secondItem="blq-xr-IBU" secondAttribute="width" id="WUK-1F-yh2"/>
                             <constraint firstItem="L7o-u7-JlP" firstAttribute="top" secondItem="Lg3-Vj-CEG" secondAttribute="bottom" constant="32" id="Yk6-bY-o82"/>
                             <constraint firstItem="yZB-b7-nFq" firstAttribute="top" secondItem="xJa-MD-h2E" secondAttribute="bottom" constant="35" id="ZNb-su-aLC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lg3-Vj-CEG" secondAttribute="trailing" constant="10" id="beL-rW-BR2"/>
                             <constraint firstAttribute="leadingMargin" secondItem="L7o-u7-JlP" secondAttribute="leading" id="gdR-7Q-aTk"/>
                             <constraint firstItem="6Pm-cT-YJq" firstAttribute="leading" secondItem="L7o-u7-JlP" secondAttribute="trailing" constant="28" id="i6N-Yk-dSI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6Pm-cT-YJq" secondAttribute="trailing" id="pGN-zU-FBv"/>
@@ -562,7 +562,7 @@
             <objects>
                 <navigationController id="Mde-LZ-dv7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="jQs-DR-5CA"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQW-Ra-WQj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fQW-Ra-WQj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1123,7 +1123,7 @@
             <objects>
                 <navigationController modalPresentationStyle="overFullScreen" id="dsT-86-0ZZ" sceneMemberID="viewController">
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4Jo-lh-MZa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4Jo-lh-MZa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1446,7 +1446,7 @@
             <objects>
                 <navigationController id="ZIh-VH-ib7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="List Filled_30.png" id="B6A-KQ-nTn"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qcs-SV-TTD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qcs-SV-TTD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>

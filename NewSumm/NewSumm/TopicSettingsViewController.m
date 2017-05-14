@@ -9,6 +9,7 @@
 #import "TopicSettingsViewController.h"
 #import "NewsOutletCollectionViewCell.h"
 #import "UtilityMethods.h"
+#import "PhoneNewsOutletCollectionViewCell.h"
 
 @interface TopicSettingsViewController ()
 
@@ -30,14 +31,20 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [flowLayout setMinimumInteritemSpacing:-10.0f];
     [flowLayout setMinimumLineSpacing:15.0f];
-    [flowLayout setItemSize:CGSizeMake(150, 180)];
-    flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 0.0f, 10.0f, 0.0f);
+    if ([UtilityMethods isIPad]) {
+        [flowLayout setItemSize:CGSizeMake(150, 180)];
+        [outletCollectionView registerNib:[UINib nibWithNibName:@"NewsOutletCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    } else {
+        [flowLayout setItemSize:CGSizeMake(100, 120)];
+        [outletCollectionView registerNib:[UINib nibWithNibName:@"PhoneNewsOutletCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    }
+    flowLayout.sectionInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
     
     [outletCollectionView.collectionViewLayout invalidateLayout];
     outletCollectionView.collectionViewLayout = flowLayout;
     [outletCollectionView setAllowsMultipleSelection:YES];
     // Register cell classes
-    [outletCollectionView registerNib:[UINib nibWithNibName:@"NewsOutletCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -61,21 +68,33 @@
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    if (![UtilityMethods isIPad]) {
+        PhoneNewsOutletCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+        NSString *topic = [outlets objectAtIndex:[indexPath row]];
+        cell.imageView.image = [UIImage imageNamed:topic];
+        cell.label.text = [UtilityMethods getPublicationName:topic];
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2;
+        cell.imageView.layer.masksToBounds = YES;
+        return cell;
+    }
     NewsOutletCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:[outlets objectAtIndex:[indexPath row]]];
-    cell.label.text = [UtilityMethods getPublicationName:[outlets objectAtIndex:[indexPath row]]];
+    NSString *topic = [outlets objectAtIndex:[indexPath row]];
+    cell.imageView.image = [UIImage imageNamed:topic];
+    cell.label.text = [UtilityMethods getPublicationName:topic];
+    cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2;
+    cell.imageView.layer.masksToBounds = YES;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NewsOutletCollectionViewCell *cell = (NewsOutletCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    UICollectionViewCell *cell = (NewsOutletCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    NewsOutletCollectionViewCell *cell = (NewsOutletCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor colorWithRed:0.12 green:0.141 blue:0.212 alpha:1.0];
 }
 
