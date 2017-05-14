@@ -79,7 +79,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     UILabel *label = [cell viewWithTag:101];
-    label.text = [[topics objectAtIndex:[indexPath row]] objectForKey:@"label"];
+    label.text = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"labelHolder"] objectForKey:@"label"];
     return cell;
 }
 

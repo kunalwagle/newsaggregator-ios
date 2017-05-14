@@ -84,14 +84,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     UIImageView *imageView = [cell viewWithTag:100];
     UILabel *label = [cell viewWithTag:101];
-    NSDictionary *topic = [topics objectAtIndex:[indexPath row]];
+    NSDictionary *topic = [[topics objectAtIndex:[indexPath row]] objectForKey:@"labelHolder"];
     label.text = topic[@"label"];
     imageView.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
     dispatch_async(imageQueue, ^{
         NSError *error = nil;
-        if ([topic[@"articles"] objectAtIndex:0][@"imageUrl"])  {
-            NSURL *url = [NSURL URLWithString:[topic[@"articles"] objectAtIndex:0][@"imageUrl"]];
+        NSString *imageUrl = [topic[@"articles"] objectAtIndex:0][@"imageUrl"];
+        if (imageUrl && ![imageUrl isKindOfClass:[NSNull class]])  {
+            
+            NSURL *url = [NSURL URLWithString:imageUrl];
             NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
             UIImage *image = [UIImage imageWithData:imageData];
             NSLog(@"Finished asynchrously attempting download");
@@ -123,7 +125,7 @@
     [_activityIndicator startAnimating];
     [_activityIndicator setHidden:NO];
     _articles = [[NSMutableArray alloc] init];
-    _chosenArticle = [topics objectAtIndex:topicId];
+    _chosenArticle = [[topics objectAtIndex:topicId] objectForKey:@"labelHolder"];
     NSArray *array = [_chosenArticle objectForKey:@"clusters"];
     for (NSDictionary *dictionary in array) {
         NSArray *arts = [dictionary objectForKey:@"articles"];

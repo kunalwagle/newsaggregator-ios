@@ -132,7 +132,7 @@
     pageContentViewController.index = index;
     
     NSMutableArray *articles = [[NSMutableArray alloc] init];
-    NSDictionary *chosenArticle = [topics objectAtIndex:index];
+    NSDictionary *chosenArticle = [[topics objectAtIndex:index] objectForKey:@"labelHolder"];
     NSArray *array = [chosenArticle objectForKey:@"clusters"];
     for (NSDictionary *dictionary in array) {
         NSArray *arts = [dictionary objectForKey:@"articles"];
