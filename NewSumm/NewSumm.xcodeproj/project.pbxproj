@@ -32,6 +32,7 @@
 		9B686B451EC7698E00F07AD2 /* List Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B441EC7698E00F07AD2 /* List Filled-50.png */; };
 		9B686B471EC76A1C00F07AD2 /* List Filled_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B461EC76A1C00F07AD2 /* List Filled_30.png */; };
 		9B686B4A1EC76E9D00F07AD2 /* PadTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B491EC76E9D00F07AD2 /* PadTopicsViewController.m */; };
+		9B686B501EC89D0F00F07AD2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B4F1EC89D0F00F07AD2 /* SettingsViewController.m */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -127,6 +128,8 @@
 		9B686B461EC76A1C00F07AD2 /* List Filled_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "List Filled_30.png"; sourceTree = "<group>"; };
 		9B686B481EC76E9D00F07AD2 /* PadTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadTopicsViewController.h; sourceTree = "<group>"; };
 		9B686B491EC76E9D00F07AD2 /* PadTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadTopicsViewController.m; sourceTree = "<group>"; };
+		9B686B4E1EC89D0F00F07AD2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		9B686B4F1EC89D0F00F07AD2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B4E1EC89D0F00F07AD2 /* SettingsViewController.h */,
+				9B686B4F1EC89D0F00F07AD2 /* SettingsViewController.m */,
 				9B686B481EC76E9D00F07AD2 /* PadTopicsViewController.h */,
 				9B686B491EC76E9D00F07AD2 /* PadTopicsViewController.m */,
 				9B686B461EC76A1C00F07AD2 /* List Filled_30.png */,
@@ -612,6 +617,7 @@
 				9BA03C3C1EC11B8F00C77F17 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				9BA03C021EC0F4AA00C77F17 /* TopicSearch.m in Sources */,
 				9B686B401EC7501700F07AD2 /* Login.m in Sources */,
+				9B686B501EC89D0F00F07AD2 /* SettingsViewController.m in Sources */,
 				9B6B4A381EBBA5B5009C8B33 /* NewSumm.xcdatamodeld in Sources */,
 				9B686B331EC605DB00F07AD2 /* WebViewController.m in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
