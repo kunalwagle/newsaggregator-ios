@@ -24,6 +24,8 @@
 @synthesize topicId;
 @synthesize activityIndicator;
 @synthesize articles;
+@synthesize subscribeButton;
+@synthesize isSubscribed;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,6 +49,12 @@
     [self.collectionView registerNib:[UINib nibWithNibName:@"ExtraLargePanel" bundle:nil] forCellWithReuseIdentifier:@"extraLargePanel"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"LargeArticlePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     self.navigationItem.title = topicName;
+    
+    if (isSubscribed) {
+        [subscribeButton setTitle:@"Unsubscribe" forState:UIControlStateNormal];
+        [subscribeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    }
+    
     // Do any additional setup after loading the view.
 }
 
@@ -209,4 +217,6 @@
 }
 */
 
+- (IBAction)subscribe:(id)sender {
+}
 @end

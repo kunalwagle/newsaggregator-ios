@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property WikipediaArticle *chosenArticle;
 @property NSMutableArray *articles;
+@property BOOL isSubscribed;
 - (IBAction)search:(id)sender;
 
 @end

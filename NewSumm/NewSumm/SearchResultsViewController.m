@@ -30,6 +30,7 @@
 @synthesize activityIndicator;
 @synthesize chosenArticle;
 @synthesize articles;
+@synthesize isSubscribed;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -80,6 +81,7 @@
         if (!error) {
             NSError *jsonError;
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
+            isSubscribed = [[dict objectForKey:@"subscribed"] boolValue];
             NSArray *array = [dict objectForKey:@"clusters"];
             for (NSDictionary *dictionary in array) {
                 NSArray *arts = [dictionary objectForKey:@"articles"];
@@ -117,6 +119,7 @@
         vc.topicId = chosenArticle._id;
         vc.topicName = chosenArticle.title;
         vc.articles = articles;
+        vc.isSubscribed = isSubscribed;
     }
 }
 

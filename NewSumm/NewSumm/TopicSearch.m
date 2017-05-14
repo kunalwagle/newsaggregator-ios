@@ -16,6 +16,12 @@
     NSString *url = [UtilityMethods getIPAddress];
     url = [url stringByAppendingString:@"topic/"];
     url = [url stringByAppendingString:topicId];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"loggedIn"]) {
+       NSString *emailAddress = [defaults objectForKey:@"emailAddress"];
+       url = [url stringByAppendingString:@"/user/"];
+       url = [url stringByAppendingString:emailAddress];
+    }
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:callback] resume];

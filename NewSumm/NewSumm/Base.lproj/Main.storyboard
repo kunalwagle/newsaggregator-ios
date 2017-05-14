@@ -1429,11 +1429,15 @@
                                 <state key="normal" title="Subscribe">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="subscribe:" destination="6Oi-me-eK5" eventType="touchUpInside" id="eu1-X3-Afu"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="qtr-Tk-Nxn" id="BQg-2z-WVt"/>
+                        <outlet property="subscribeButton" destination="GNV-FI-m4f" id="7pf-W3-aB9"/>
                         <segue destination="9Qr-4P-3aC" kind="show" identifier="showArticle" id="OfE-YI-siD"/>
                     </connections>
                 </viewController>
