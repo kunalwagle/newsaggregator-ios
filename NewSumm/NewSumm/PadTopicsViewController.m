@@ -10,6 +10,8 @@
 #import "Login.h"
 #import "LoginViewController.h"
 #import "Article.h"
+#import "PadContainerViewController.h"
+
 
 @interface PadTopicsViewController ()
 
@@ -23,6 +25,11 @@
     [super viewDidLoad];
     [self loggedIn];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self loggedIn];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,22 +51,8 @@
                 topics = [dict objectForKey:@"topics"];
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self setLoginItemsHidden];
-                    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageViewController"];
-                    self.pageViewController.dataSource = self;
-                    self.pageViewController.delegate = self;
+                    [_topicTable reloadData];
                     
-                    TopicCollectionViewController *startingViewController = [self viewControllerAtIndex:0];
-                    NSArray *viewControllers = @[startingViewController];
-                    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-                    
-                    // Change the size of page view controller
-                    self.pageViewController.view.frame = CGRectMake(0, self.navigationController.navigationBar.frame.size.height+20, self.view.frame.size.width, self.view.frame.size.height - 120);
-                    
-                    [self addChildViewController:_pageViewController];
-                    [self.view addSubview:_pageViewController.view];
-                    [self.pageViewController didMoveToParentViewController:self];
-                    UIViewController* vc = self.pageViewController.viewControllers[0];
-                    self.navigationItem.title = vc.navigationItem.title;
                 });
             } else {
                 NSLog(@"Error: %@", error);
@@ -67,7 +60,6 @@
         }];
     } else {
         [self showLoginItems];
-        
     }
 }
 
@@ -75,12 +67,16 @@
     [_loginLabel setHidden:YES];
     [_loginButton setHidden:YES];
     [_activityIndicator setHidden:YES];
+    [_topicTable setHidden:NO];
+    [_container setHidden:NO];
 }
 
 -(void)showLoginItems {
     [_loginLabel setHidden:NO];
     [_loginButton setHidden:NO];
     [_activityIndicator setHidden:YES];
+    [_topicTable setHidden:YES];
+    [_container setHidden:YES];
 }
 
 - (IBAction)login:(id)sender {
@@ -91,82 +87,49 @@
     [self presentViewController:loginViewController animated:YES completion:nil];
 }
 
-#pragma mark - Page View Controller Data Source
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
-    NSUInteger index = ((TopicCollectionViewController*) viewController).index;
-    
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
-    }
-    
-    index--;
-    return [self viewControllerAtIndex:index];
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [topics count];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
-    NSUInteger index = ((TopicCollectionViewController*) viewController).index;
-    
-    if (index == NSNotFound) {
-        return nil;
-    }
-    
-    index++;
-    if (index == [self.topics count]) {
-        return nil;
-    }
-    return [self viewControllerAtIndex:index];
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UILabel *label = [cell viewWithTag:101];
+    label.text = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"labelHolder"] objectForKey:@"label"];
+    return cell;
 }
 
-- (TopicCollectionViewController *)viewControllerAtIndex:(NSUInteger)index
-{
-    if (([self.topics count] == 0) || (index >= [self.topics count])) {
-        return nil;
-    }
-    
-    // Create a new view controller and pass suitable data.
-    TopicCollectionViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageContentController"];
-    
-    pageContentViewController.index = index;
-    
-    NSMutableArray *articles = [[NSMutableArray alloc] init];
-    NSDictionary *chosenArticle = [[topics objectAtIndex:index] objectForKey:@"labelHolder"];
-    NSArray *array = [chosenArticle objectForKey:@"clusters"];
-    for (NSDictionary *dictionary in array) {
-        NSArray *arts = [dictionary objectForKey:@"articles"];
-        if (arts && [arts count] > 0) {
-            [articles addObject:[[Article alloc] initWithDictionary:dictionary]];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath   {
+    UIViewController *vc = [self.childViewControllers objectAtIndex:0];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
+    [self performSegueWithIdentifier:@"embed" sender:self];
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"My Topics";
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"embed"]) {
+        NSIndexPath *indexPath = [_topicTable indexPathForSelectedRow];
+        if (indexPath) {
+            PadContainerViewController *vc = (PadContainerViewController *)[segue destinationViewController];
+            NSMutableArray *articles = [[NSMutableArray alloc] init];
+            NSDictionary *chosenArticle = [[topics objectAtIndex:[indexPath row]] objectForKey:@"labelHolder"];
+            NSArray *array = [chosenArticle objectForKey:@"clusters"];
+            for (NSDictionary *dictionary in array) {
+                NSArray *arts = [dictionary objectForKey:@"articles"];
+                if (arts && [arts count] > 0) {
+                    [articles addObject:[[Article alloc] initWithDictionary:dictionary]];
+                }
+            }
+            
+            vc.articles = articles;
+            vc.topicId = chosenArticle[@"_id"];
+            vc.topicName = chosenArticle[@"label"];
+            
         }
     }
-
-    pageContentViewController.articles = articles;
-    pageContentViewController.topicId = chosenArticle[@"_id"];
-    pageContentViewController.topicName = chosenArticle[@"label"];
-    
-    return pageContentViewController;
-}
-
-- (void)pageViewController:(UIPageViewController *)pageViewController
-        didFinishAnimating:(BOOL)finished
-   previousViewControllers:(NSArray *)previousViewControllers
-       transitionCompleted:(BOOL)completed {
-    
-    // .viewControllers[0] is always (in my case at least) the 'current' viewController.
-    UIViewController* vc = self.pageViewController.viewControllers[0];
-    self.navigationItem.title = vc.navigationItem.title;
-}
-
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return [self.topics count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
 }
 
 /*

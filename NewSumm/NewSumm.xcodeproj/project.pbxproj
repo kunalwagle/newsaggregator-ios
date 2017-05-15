@@ -41,6 +41,7 @@
 		9B686B641EC90C4500F07AD2 /* Subscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B631EC90C4500F07AD2 /* Subscribe.m */; };
 		9B686B671EC99B8600F07AD2 /* Unsubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B661EC99B8600F07AD2 /* Unsubscribe.m */; };
 		9B686B6A1EC9AD3300F07AD2 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B691EC9AD3300F07AD2 /* Settings.m */; };
+		9B686B701EC9D6D100F07AD2 /* PadContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B6F1EC9D6D100F07AD2 /* PadContainerViewController.m */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -152,6 +153,8 @@
 		9B686B661EC99B8600F07AD2 /* Unsubscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unsubscribe.m; sourceTree = "<group>"; };
 		9B686B681EC9AD3300F07AD2 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		9B686B691EC9AD3300F07AD2 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		9B686B6E1EC9D6D100F07AD2 /* PadContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadContainerViewController.h; sourceTree = "<group>"; };
+		9B686B6F1EC9D6D100F07AD2 /* PadContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadContainerViewController.m; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -303,6 +306,8 @@
 				9B6B4A301EBBA5B5009C8B33 /* HomeViewController.h */,
 				9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */,
 				9B6B4A331EBBA5B5009C8B33 /* Main.storyboard */,
+				9B686B6E1EC9D6D100F07AD2 /* PadContainerViewController.h */,
+				9B686B6F1EC9D6D100F07AD2 /* PadContainerViewController.m */,
 				9B686B511EC8A79400F07AD2 /* NewsOutletCollectionViewCell.h */,
 				9B686B521EC8A79400F07AD2 /* NewsOutletCollectionViewCell.m */,
 				9B686B531EC8A79400F07AD2 /* NewsOutletCollectionViewCell.xib */,
@@ -662,6 +667,7 @@
 				9B686B331EC605DB00F07AD2 /* WebViewController.m in Sources */,
 				9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */,
 				9BA03C3D1EC11B8F00C77F17 /* AFPropertyListRequestOperation.m in Sources */,
+				9B686B701EC9D6D100F07AD2 /* PadContainerViewController.m in Sources */,
 				9B686B601EC8CFCC00F07AD2 /* PhoneNewsOutletCollectionViewCell.m in Sources */,
 				9BA03C3A1EC11B8F00C77F17 /* AFImageRequestOperation.m in Sources */,
 				9B6B4A701EBF5B74009C8B33 /* UtilityMethods.m in Sources */,

@@ -28,8 +28,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewDidAppear {
-    
+-(void)viewWillAppear:(BOOL)animated {
+    [self loggedIn];
 }
 
 - (void)didReceiveMemoryWarning {

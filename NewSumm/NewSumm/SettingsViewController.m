@@ -22,12 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loggedIn];
     // Do any additional setup after loading the view.
 }
 
-- (void)viewDidAppear {
-    [self viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [self loggedIn];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,5 +126,11 @@
 
 
 - (IBAction)logout:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIn"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self viewDidLoad];
+    [self viewWillAppear:YES];
+
 }
+
 @end
