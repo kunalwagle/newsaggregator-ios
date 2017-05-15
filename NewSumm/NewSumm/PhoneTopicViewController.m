@@ -13,6 +13,7 @@
 #import "UtilityMethods.h"
 #import "PhoneArticleViewController.h"
 #import "Subscribe.h"
+#import "Unsubscribe.h"
 
 @interface PhoneTopicViewController ()
 
@@ -51,6 +52,9 @@
     if (isSubscribed) {
         [subscribeButton setTitle:@"Unsubscribe" forState:UIControlStateNormal];
         [subscribeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    } else {
+        [subscribeButton setTitle:@"Subscribe" forState:UIControlStateNormal];
+        [subscribeButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     }
 }
 
@@ -185,6 +189,14 @@
         [Subscribe subscribe:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (!error) {
                 isSubscribed = true;
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self checkSubscription];            });
+            }
+        }];
+    }  else {
+        [Unsubscribe unsubscribe:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (!error) {
+                isSubscribed = false;
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self checkSubscription];            });
             }

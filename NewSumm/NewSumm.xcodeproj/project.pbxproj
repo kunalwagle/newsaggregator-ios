@@ -39,6 +39,7 @@
 		9B686B601EC8CFCC00F07AD2 /* PhoneNewsOutletCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B5E1EC8CFCC00F07AD2 /* PhoneNewsOutletCollectionViewCell.m */; };
 		9B686B611EC8CFCC00F07AD2 /* PhoneNewsOutletCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B686B5F1EC8CFCC00F07AD2 /* PhoneNewsOutletCollectionViewCell.xib */; };
 		9B686B641EC90C4500F07AD2 /* Subscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B631EC90C4500F07AD2 /* Subscribe.m */; };
+		9B686B671EC99B8600F07AD2 /* Unsubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B686B661EC99B8600F07AD2 /* Unsubscribe.m */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -146,6 +147,8 @@
 		9B686B5F1EC8CFCC00F07AD2 /* PhoneNewsOutletCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneNewsOutletCollectionViewCell.xib; sourceTree = "<group>"; };
 		9B686B621EC90C4500F07AD2 /* Subscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subscribe.h; sourceTree = "<group>"; };
 		9B686B631EC90C4500F07AD2 /* Subscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subscribe.m; sourceTree = "<group>"; };
+		9B686B651EC99B8600F07AD2 /* Unsubscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unsubscribe.h; sourceTree = "<group>"; };
+		9B686B661EC99B8600F07AD2 /* Unsubscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unsubscribe.m; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -366,6 +369,8 @@
 				9B686B3F1EC7501700F07AD2 /* Login.m */,
 				9B686B621EC90C4500F07AD2 /* Subscribe.h */,
 				9B686B631EC90C4500F07AD2 /* Subscribe.m */,
+				9B686B651EC99B8600F07AD2 /* Unsubscribe.h */,
+				9B686B661EC99B8600F07AD2 /* Unsubscribe.m */,
 				9B6B4A6E1EBF5B74009C8B33 /* UtilityMethods.h */,
 				9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */,
 				9BA03C181EC11B8F00C77F17 /* AFNetworking */,
@@ -672,6 +677,7 @@
 				9BA03C401EC11B8F00C77F17 /* UIImageView+AFNetworking.m in Sources */,
 				9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */,
 				9BA03C161EC118BF00C77F17 /* ExtraLargePanel.m in Sources */,
+				9B686B671EC99B8600F07AD2 /* Unsubscribe.m in Sources */,
 				9BA03C471EC1BD1C00C77F17 /* LargeArticlePanel.m in Sources */,
 				9BA03C391EC11B8F00C77F17 /* AFHTTPRequestOperation.m in Sources */,
 				9BA03C381EC11B8F00C77F17 /* AFHTTPClient.m in Sources */,
