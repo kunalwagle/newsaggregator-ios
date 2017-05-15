@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Article.h"
+#import "MyTopicsViewController.h"
 
-@interface PhoneTopicViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource>
+@interface PhoneTopicViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, LoginDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *leadArticle;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *subscribe;

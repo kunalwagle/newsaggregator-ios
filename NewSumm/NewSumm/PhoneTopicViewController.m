@@ -185,6 +185,7 @@
 }
 
 -(IBAction)subscribe:(id)sender {
+    
     if (!isSubscribed) {
         [Subscribe subscribe:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (!error) {
@@ -202,6 +203,10 @@
             }
         }];
     }
+}
+
+-(void)loggedIn {
+    
 }
 
 @end
