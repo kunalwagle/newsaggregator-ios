@@ -15,5 +15,6 @@
 @property NSString *topicName;
 @property NSString *topicId;
 @property NSInteger chosenArticle;
+@property NSArray *defaultSources;
 
 @end

@@ -21,6 +21,7 @@
 @property WikipediaArticle *chosenArticle;
 @property NSMutableArray *articles;
 @property BOOL isSubscribed;
+@property NSArray *defaultSources;
 - (IBAction)search:(id)sender;
 
 @end

@@ -19,6 +19,7 @@
 @property BOOL isSubscribed;
 @property (weak, nonatomic) IBOutlet UIButton *subscribeButton;
 @property NSInteger chosenArticle;
+@property NSArray *defaultSources;
 - (IBAction)subscribe:(id)sender;
 
 @end

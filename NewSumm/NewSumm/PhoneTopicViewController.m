@@ -73,6 +73,7 @@
         PhoneArticleViewController *vc = (PhoneArticleViewController*)[segue destinationViewController];
         vc.article = [articles objectAtIndex:chosenArticle];
         vc.topicName = topicName;
+        vc.defaultSources = _defaultSources;
     }
 }
 

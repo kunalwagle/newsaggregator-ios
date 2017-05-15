@@ -30,7 +30,9 @@
     
     sources = [[NSMutableArray alloc] init];
     for (NSDictionary *dictionary in article.articles) {
-        [sources addObject:[dictionary objectForKey:@"source"]];
+        if ([_defaultSources containsObject:[dictionary objectForKey:@"source"]]) {
+            [sources addObject:[dictionary objectForKey:@"source"]];
+        }
     }
     [self updateSources];
     articleTableView.estimatedRowHeight = 260;

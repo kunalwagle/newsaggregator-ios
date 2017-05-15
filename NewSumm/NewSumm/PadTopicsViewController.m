@@ -127,7 +127,7 @@
             vc.articles = articles;
             vc.topicId = chosenArticle[@"_id"];
             vc.topicName = chosenArticle[@"label"];
-            
+            vc.defaultSources = [[topics objectAtIndex:[indexPath row]] objectForKey:@"sources"];
         }
     }
 }

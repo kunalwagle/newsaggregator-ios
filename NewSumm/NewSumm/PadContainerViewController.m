@@ -93,6 +93,7 @@
         PadArticleViewController *vc = (PadArticleViewController*)[segue destinationViewController];
         vc.article = [articles objectAtIndex:_chosenArticle];
         vc.topicName = topicName;
+        vc.defaultSources = _defaultSources;
     }
 }
 

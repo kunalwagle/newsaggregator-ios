@@ -20,6 +20,7 @@
 @property BOOL summaryAnalysis;
 @property NSIndexPath* chosenSentence;
 @property NSInteger chosenLink;
+@property NSArray *defaultSources;
 @property (weak, nonatomic) IBOutlet UIButton *summaryAnalysisButton;
 
 @end

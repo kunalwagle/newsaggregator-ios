@@ -80,7 +80,9 @@
     [TopicSearch getTopic:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (!error) {
             NSError *jsonError;
-            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
+            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
+            _defaultSources = [result objectForKey:@"sources"];
+            NSDictionary *dict = [result objectForKey:@"labelHolder"];
             isSubscribed = [[dict objectForKey:@"subscribed"] boolValue];
             NSArray *array = [dict objectForKey:@"clusters"];
             for (NSDictionary *dictionary in array) {
@@ -89,6 +91,7 @@
                     [articles addObject:[[Article alloc] initWithDictionary:dictionary]];
                 }
             }
+            
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [activityIndicator stopAnimating];
                 [activityIndicator setHidden:YES];
@@ -115,12 +118,14 @@
         vc.topicName = chosenArticle.title;
         vc.articles = articles;
         vc.isSubscribed = isSubscribed;
+        vc.defaultSources = _defaultSources;
     } else if ([[segue identifier] isEqualToString:@"iPadTopic"]) {
         TopicCollectionViewController *vc = (TopicCollectionViewController*)[segue destinationViewController];
         vc.topicId = chosenArticle._id;
         vc.topicName = chosenArticle.title;
         vc.articles = articles;
         vc.isSubscribed = isSubscribed;
+        vc.defaultSources = _defaultSources;
     }
 }
 

@@ -28,7 +28,9 @@
     // Do any additional setup after loading the view;
     sources = [[NSMutableArray alloc] init];
     for (NSDictionary *dictionary in article.articles) {
-        [sources addObject:[dictionary objectForKey:@"source"]];
+        if ([_defaultSources containsObject:[dictionary objectForKey:@"source"]]) {
+            [sources addObject:[dictionary objectForKey:@"source"]];
+        }
     }
     [self updateSources];
     tv.estimatedRowHeight = 260;
