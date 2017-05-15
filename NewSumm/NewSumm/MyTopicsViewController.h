@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property NSMutableArray *articles;
 @property NSDictionary *chosenArticle;
+@property NSArray *defaultSources;
 
 @end

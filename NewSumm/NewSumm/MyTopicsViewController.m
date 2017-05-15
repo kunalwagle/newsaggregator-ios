@@ -126,6 +126,7 @@
     [_activityIndicator setHidden:NO];
     _articles = [[NSMutableArray alloc] init];
     _chosenArticle = [[topics objectAtIndex:topicId] objectForKey:@"labelHolder"];
+    _defaultSources = [[topics objectAtIndex:topicId] objectForKey:@"sources"];
     NSArray *array = [_chosenArticle objectForKey:@"clusters"];
     for (NSDictionary *dictionary in array) {
         NSArray *arts = [dictionary objectForKey:@"articles"];
@@ -145,6 +146,7 @@
         vc.topicId = _chosenArticle[@"_id"];
         vc.topicName = _chosenArticle[@"label"];
         vc.articles = _articles;
+        vc.defaultSources = _defaultSources;
     }
 }
 
