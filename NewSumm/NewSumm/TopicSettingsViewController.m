@@ -22,6 +22,8 @@
 @synthesize save;
 @synthesize unsubscribe;
 @synthesize outlets;
+@synthesize selectedOutlets;
+@synthesize digest;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,34 +70,45 @@
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    NSString *topic = [outlets objectAtIndex:[indexPath row]];
+    BOOL selected = [selectedOutlets containsObject:topic];
     if (![UtilityMethods isIPad]) {
         PhoneNewsOutletCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-        NSString *topic = [outlets objectAtIndex:[indexPath row]];
+        
         cell.imageView.image = [UIImage imageNamed:topic];
         cell.label.text = [UtilityMethods getPublicationName:topic];
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2;
         cell.imageView.layer.masksToBounds = YES;
+        [cell setSelected:selected];
+        if (selected) {
+            cell.backgroundColor = [UIColor colorWithRed:0.12 green:0.141 blue:0.212 alpha:1.0];
+        }
         return cell;
     }
     NewsOutletCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *topic = [outlets objectAtIndex:[indexPath row]];
     cell.imageView.image = [UIImage imageNamed:topic];
     cell.label.text = [UtilityMethods getPublicationName:topic];
     cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2;
     cell.imageView.layer.masksToBounds = YES;
+    if (selected) {
+        cell.backgroundColor = [UIColor colorWithRed:0.12 green:0.141 blue:0.212 alpha:1.0];
+    }
     return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell = (NewsOutletCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor clearColor];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
+    NSString *topic = [outlets objectAtIndex:[indexPath row]];
+    BOOL selected = [selectedOutlets containsObject:topic];
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:0.12 green:0.141 blue:0.212 alpha:1.0];
+    if (!selected) {
+        cell.backgroundColor = [UIColor colorWithRed:0.12 green:0.141 blue:0.212 alpha:1.0];
+        [selectedOutlets addObject:topic];
+    } else {
+        cell.backgroundColor = [UIColor clearColor];
+        [selectedOutlets removeObject:topic];
+    }
+    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
 }
 
 - (IBAction)save:(id)sender {

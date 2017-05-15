@@ -111,7 +111,10 @@
     if ([[segue identifier] isEqualToString:@"showSettings"]) {
         TopicSettingsViewController *vc = (TopicSettingsViewController*)[segue destinationViewController];
         NSIndexPath *indexPath = [self.tv indexPathForSelectedRow];
-        vc.topicName = [[topics objectAtIndex:[indexPath row]] objectForKey:@"label"];
+        vc.topicName = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"labelHolder"] objectForKey:@"label"];
+        vc.selectedOutlets = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"sources"] mutableCopy];
+        vc.topicId = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"labelHolder"] objectForKey:@"id"];
+        vc.digest = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"digests"] boolValue];
         [self.tv deselectRowAtIndexPath:indexPath animated:YES];
     }
 }

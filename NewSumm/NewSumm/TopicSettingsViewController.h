@@ -17,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *unsubscribe;
 @property NSArray *outlets;
 @property NSString *topicName;
+@property NSMutableArray *selectedOutlets;
+@property NSString *topicId;
+@property BOOL digest;
 
 @end
