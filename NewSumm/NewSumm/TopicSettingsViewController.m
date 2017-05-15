@@ -11,6 +11,7 @@
 #import "UtilityMethods.h"
 #import "PhoneNewsOutletCollectionViewCell.h"
 #import "Unsubscribe.h"
+#import "Settings.h"
 
 @interface TopicSettingsViewController ()
 
@@ -113,7 +114,36 @@
 }
 
 - (IBAction)save:(id)sender {
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *emailAddress = [defaults objectForKey:@"emailAddress"];
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setObject:selectedOutlets forKey:@"sources"];
+    [dictionary setValue:[NSNumber numberWithBool:digest] forKey:@"digest"];
+    [dictionary setObject:_topicId forKey:@"topicId"];
+    [dictionary setObject:emailAddress forKey:@"user"];
+    [Settings settings:dictionary withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            UIAlertController * alert=   [UIAlertController
+                                          alertControllerWithTitle:@"Saved"
+                                          message:@"Your settings were saved"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+            
+            [alert addAction:ok];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        });
+        }
+    }];
 }
 
 - (IBAction)unsubscribe:(id)sender {
