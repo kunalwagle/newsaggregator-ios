@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyTopicsViewController.h"
 
 @interface TopicSettingsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *outletCollectionView;
@@ -19,6 +20,7 @@
 @property NSString *topicName;
 @property NSMutableArray *selectedOutlets;
 @property NSString *topicId;
+@property id<LoginDelegate> delegate;
 @property BOOL digest;
 
 @end

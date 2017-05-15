@@ -26,6 +26,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear {
+    [self viewDidLoad];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -115,6 +119,7 @@
         vc.selectedOutlets = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"sources"] mutableCopy];
         vc.topicId = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"labelHolder"] objectForKey:@"id"];
         vc.digest = [[[topics objectAtIndex:[indexPath row]] objectForKey:@"digests"] boolValue];
+        vc.delegate = self;
         [self.tv deselectRowAtIndexPath:indexPath animated:YES];
     }
 }

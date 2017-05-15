@@ -10,6 +10,7 @@
 #import "NewsOutletCollectionViewCell.h"
 #import "UtilityMethods.h"
 #import "PhoneNewsOutletCollectionViewCell.h"
+#import "Unsubscribe.h"
 
 @interface TopicSettingsViewController ()
 
@@ -116,5 +117,15 @@
 }
 
 - (IBAction)unsubscribe:(id)sender {
+    [Unsubscribe unsubscribe:_topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+                [self.delegate loggedIn];
+            });
+        }
+    }];
+
 }
+
 @end
