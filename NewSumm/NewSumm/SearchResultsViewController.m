@@ -37,7 +37,7 @@
     UICollectionViewFlowLayout *flowLayout = [UtilityMethods getCollectionViewFlowLayout];
     [searchResultGrid.collectionViewLayout invalidateLayout];
     searchResultGrid.collectionViewLayout = flowLayout;
-    
+    searchField.delegate = self;
     [searchResultGrid registerNib:[UINib nibWithNibName:@"LargePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     [self doSearch];
     // Do any additional setup after loading the view.
@@ -62,7 +62,7 @@
                 [searchResults addObject:[[WikipediaArticle alloc] initWithDictionary:dictionary]];
             }
             dispatch_sync(dispatch_get_main_queue(), ^{
-                searchResultCount.text = [NSString stringWithFormat:@"Your search returned %lu results", searchResults.count];
+                searchResultCount.text = [NSString stringWithFormat:@"Your search returned %lu results", (unsigned long)searchResults.count];
                 [activityIndicator stopAnimating];
                 [searchResultGrid reloadData];
             });
@@ -194,6 +194,11 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     chosenArticle = [searchResults objectAtIndex:(([indexPath section]*[collectionView numberOfItemsInSection:0]) + [indexPath row])];
     [self getTopic:chosenArticle._id];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField  {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 @end

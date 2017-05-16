@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WikipediaArticle.h"
 
-@interface SearchResultsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SearchResultsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
 
 @property NSString *searchTerm;
 @property (weak, nonatomic) IBOutlet UITextField *searchField;

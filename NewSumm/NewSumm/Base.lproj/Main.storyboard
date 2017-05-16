@@ -97,7 +97,7 @@
                 <navigationController id="bcA-L1-O5Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="M1k-Em-7S7"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="pfz-Nq-xph">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="pfz-Nq-xph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -197,7 +197,7 @@
                 <navigationController id="T2b-p2-dVh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="0Qi-Mt-m1W"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UNv-e1-n8N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UNv-e1-n8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -557,7 +557,7 @@
                 <navigationController id="Mde-LZ-dv7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Topics" image="List Filled_30.png" id="jQs-DR-5CA"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fQW-Ra-WQj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQW-Ra-WQj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1175,7 +1175,7 @@
                 <navigationController modalPresentationStyle="overFullScreen" id="dsT-86-0ZZ" sceneMemberID="viewController">
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4Jo-lh-MZa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4Jo-lh-MZa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.23137254900000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1549,7 +1549,7 @@
                 <navigationController id="ZIh-VH-ib7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings Filled-30.png" id="B6A-KQ-nTn"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qcs-SV-TTD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qcs-SV-TTD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.3294117647" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
