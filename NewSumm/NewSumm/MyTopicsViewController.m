@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _activityIndicator.hidden = YES;
+    self.tv.tableFooterView = [UIView new];
     [self loggedIn];
     // Do any additional setup after loading the view.
 }

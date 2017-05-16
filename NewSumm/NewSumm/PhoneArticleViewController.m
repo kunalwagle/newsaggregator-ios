@@ -34,7 +34,9 @@
     }
     [self updateSources];
     tv.estimatedRowHeight = 260;
+   
     tv.rowHeight = UITableViewAutomaticDimension;
+    tv.tableFooterView = [UIView new];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

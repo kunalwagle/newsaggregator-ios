@@ -39,6 +39,7 @@
     leadArticle.collectionViewLayout = flowLayout;
     [leadArticle registerNib:[UINib nibWithNibName:@"LargeArticlePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     [tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+     tableView.tableFooterView = [UIView new];
     self.navigationItem.title = topicName;
     
     [self checkSubscription];

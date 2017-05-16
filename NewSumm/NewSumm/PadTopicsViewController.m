@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loggedIn];
+    self.topicTable.tableFooterView = [UIView new];
     // Do any additional setup after loading the view.
 }
 
