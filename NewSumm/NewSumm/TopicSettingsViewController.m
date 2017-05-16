@@ -81,9 +81,10 @@
         cell.label.text = [UtilityMethods getPublicationName:topic];
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2;
         cell.imageView.layer.masksToBounds = YES;
-        [cell setSelected:selected];
         if (selected) {
             cell.backgroundColor = [UIColor colorWithRed:0.12 green:0.141 blue:0.212 alpha:1.0];
+        } else {
+            cell.backgroundColor = [UIColor clearColor];
         }
         return cell;
     }
@@ -94,6 +95,8 @@
     cell.imageView.layer.masksToBounds = YES;
     if (selected) {
         cell.backgroundColor = [UIColor colorWithRed:0.12 green:0.141 blue:0.212 alpha:1.0];
+    } else {
+        cell.backgroundColor = [UIColor clearColor];
     }
     return cell;
 }
