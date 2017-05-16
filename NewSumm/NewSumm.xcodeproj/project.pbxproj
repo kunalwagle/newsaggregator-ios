@@ -69,6 +69,7 @@
 		9B686BD51ECAFA3200F07AD2 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686BA71ECAFA3100F07AD2 /* iTunesArtwork@2x.png */; };
 		9B686BD61ECAFA3200F07AD2 /* iTunesArtwork@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686BA81ECAFA3100F07AD2 /* iTunesArtwork@3x.png */; };
 		9B686BD71ECAFA3200F07AD2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9B686BA91ECAFA3100F07AD2 /* README.md */; };
+		9B686BD91ECB0D2300F07AD2 /* Settings Filled-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B686BD81ECB0D2300F07AD2 /* Settings Filled-30.png */; };
 		9B6B4A2C1EBBA5B5009C8B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2B1EBBA5B5009C8B33 /* main.m */; };
 		9B6B4A2F1EBBA5B5009C8B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A2E1EBBA5B5009C8B33 /* AppDelegate.m */; };
 		9B6B4A321EBBA5B5009C8B33 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B4A311EBBA5B5009C8B33 /* HomeViewController.m */; };
@@ -209,6 +210,7 @@
 		9B686BA71ECAFA3100F07AD2 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		9B686BA81ECAFA3100F07AD2 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
 		9B686BA91ECAFA3100F07AD2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B686BD81ECB0D2300F07AD2 /* Settings Filled-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings Filled-30.png"; sourceTree = "<group>"; };
 		9B6B4A271EBBA5B5009C8B33 /* NewSumm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSumm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B4A2B1EBBA5B5009C8B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B6B4A2D1EBBA5B5009C8B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 				9B686B691EC9AD3300F07AD2 /* Settings.m */,
 				9B6B4A6E1EBF5B74009C8B33 /* UtilityMethods.h */,
 				9B6B4A6F1EBF5B74009C8B33 /* UtilityMethods.m */,
+				9B686BD81ECB0D2300F07AD2 /* Settings Filled-30.png */,
 				9BA03C181EC11B8F00C77F17 /* AFNetworking */,
 				9BA03C2C1EC11B8F00C77F17 /* MosaicLayout */,
 			);
@@ -704,6 +707,7 @@
 			files = (
 				9B686B281EC313A200F07AD2 /* the-guardian-uk.png in Resources */,
 				9B686B231EC313A200F07AD2 /* independent.png in Resources */,
+				9B686BD91ECB0D2300F07AD2 /* Settings Filled-30.png in Resources */,
 				9B686BC81ECAFA3200F07AD2 /* Icon-App-57x57@2x.png in Resources */,
 				9B686B261EC313A200F07AD2 /* newsweek.png in Resources */,
 				9B686BC61ECAFA3200F07AD2 /* Icon-App-40x40@3x.png in Resources */,
