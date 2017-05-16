@@ -17,10 +17,15 @@
     self.summaryMap = dictionary[@"summaryMap"];
     if (!self.summaries) {
         self.summaries = [[NSMutableArray alloc] init];
+        if ([[dictionary objectForKey:@"summary"] count]>0) {
         NSArray *summary = [[dictionary objectForKey:@"summary"] objectAtIndex: 0];
         [self.summaries addObject:summary];
+        }
     }
     self._id = dictionary[@"id"];
+    self.imageUrl = dictionary[@"imageUrl"];
+    self.lastPublished = dictionary[@"lastPublished"];
+    self.title = dictionary[@"title"];
     return self;
 }
 

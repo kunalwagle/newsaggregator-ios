@@ -226,7 +226,7 @@
     } else if ([[segue identifier] isEqualToString:@"showArticle"]) {
         NSDictionary *art = [[article articles] objectAtIndex:_chosenLink];
         WebViewController *vc = (WebViewController*) [segue destinationViewController];
-        vc.url = @"http://www.bbc.co.uk/news/health-39899646";//art[@"articleUrl"];
+        vc.url = art[@"articleUrl"];
         vc.source = art[@"source"];
     }
 }

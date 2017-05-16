@@ -16,6 +16,9 @@
 @property UIImage *image;
 @property NSString *_id;
 @property NSDictionary *summaryMap;
+@property NSString *title;
+@property NSString *lastPublished;
+@property NSString *imageUrl;
 
 -(Article*)initWithDictionary:(NSDictionary *)dictionary;
 

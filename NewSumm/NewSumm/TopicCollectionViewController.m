@@ -104,15 +104,14 @@
     if ([indexPath section] == 0) {
         ExtraLargePanel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"extraLargePanel" forIndexPath:indexPath];
         Article *article = [articles objectAtIndex:[indexPath row]];
-        NSDictionary *source = [[article articles] objectAtIndex:0];
         cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
-        cell.title.text = source[@"title"];
+        cell.title.text = [article title];
         article.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
         dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
         dispatch_async(imageQueue, ^{
             NSError *error = nil;
-            if (![source[@"imageUrl"] isKindOfClass:[NSNull class]]) {
-                NSURL *url = [NSURL URLWithString:source[@"imageUrl"]];
+            if (![[article imageUrl] isKindOfClass:[NSNull class]]) {
+                NSURL *url = [NSURL URLWithString:[article imageUrl]];
                 NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
                 UIImage *image = [UIImage imageWithData:imageData];
                 NSLog(@"Finished asynchrously attempting download on Topic Collection screen");
@@ -139,15 +138,14 @@
     
     LargeArticlePanel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"largePanel" forIndexPath:indexPath];
     Article *article = [articles objectAtIndex:[indexPath row]+2];
-    NSDictionary *source = [[article articles] objectAtIndex:0];
     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
-    cell.title.text = source[@"title"];
+    cell.title.text = [article title];
     article.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
     dispatch_async(imageQueue, ^{
         NSError *error = nil;
-        if (![source[@"imageUrl"] isKindOfClass:[NSNull class]]) {
-            NSURL *url = [NSURL URLWithString:source[@"imageUrl"]];
+        if (![[article imageUrl] isKindOfClass:[NSNull class]]) {
+            NSURL *url = [NSURL URLWithString:[article imageUrl]];
             NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
             UIImage *image = [UIImage imageWithData:imageData];
             NSLog(@"Finished asynchrously attempting download");
