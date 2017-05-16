@@ -26,6 +26,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.registerButton.layer.cornerRadius = 5;
+    self.cancel.layer.cornerRadius = 5;
     // Do any additional setup after loading the view.
 }
 

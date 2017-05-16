@@ -30,6 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     outlets = @[@"associated-press", @"the-guardian-uk", @"independent", @"reuters", @"business-insider-uk", @"daily-mail", @"espn-cric-info", @"metro", @"mirror", @"newsweek", @"the-telegraph", @"the-times-of-india"];
+    save.layer.cornerRadius = 5;
+    unsubscribe.layer.cornerRadius = 5;
     self.navigationItem.title = _topicName;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];

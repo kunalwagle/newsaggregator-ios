@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.logout.layer.cornerRadius = 5;
     // Do any additional setup after loading the view.
 }
 
