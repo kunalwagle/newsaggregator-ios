@@ -19,5 +19,6 @@
 @property NSArray *topics;
 @property (weak, nonatomic) IBOutlet UITableView *topicTable;
 @property (weak, nonatomic) IBOutlet UIView *container;
+@property BOOL loginClicked;
 
 @end

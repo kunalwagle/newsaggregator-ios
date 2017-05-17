@@ -12,6 +12,7 @@
 #import "TopicSearch.h"
 #import "Article.h"
 #import "PhoneTopicViewController.h"
+#import "UIView+Toast.h"
 
 @interface MyTopicsViewController ()
 
@@ -24,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _activityIndicator.hidden = YES;
+    self.loginClicked = NO;
+    self.loginButton.layer.cornerRadius = 5;
     self.tv.tableFooterView = [UIView new];
     [self loggedIn];
     // Do any additional setup after loading the view.
@@ -41,6 +44,10 @@
 - (void)loggedIn {
     BOOL loggedIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIn"];
     if (loggedIn) {
+        if (self.loginClicked) {
+            [self.view makeToast:@"Succesfully logged in" duration:5.0 position:CSToastPositionTop];
+        }
+        self.loginClicked = NO;
         [self setLoginItemsHidden];
         NSString *emailAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"emailAddress"];
         [_activityIndicator startAnimating];
@@ -136,7 +143,7 @@
 */
 
 - (IBAction)login:(id)sender {
-    
+    self.loginClicked = YES;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];;
     [loginViewController setDelegate:self];

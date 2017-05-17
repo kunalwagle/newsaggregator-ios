@@ -10,6 +10,7 @@
 #import "Login.h"
 #import "LoginViewController.h"
 #import "Article.h"
+#import "UIView+Toast.h"
 #import "PadContainerViewController.h"
 
 
@@ -24,12 +25,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loggedIn];
+    self.loginClicked = NO;
+    self.loginButton.layer.cornerRadius = 5;
     self.topicTable.tableFooterView = [UIView new];
     // Do any additional setup after loading the view.
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    BOOL clicked = self.loginClicked;
     [self loggedIn];
+    self.loginClicked = clicked;
     
 }
 
@@ -41,6 +46,10 @@
 - (void)loggedIn {
     BOOL loggedIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIn"];
     if (loggedIn) {
+        if (self.loginClicked) {
+            [self.view makeToast:@"Succesfully logged in" duration:5.0 position:CSToastPositionTop];
+        }
+        self.loginClicked = NO;
         [self setLoginItemsHidden];
         NSString *emailAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"emailAddress"];
         [_activityIndicator startAnimating];
@@ -81,7 +90,7 @@
 }
 
 - (IBAction)login:(id)sender {
-    
+    self.loginClicked = YES;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];;
     [loginViewController setDelegate:self];

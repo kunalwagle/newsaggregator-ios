@@ -221,6 +221,7 @@
         NSDictionary *sentence = [sentences objectAtIndex:[_chosenSentence row]];
         vc.sentence = sentence;
         CGRect selectedCellRect = [articleTableView rectForRowAtIndexPath:_chosenSentence];
+        selectedCellRect = [self.articleTableView convertRect:selectedCellRect toView:self.view];
         selectedCellRect.size.width = selectedCellRect.size.width/6;
         navController.popoverPresentationController.sourceRect = selectedCellRect;
     } else if ([[segue identifier] isEqualToString:@"showArticle"]) {

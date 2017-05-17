@@ -10,6 +10,7 @@
 #import "Login.h"
 #import "LoginViewController.h"
 #import "TopicSettingsViewController.h"
+#import "UIView+Toast.h"
 
 @interface SettingsViewController ()
 
@@ -22,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loginClicked = NO;
+    self.loginButton.layer.cornerRadius = 5;
     self.logout.layer.cornerRadius = 5;
     self.tv.tableFooterView = [UIView new];
     // Do any additional setup after loading the view.
@@ -40,6 +43,10 @@
 - (void)loggedIn {
     BOOL loggedIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIn"];
     if (loggedIn) {
+        if (self.loginClicked) {
+            [self.view makeToast:@"Succesfully logged in" duration:5.0 position:CSToastPositionTop];
+        }
+        self.loginClicked = NO;
         [self setLoginItemsHidden];
         NSString *emailAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"emailAddress"];
         [_activityIndicator startAnimating];
@@ -99,7 +106,7 @@
 }
 
 - (IBAction)login:(id)sender {
-    
+    self.loginClicked = YES;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];;
     [loginViewController setDelegate:self];
@@ -128,6 +135,7 @@
 
 
 - (IBAction)logout:(id)sender {
+    [self.view makeToast:@"Succesfully logged out" duration:3.0 position:CSToastPositionTop];
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIn"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self viewDidLoad];

@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "Login.h"
+#import "UIView+Toast.h"
 
 @interface LoginViewController ()
 
@@ -53,8 +54,10 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 352;
             [defaults setObject:emailAddress.text forKey:@"emailAddress"];
             [defaults setBool:YES forKey:@"loggedIn"];
             [defaults synchronize];
+            
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [self dismissViewControllerAnimated:YES completion:^{
+                    
                     [self.delegate loggedIn];
                 }];
             });

@@ -19,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *logout;
 - (IBAction)logout:(id)sender;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-
+@property BOOL loginClicked;
 
 @end

@@ -23,5 +23,6 @@
 @property NSMutableArray *articles;
 @property NSDictionary *chosenArticle;
 @property NSArray *defaultSources;
+@property BOOL loginClicked;
 
 @end
