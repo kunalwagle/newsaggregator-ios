@@ -57,12 +57,14 @@
                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
                 topics = [dict objectForKey:@"topics"];
                 dispatch_sync(dispatch_get_main_queue(), ^{
+                    [_activityIndicator setHidden:YES];
                     [_tv reloadData];
                     [self setLoginItemsHidden];
                 });
             } else {
                 NSLog(@"Error: %@", error);
                 dispatch_sync(dispatch_get_main_queue(), ^{
+                    [_activityIndicator setHidden:YES];
                     UIAlertController * alert=   [UIAlertController
                                                   alertControllerWithTitle:@"Error"
                                                   message:@"Something went wrong there. Sorry about that"
@@ -92,7 +94,6 @@
     [_loginLabel setHidden:YES];
     [_loginButton setHidden:YES];
     [_logout setHidden:NO];
-    [_activityIndicator setHidden:YES];
     [_tv setHidden:NO];
 }
 
@@ -100,7 +101,6 @@
     [_loginLabel setHidden:NO];
     [_loginButton setHidden:NO];
     [_logout setHidden:YES];
-    [_activityIndicator setHidden:YES];
     [_tv setHidden:YES];
 }
 

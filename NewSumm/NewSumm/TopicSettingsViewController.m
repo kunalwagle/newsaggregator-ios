@@ -124,7 +124,7 @@
     NSString *emailAddress = [defaults objectForKey:@"emailAddress"];
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
     [dictionary setObject:selectedOutlets forKey:@"sources"];
-    [dictionary setValue:[NSNumber numberWithBool:digest] forKey:@"digest"];
+    [dictionary setValue:[NSNumber numberWithBool:[dailyDigest isOn]] forKey:@"digest"];
     [dictionary setObject:_topicId forKey:@"topicId"];
     [dictionary setObject:emailAddress forKey:@"user"];
     [Settings settings:dictionary withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
