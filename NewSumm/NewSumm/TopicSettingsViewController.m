@@ -147,6 +147,27 @@
             
             [self presentViewController:alert animated:YES completion:nil];
         });
+        } else {
+            NSLog(@"Error: %@", error);
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                UIAlertController * alert=   [UIAlertController
+                                              alertControllerWithTitle:@"Error"
+                                              message:@"Something went wrong there. Sorry about that"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* ok = [UIAlertAction
+                                     actionWithTitle:@"OK"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action)
+                                     {
+                                         [alert dismissViewControllerAnimated:YES completion:nil];
+                                         
+                                     }];
+                
+                [alert addAction:ok];
+                
+                [self presentViewController:alert animated:YES completion:nil];
+            });
         }
     }];
 }
