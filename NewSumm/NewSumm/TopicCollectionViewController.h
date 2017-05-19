@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyTopicsViewController.h"
 
-@interface TopicCollectionViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface TopicCollectionViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, LoginDelegate>
 
 @property NSMutableArray *articles;
 @property NSUInteger index;

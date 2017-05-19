@@ -14,6 +14,8 @@
 #import "PhoneArticleViewController.h"
 #import "Subscribe.h"
 #import "Unsubscribe.h"
+#import "LoginViewController.h"
+#import "Login.h"
 
 @interface PhoneTopicViewController ()
 
@@ -184,8 +186,7 @@
     [self selectedArticle:[indexPath row]+1];
 }
 
--(IBAction)subscribe:(id)sender {
-    
+-(void)subscribe {
     if (!isSubscribed) {
         [Subscribe subscribe:topicId withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (!error) {
@@ -247,8 +248,50 @@
     }
 }
 
+-(IBAction)subscribe:(id)sender {
+    BOOL loggedIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIn"];
+    if (loggedIn) {
+        [self subscribe];
+    } else {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];;
+        [loginViewController setDelegate:self];
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    }
+}
+
 -(void)loggedIn {
-    
+    BOOL loggedIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIn"];
+    if (loggedIn) {
+        
+        NSString *emailAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@"emailAddress"];
+        [Login login:emailAddress withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (!error) {
+                [self subscribe];
+            } else {
+                NSLog(@"Error: %@", error);
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    UIAlertController * alert=   [UIAlertController
+                                                  alertControllerWithTitle:@"Error"
+                                                  message:@"Something went wrong there. Sorry about that"
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"OK"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action)
+                                         {
+                                             [alert dismissViewControllerAnimated:YES completion:nil];
+                                             
+                                         }];
+                    
+                    [alert addAction:ok];
+                    
+                    [self presentViewController:alert animated:YES completion:nil];
+                });
+            }
+        }];
+    }
 }
 
 @end
