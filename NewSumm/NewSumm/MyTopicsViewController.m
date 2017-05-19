@@ -143,8 +143,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showTopic"]) {
         PhoneTopicViewController *vc = (PhoneTopicViewController *)[segue destinationViewController];
-        vc.topicId = _chosenArticle[@"_id"];
+        vc.topicId = _chosenArticle[@"id"];
         vc.topicName = _chosenArticle[@"label"];
+        vc.isSubscribed = YES;
         vc.articles = _articles;
         vc.defaultSources = _defaultSources;
     }
