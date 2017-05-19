@@ -24,5 +24,6 @@
 @property NSDictionary *chosenArticle;
 @property NSArray *defaultSources;
 @property BOOL loginClicked;
+@property UIRefreshControl *refreshControl;
 
 @end

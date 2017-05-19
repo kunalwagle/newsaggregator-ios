@@ -38,8 +38,17 @@
     [searchResultGrid.collectionViewLayout invalidateLayout];
     searchResultGrid.collectionViewLayout = flowLayout;
     searchField.delegate = self;
+    searchButton.layer.cornerRadius = 5;
     [searchResultGrid registerNib:[UINib nibWithNibName:@"LargePanel" bundle:nil] forCellWithReuseIdentifier:@"largePanel"];
     [self doSearch];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UtilityMethods getBackgroundColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(doSearch)
+                  forControlEvents:UIControlEventValueChanged];
+    [searchResultGrid addSubview:self.refreshControl];
+    searchResultGrid.alwaysBounceVertical = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -53,6 +62,7 @@
     [activityIndicator setHidden:NO];
     [searchResults removeAllObjects];
     [searchResultGrid reloadData];
+    [searchResultCount setHidden:YES];
     [WikipediaSearch performSearch:searchTerm withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (!error) {
             NSError *jsonError;
@@ -62,6 +72,11 @@
                 [searchResults addObject:[[WikipediaArticle alloc] initWithDictionary:dictionary]];
             }
             dispatch_sync(dispatch_get_main_queue(), ^{
+                if (self.refreshControl) {
+                    self.refreshControl.attributedTitle = [UtilityMethods getRefreshControlTimeStamp];
+                    [self.refreshControl endRefreshing];
+                }
+                [searchResultCount setHidden:NO];
                 searchResultCount.text = [NSString stringWithFormat:@"Your search returned %lu results", (unsigned long)searchResults.count];
                 [activityIndicator stopAnimating];
                 [searchResultGrid reloadData];
@@ -70,6 +85,10 @@
         } else {
             NSLog(@"Error: %@", error);
             dispatch_sync(dispatch_get_main_queue(), ^{
+                if (self.refreshControl) {
+                    self.refreshControl.attributedTitle = [UtilityMethods getRefreshControlTimeStamp];
+                    [self.refreshControl endRefreshing];
+                }
                 UIAlertController * alert=   [UIAlertController
                                               alertControllerWithTitle:@"Error"
                                               message:@"Something went wrong there. Sorry about that"
@@ -112,6 +131,7 @@
             }
             
             dispatch_sync(dispatch_get_main_queue(), ^{
+                
                 [activityIndicator stopAnimating];
                 [activityIndicator setHidden:YES];
                 if ([UtilityMethods isIPad]) {
@@ -124,6 +144,7 @@
         } else {
             NSLog(@"Error: %@", error);
             dispatch_sync(dispatch_get_main_queue(), ^{
+            
                 UIAlertController * alert=   [UIAlertController
                                               alertControllerWithTitle:@"Error"
                                               message:@"Something went wrong there. Sorry about that"

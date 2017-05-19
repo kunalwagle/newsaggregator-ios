@@ -13,6 +13,7 @@
 
 @property NSMutableArray *articles;
 @property NSUInteger index;
+@property (weak, nonatomic) IBOutlet UILabel *noArticles;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property NSString *topicName;
 @property NSString *topicId;

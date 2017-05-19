@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *topicTable;
 @property (weak, nonatomic) IBOutlet UIView *container;
 @property BOOL loginClicked;
+@property UIRefreshControl *refreshControl;
 
 @end

@@ -30,9 +30,16 @@
 @synthesize articles;
 @synthesize subscribeButton;
 @synthesize isSubscribed;
+@synthesize noArticles;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if ([articles count]==0) {
+        [noArticles setHidden:NO];
+    } else {
+        [noArticles setHidden:YES];
+    }
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;

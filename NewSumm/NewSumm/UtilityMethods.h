@@ -16,5 +16,7 @@
 +(BOOL)isIPad;
 +(UIColor*)getColour:(NSString*)source;
 +(NSString*)getPublicationName:(NSString*)source;
++(UIColor*)getBackgroundColor;
++(NSAttributedString*)getRefreshControlTimeStamp;
 
 @end

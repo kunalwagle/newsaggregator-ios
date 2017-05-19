@@ -133,4 +133,17 @@
     return NULL;
 }
 
++(UIColor *)getBackgroundColor {
+    return [UIColor colorWithRed:0.157 green:0.329 blue:0.424 alpha:1.0];
+}
+
++(NSAttributedString*)getRefreshControlTimeStamp {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                forKey:NSForegroundColorAttributeName];
+    return [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+}
+
 @end

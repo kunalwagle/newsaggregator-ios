@@ -12,6 +12,7 @@
 #import "Article.h"
 #import "UIView+Toast.h"
 #import "PadContainerViewController.h"
+#import "UtilityMethods.h"
 
 
 @interface PadTopicsViewController ()
@@ -28,6 +29,15 @@
     self.loginClicked = NO;
     self.loginButton.layer.cornerRadius = 5;
     self.topicTable.tableFooterView = [UIView new];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UtilityMethods getBackgroundColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(loggedIn)
+                  forControlEvents:UIControlEventValueChanged];
+    UITableViewController *tableViewController = [[UITableViewController alloc] init];
+    tableViewController.tableView = self.topicTable;
+    tableViewController.refreshControl = self.refreshControl;
     // Do any additional setup after loading the view.
 }
 
@@ -60,6 +70,10 @@
                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&jsonError];
                 topics = [dict objectForKey:@"topics"];
                 dispatch_sync(dispatch_get_main_queue(), ^{
+                    if (self.refreshControl) {
+                        self.refreshControl.attributedTitle = [UtilityMethods getRefreshControlTimeStamp];
+                        [self.refreshControl endRefreshing];
+                    }
                     [_activityIndicator setHidden:YES];
                     [self setLoginItemsHidden];
                     [_topicTable reloadData];
@@ -68,6 +82,10 @@
             } else {
                 NSLog(@"Error: %@", error);
                 dispatch_sync(dispatch_get_main_queue(), ^{
+                    if (self.refreshControl) {
+                        self.refreshControl.attributedTitle = [UtilityMethods getRefreshControlTimeStamp];
+                        [self.refreshControl endRefreshing];
+                    }
                     [_activityIndicator setHidden:YES];
                     UIAlertController * alert=   [UIAlertController
                                                   alertControllerWithTitle:@"Error"
@@ -90,6 +108,9 @@
             }
         }];
     } else {
+        if (self.refreshControl) {
+            [self.refreshControl endRefreshing];
+        }
         [self showLoginItems];
     }
 }
@@ -153,6 +174,8 @@
                     [articles addObject:[[Article alloc] initWithDictionary:dictionary]];
                 }
             }
+            
+            self.navigationItem.title = chosenArticle[@"label"];
             
             vc.articles = articles;
             vc.topicId = chosenArticle[@"_id"];

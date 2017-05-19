@@ -22,6 +22,7 @@
 @property NSMutableArray *articles;
 @property BOOL isSubscribed;
 @property NSArray *defaultSources;
+@property UIRefreshControl *refreshControl;
 - (IBAction)search:(id)sender;
 
 @end

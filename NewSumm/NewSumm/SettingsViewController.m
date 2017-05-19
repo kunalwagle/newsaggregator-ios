@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "TopicSettingsViewController.h"
 #import "UIView+Toast.h"
+#import "UtilityMethods.h"
 
 @interface SettingsViewController ()
 
@@ -27,6 +28,16 @@
     self.loginButton.layer.cornerRadius = 5;
     self.logout.layer.cornerRadius = 5;
     self.tv.tableFooterView = [UIView new];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UtilityMethods getBackgroundColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(loggedIn)
+                  forControlEvents:UIControlEventValueChanged];
+    UITableViewController *tableViewController = [[UITableViewController alloc] init];
+    tableViewController.tableView = self.tv;
+    tableViewController.refreshControl = self.refreshControl;
     // Do any additional setup after loading the view.
 }
 
@@ -60,11 +71,19 @@
                     [_activityIndicator setHidden:YES];
                     [_tv reloadData];
                     [self setLoginItemsHidden];
+                    if (self.refreshControl) {
+                        self.refreshControl.attributedTitle = [UtilityMethods getRefreshControlTimeStamp];
+                        [self.refreshControl endRefreshing];
+                    }
                 });
             } else {
                 NSLog(@"Error: %@", error);
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [_activityIndicator setHidden:YES];
+                    if (self.refreshControl) {
+                        self.refreshControl.attributedTitle = [UtilityMethods getRefreshControlTimeStamp];
+                        [self.refreshControl endRefreshing];
+                    }
                     UIAlertController * alert=   [UIAlertController
                                                   alertControllerWithTitle:@"Error"
                                                   message:@"Something went wrong there. Sorry about that"
@@ -86,6 +105,9 @@
             }
         }];
     } else {
+        if (self.refreshControl) {
+            [self.refreshControl endRefreshing];
+        }
         [self showLoginItems];
     }
 }
