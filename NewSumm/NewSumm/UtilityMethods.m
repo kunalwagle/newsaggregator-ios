@@ -11,7 +11,7 @@
 @implementation UtilityMethods
 
 +(NSString*)getIPAddress {
-    return @"http://192.168.0.20:8182/api/";
+    return @"http://178.62.27.53:8182/api/";
 }
 
 +(UICollectionViewFlowLayout*)getCollectionViewFlowLayout {
@@ -78,6 +78,38 @@
         return [UIColor colorWithRed:255.0/255.0 green:165.0/255.0 blue:0 alpha:0.4];
     }
     
+    if ([source isEqualToString:@"bbc-news"]) {
+        return [UIColor colorWithRed:0.5 green:0 blue:0 alpha:0.4];
+    }
+    
+    if ([source isEqualToString:@"bbc-sport"]) {
+        return [UIColor colorWithRed:1.0 green:215.0/255.0 blue:0.0 alpha:0.4];
+    }
+    
+    if ([source isEqualToString:@"bloomberg"]) {
+        return [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.4];
+    }
+    
+    if ([source isEqualToString:@"cnbc"]) {
+        return [UIColor colorWithRed:0.0 green:100.0/255.0 blue:0 alpha:0.4];
+    }
+    
+    if ([source isEqualToString:@"cnn"]) {
+        return [UIColor colorWithRed:178.0/255.0 green:34.0/255.0 blue:34.0/255.0 alpha:0.4];
+    }
+    
+    if ([source isEqualToString:@"espn"]) {
+        return [UIColor colorWithRed:60.0/255.0 green:179.0/255.0 blue:113.0 alpha:0.4];
+    }
+    
+    if ([source isEqualToString:@"four-four-two"]) {
+        return [UIColor colorWithRed:205.0/255.0 green:133.0/255.0 blue:63.0/255.0 alpha:0.4];
+    }
+    
+    if ([source isEqualToString:@"the-washington-post"]) {
+        return [UIColor colorWithRed:70.0/255.0 green:130.0/255.0 blue:180.0/255.0 alpha:0.4];
+    }
+    
     return NULL;
 }
 
@@ -128,6 +160,38 @@
     
     if ([source isEqualToString:@"the-times-of-india"]) {
         return @"The Times of India";
+    }
+    
+    if ([source isEqualToString:@"bbc-news"]) {
+        return @"BBC News";
+    }
+    
+    if ([source isEqualToString:@"bbc-sport"]) {
+        return @"BBC Sport";
+    }
+    
+    if ([source isEqualToString:@"bloomberg"]) {
+        return @"Bloomberg";
+    }
+    
+    if ([source isEqualToString:@"cnbc"]) {
+        return @"CNBC";
+    }
+    
+    if ([source isEqualToString:@"cnn"]) {
+        return @"CNN";
+    }
+    
+    if ([source isEqualToString:@"espn"]) {
+        return @"ESPN";
+    }
+    
+    if ([source isEqualToString:@"four-four-two"]) {
+        return @"FourFourTwo";
+    }
+    
+    if ([source isEqualToString:@"the-washington-post"]) {
+        return @"The Washington Post";
     }
     
     return NULL;
