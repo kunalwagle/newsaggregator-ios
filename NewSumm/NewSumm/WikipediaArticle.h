@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface WikipediaArticle : NSObject
 
@@ -14,6 +15,8 @@
 @property NSString *extract;
 @property NSString *imageUrl;
 @property NSString *_id;
+@property NSString *articleCount;
+@property UIImage *image;
 
 -(WikipediaArticle*)initWithDictionary:(NSDictionary *)dictionary;
 

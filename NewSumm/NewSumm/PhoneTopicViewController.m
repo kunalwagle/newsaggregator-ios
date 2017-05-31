@@ -43,7 +43,11 @@
     [tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
      tableView.tableFooterView = [UIView new];
     self.navigationItem.title = topicName;
-    
+    if ([self.articles count] == 0) {
+        [self.noArticles setHidden:NO];
+    } else {
+        [self.noArticles setHidden:YES];
+    }
     [self checkSubscription];
     
     

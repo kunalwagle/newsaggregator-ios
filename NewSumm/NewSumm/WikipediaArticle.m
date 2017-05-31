@@ -16,6 +16,7 @@
     self.extract = dictionary[@"extract"];
     self.imageUrl = dictionary[@"imageUrl"];
     self._id = dictionary[@"_id"];
+    self.articleCount = dictionary[@"articleCount"];
     return self;
 }
 

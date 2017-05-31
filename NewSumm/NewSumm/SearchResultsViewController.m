@@ -218,10 +218,13 @@
     NSUInteger index = ([indexPath section]*[collectionView numberOfItemsInSection:0]) + [indexPath row];
     WikipediaArticle *article = [searchResults objectAtIndex:index];
     cell.title.text = article.title;
-    NSString *extract = article.extract;
-    cell.text.text = extract;
-    cell.text.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
-    cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
+    NSString *extract = @"WIKPEDIA Intro: ";
+    extract = [extract stringByAppendingString:[[article.extract substringToIndex:100] stringByAppendingString:@"..."]];
+    NSString *cellText = [NSString stringWithFormat:@"%@\r\rArticle Count: %@", extract, [article articleCount]];
+    cell.text.text = cellText;
+//    cell.text.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
+    if (!article.image) {
+        cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
     dispatch_queue_t imageQueue = dispatch_queue_create("Image Queue",NULL);
     dispatch_async(imageQueue, ^{
         NSError *error = nil;
@@ -236,8 +239,10 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (image) {
                     cell.image.image = image;
+                    article.image = image;
                 } else {
                     cell.image.image = [UIImage imageNamed:@"default-thumbnail.jpg"];
+                    article.image = image;
                 }
             });
         } else {
@@ -247,6 +252,9 @@
         }
         
     });
+    } else {
+        cell.image.image = article.image;
+    }
     return cell;
 }
 
